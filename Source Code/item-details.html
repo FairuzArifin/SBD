@@ -27,7 +27,7 @@
 
 
     <!-- site title -->
-    <title>Enftomark</title>
+    <title>OpenSea</title>
 </head>
 
 <body class="light-version">
@@ -352,7 +352,20 @@
                             </div>
                             <div class="buying-btns d-flex flex-wrap">
                                 <a href="wallet.html" class="default-btn move-right"><span>Buy Now</span> </a>
-                                <a href="wallet.html" class="default-btn move-right"><span>Place a Bid</span> </a>
+                                <button class="default-btn move-right" id="bid"><span>Place a Bid</span> </button>
+                                <div id="bid-frm">
+                                    <div class="col-md-12">
+                                        <form id="manage-bid">
+                                            <input type="hidden" name="nft_id" value="<?php echo $nft_id ?>">
+                                            <div class="form-group">
+                                                <label for="" class="control-label"><h5>Bid Amount</h5></label>
+                                                <input type="number" class="form-control text-right mt-2" name="bid_amount" style="width: 330px;">
+                                            </div>
+                                            <button class="default-btn move-right mt-3 me-5"><span>Submit</span> </button>
+                                            <button class="default-btn move-right mt-3" id="cancel_bid"><span>Cancel</span> </button>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -497,6 +510,28 @@
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/isotope.pkgd.min.js"></script>
     <script src="assets/js/functions.js"></script>
+    <script>
+        $('#manage-bid').submit(function(e){
+    	e.preventDefault()
+            start_load()
+            var latest = $('#hbid').text()
+            latest = latest.replace(/,/g,'')
+            if(parseFloat(latest)  > $('[name="bid_amount"]').val()){
+            	alert_toast("Bid amount must be greater than the current Highest Bid.",'danger')
+            	end_load()
+            	return false;
+            }
+        })
+        $('#bid-frm').hide()
+        $('#bid').click(function(){
+            $(this).hide()
+            $('#bid-frm').show()
+        })
+        $('#cancel_bid').click(function(){
+            $('#bid').show()
+            $('#bid-frm').hide()
+        })
+    </script>
 </body>
 
 </html>
