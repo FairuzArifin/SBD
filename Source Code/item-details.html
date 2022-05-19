@@ -513,14 +513,6 @@
     <script>
         $('#manage-bid').submit(function(e){
     	e.preventDefault()
-            start_load()
-            var latest = $('#hbid').text()
-            latest = latest.replace(/,/g,'')
-            if(parseFloat(latest)  > $('[name="bid_amount"]').val()){
-            	alert_toast("Bid amount must be greater than the current Highest Bid.",'danger')
-            	end_load()
-            	return false;
-            }
         })
         $('#bid-frm').hide()
         $('#bid').click(function(){
