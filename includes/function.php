@@ -1,13 +1,16 @@
 <?php
+include 'connect.php';
 
-function data_bid($db){
-    $query = "SELECT * FROM bid";
-    $nft = mysqli_query($db, $query);
-    $data_kategori = array();
+function data_bid($bid){
+    $query = "SELECT * FROM nft WHERE nft_id = $bid";
 
-    while ($row = mysqli_fetch_assoc($nft)) {
-        $data_kategori[] = $row;
+    $h = mysqli_query($connect, $query);
+        $nft = array();
+
+    // ... tiap baris dari hasil query dikumpulkan ke $nft
+        while ($row = mysqli_fetch_assoc($h)) {
+        $nft[] = $row;
     }
-
-    return $data_bid;
+    // ... lanjut di tampilan
+    return $nft;
 }

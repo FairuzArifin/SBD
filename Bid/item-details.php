@@ -1,3 +1,20 @@
+<?php 
+
+include '../includes/connect.php';
+$nftid = 123;
+$query = "SELECT * FROM nft WHERE nft_id = $nftid";
+
+    $h = mysqli_query($connect, $query);
+        $nft = array();
+
+    // ... tiap baris dari hasil query dikumpulkan ke $nft
+        while ($row = mysqli_fetch_assoc($h)) {
+        $nft[] = $row;
+    }
+
+ foreach ($nft as $output)
+?>
+
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 
@@ -192,7 +209,7 @@
                         <div class="item-desc-part">
                             <div class="item-desc-inner">
                                 <div class="item-desc-thumb">
-                                    <img src="../Source Code/assets/images/nft-item/item-details-light.gif" alt="item-img">
+                                    <img src="<?php $output['photo'] ?>" alt="item-img">
                                 </div>
                                 <div class="item-desc-content">
                                     <nav>
@@ -229,31 +246,10 @@
                                             <ul class="other-info-list">
                                                 <li class="item-other-info">
                                                     <div class="item-info-title">
-                                                        <h6>Contact Address</h6>
-                                                    </div>
-                                                    <div class="item-info-details">
-                                                        <div id="cryptoCode" class="crypto-page">
-                                                            <input id="cryptoLink"
-                                                                value="0x1dDB2C0897daF134545641545462E71fdD2dbDC0eB3a9Ec"
-                                                                readonly>
-                                                            <div id="cryptoCopy" data-bs-toggle="tooltip"
-                                                                data-bs-placement="top" title="Copy Address">
-                                                                <span class="copy-icon">
-                                                                    <i class="icofont-ui-copy" aria-hidden="true"
-                                                                        data-copytarget="#cryptoLink"></i>
-                                                                </span>
-
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </li>
-                                                <li class="item-other-info">
-                                                    <div class="item-info-title">
                                                         <h6>Token ID</h6>
                                                     </div>
                                                     <div class="item-info-details">
-                                                        <p>0005515456416</p>
+                                                        <p><?PHP echo $output['nft_id']?></p>
                                                     </div>
 
                                                 </li>
@@ -266,14 +262,6 @@
                                                     </div>
                                                 </li>
 
-                                                <li class="item-other-info">
-                                                    <div class="item-info-title">
-                                                        <h6>Size</h6>
-                                                    </div>
-                                                    <div class="item-info-details">
-                                                        <p>1000 x 1000 px.VIDEO (19.85MB)</p>
-                                                    </div>
-                                                </li>
                                             </ul>
                                         </div>
                                         <div class="bids-tab tab-pane fade" id="nav-bids" role="tabpanel"
@@ -307,7 +295,8 @@
                     <div class="col-lg-6">
                         <div class="item-buy-part">
                             <div class="nft-item-title">
-                                <h3>#003 da Silly Cat wid baLoon NFT: size 1/50</h3>
+                            
+                                <h3> <?php echo $output['title']?> </h3>
                                 <div class="share-btn">
                                     <div class=" dropstart">
                                         <a class=" dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
