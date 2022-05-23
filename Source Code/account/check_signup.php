@@ -4,9 +4,9 @@
     
     $email = $_POST['email'];
     $name = $_POST['name'];
-    $username = $_POST['username'];
     $password1 = $_POST['password1'];
 	$password2 = $_POST['password2'];
+    $fund_eth = $_POST['fund_eth'];
 
     $check = "SELECT * FROM user WHERE email='$_POST[email]'";
     $process = mysqli_query($connect, $check);
@@ -20,14 +20,19 @@
     if (mysqli_num_rows($process)>0) { 
         header("location:signup.php?pesan=ganda");
     } else { 
-    	$sql = "INSERT INTO akun (name,password,email) VALUES ('$name', '$password1', $email')";          			                
-        if($koneksi->query($sql)===TRUE){
-			echo "<h1 style='margin-top:30px; color:green; text-align:center;'>Sign Up Success</h1>";
+    	$sql1 = "INSERT INTO user (name,password,email) VALUES ('$name', '$password1', '$email')"; 
+        $sql2 = "INSERT INTO wallet (fund_eth) VALUES ('$fund_eth')";         			                
+        if($connect->query($sql1)===TRUE){
+			if($connect->query($sql2)===TRUE){
+                echo "<script>alert('Your Accout Registration Success');history.go(-1) </script>";
+            } else {
+                echo "Error : " .$sql2."<br/>".$connect->error;
+            }
 		} else {
-			echo "Error : " .$sql."<br/>".$koneksi->error;
+			echo "Error : " .$sql1."<br/>".$connect->error;
 		}
     }
     
-    $koneksi->close();
+    $connect->close();
 
 ?>

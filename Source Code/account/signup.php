@@ -30,6 +30,13 @@
     <title>OpenSea</title>
 </head>
 
+<?php
+session_start();
+if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
+    header("location:../index.php?pesan=sudah");
+}   
+?>
+
 <body class="light-version">
     <!-- preloader start here -->
     <div class="preloader">
@@ -130,12 +137,16 @@
                             </a>
 
                             <ul class="dropdown-menu">
+                                <?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == true) : ?>
                                 <li><a class="dropdown-item" href="../author.php"><span class="me-1"><i
                                                 class="icofont-options"></i></span>
                                         Profile</a></li>
                                 <li><a class="dropdown-item" href="../activity.php"><span class="me-1"><i
                                                 class="icofont-lightning-ray"></i></span>
                                         Activity</a></li>
+                                <?php endif ;?>
+
+                                <?php if(!isset($_SESSION['logged'])) : ?>
                                 <li><a class="dropdown-item" href="signup.php"><span class="me-1"><i
                                                 class="icofont-space-shuttle"></i></span>
                                         Sign
@@ -143,12 +154,16 @@
                                 <li><a class="dropdown-item" href="signin.php"><span class="me-1"><i
                                                 class="icofont-login"></i></span> Sign
                                         In</a></li>
+                                <?php endif ;?>
+
+                                <?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == true) : ?>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
 
                                 <li><a class="dropdown-item" href="signout.php"> Sign
                                         Out <span class="ms-1"><i class="icofont-logout"></i></span></a></li>
+                                <?php endif ;?>
                             </ul>
                         </div>
                     </div>
@@ -205,25 +220,29 @@
                 <div class="col-lg-5">
                     <div class="account-wrapper">
                         <h3 class="title">Sign Up</h3>
-                        <form class="account-form">
+                        <form class="account-form" method="POST" action="check_signup.php">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="userIdInput" placeholder="user-id">
-                                <label for="userIdInput">User ID</label>
+                                <input type="text" class="form-control" id="nameInput" placeholder="name" name="name" required>
+                                <label for="nameInput">Name</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInput"
+                                <input type="email" class="form-control" id="floatingInput" name="email" required
                                     placeholder="name@example.com">
                                 <label for="floatingInput">Email address</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="floatingPassword"
+                                <input type="password" class="form-control" id="floatingPassword" name="password1" required
                                     placeholder="Password">
                                 <label for="floatingPassword">Password</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="confirmPass"
+                                <input type="password" class="form-control" id="confirmPass" name="password2" required
                                     placeholder="Confirm Password">
                                 <label for="confirmPass">Confirm Password</label>
+                            </div>
+                            <div hidden class="form-group">
+                                <label for="">Fund</label>
+                                <input type="text" name="fund_eth" id="fund_eth" readonly value="3">
                             </div>
                             <div class="form-group">
                                 <div class="d-flex justify-content-between flex-wrap pt-sm-2">
@@ -235,11 +254,11 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <button class="d-block default-btn move-top"><span>Signup Now</span></button>
+                                <button class="d-block default-btn move-top" type="submit"><span>Signup Now</span></button>
                             </div>
                         </form>
                         <div class="account-bottom">
-                            <span class="d-block cate pt-10">Already Have an Account? <a href="signin.html"> Sign
+                            <span class="d-block cate pt-10">Already Have an Account? <a href="signin.php"> Sign
                                     In</a></span>
                             <span class="or"><span>or</span></span>
                             <h5 class="subtitle">Signup With Social Media</h5>
@@ -265,7 +284,7 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="account-img">
-                        <img src="assets/images/account/01.png" alt="shape-image">
+                        <img src="../assets/images/account/01.png" alt="shape-image">
                     </div>
                 </div>
             </div>

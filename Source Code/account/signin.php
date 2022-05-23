@@ -137,12 +137,16 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
                             </a>
 
                             <ul class="dropdown-menu">
+                                <?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == true) : ?>
                                 <li><a class="dropdown-item" href="../author.php"><span class="me-1"><i
                                                 class="icofont-options"></i></span>
                                         Profile</a></li>
                                 <li><a class="dropdown-item" href="../activity.php"><span class="me-1"><i
                                                 class="icofont-lightning-ray"></i></span>
                                         Activity</a></li>
+                                <?php endif ;?>
+
+                                <?php if(!isset($_SESSION['logged'])) : ?>
                                 <li><a class="dropdown-item" href="signup.php"><span class="me-1"><i
                                                 class="icofont-space-shuttle"></i></span>
                                         Sign
@@ -150,12 +154,16 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
                                 <li><a class="dropdown-item" href="signin.php"><span class="me-1"><i
                                                 class="icofont-login"></i></span> Sign
                                         In</a></li>
+                                <?php endif ;?>
+
+                                <?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == true) : ?>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
 
                                 <li><a class="dropdown-item" href="signout.php"> Sign
                                         Out <span class="ms-1"><i class="icofont-logout"></i></span></a></li>
+                                <?php endif ;?>
                             </ul>
                         </div>
                     </div>
