@@ -118,10 +118,18 @@
                             </ul>
                         </div>
                     </div>
+                    <?php if(isset($_SESSION['login'])) : ?>
                     <div class="wallet-btn">
                         <a href="wallet.html"><span><i class="icofont-wallet" data-blast="color"></i></span> <span
-                                class="d-none d-md-inline">234.98ETH</span> </a>
+                                class="d-none d-md-inline"><?=$_SESSION['fund_eth']?></span> </a>
                     </div>
+                    <?php endif ;?>
+                    <?php if(!isset($_SESSION['login'])) : ?>
+                    <div class="wallet-btn">
+                        <a href="wallet.html"><span><i class="icofont-wallet" data-blast="color"></i></span> <span
+                                class="d-none d-md-inline">Unknown</span> </a>
+                    </div>
+                    <?php endif ;?>
 
                 </div>
 

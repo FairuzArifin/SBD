@@ -1,40 +1,27 @@
 <?php
-include 'connect.php';
-
-//function show
-function show($query) {
-
-    global $connect;
-
-    $box = [];
-
-    $result = mysqli_query($connect, $query);
-
-    while($row = mysqli_fetch_assoc($result)) {
-
-        $box[] = $row;
-
+    include 'connect.php';
+    //function show
+    function show($query) {
+        global $connect;
+        $box = [];
+        $result = mysqli_query($connect, $query);
+        while($row = mysqli_fetch_assoc($result)) {
+            $box[] = $row;
+        }
+        return $box;
     }
 
-    return $box;
-}
-
-//Register
-function regist($data) {
-
-    global $connect;
-
-    $name = strtolower(stripslashes($data['name']));
-    $username = stripslashes($data['username']);
-    $email = stripslashes($data['email']);
-    //$dob = $data['dob'];
-    //$age = $data['age'];
-    $pass = mysqli_real_escape_string($connect, $data["password"]);
-    $pass2 = mysqli_real_escape_string($connect, $data["password_confirmation"]);
-    //$coutry = stripslashes($data['country']);
-    //$address = stripslashes($data['address']);
-
-    //passwordconfirmation
+    //Register
+    function regist($data) {
+        global $connect;
+        $name = strtolower(stripslashes($data['name']));
+        $username = stripslashes($data['username']);
+        $email = stripslashes($data['email']);
+        $pass = mysqli_real_escape_string($connect, $data["password"]);
+        $pass2 = mysqli_real_escape_string($connect, $data["password_confirmation"]);
+        $fund_eth = stripslashes($data['fund_eth']);
+    
+        //passwordconfirmation
     if ($pass !== $pass2) {
         return false;
     }
@@ -44,6 +31,7 @@ function regist($data) {
 
     //insert data ke table user
     $daftar = mysqli_query($connect, "INSERT INTO user(username, email, password, name, about, date_of_birth, age, country, address) VALUES('$username', '$email', '$pass', '$name', '', '', 0, '', '')");
+    $daftar2 = mysqli_query($connect, "INSERT INTO wallet(fund_eth) VALUES ('$fund_eth')");
 
     return mysqli_affected_rows($connect) ;
 }

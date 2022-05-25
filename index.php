@@ -1,9 +1,5 @@
 <?php 
-
-include  'includes/function.php';
-
-var_dump($_SESSION);
-
+    include  'includes/function.php';
 ?>
 
 <!DOCTYPE html>

@@ -1,16 +1,10 @@
 <?php
-
-include 'includes/function.php';
-
-if(!isset($_SESSION['login'])) {
-  header("Location: index.php");
-}
-
-$id = $_SESSION['user_id'];
-
-/* var_dump($id); */
-
-$profil = show("SELECT * FROM user WHERE user_id = $id ")[0];
+    include 'includes/function.php';
+    if(!isset($_SESSION['login'])) {
+        header("Location: index.php");
+    }
+    $id = $_SESSION['user_id'];
+    $profil = show("SELECT * FROM user WHERE user_id = $id ")[0];
 ?>
 
 <!DOCTYPE html>

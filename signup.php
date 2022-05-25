@@ -1,19 +1,13 @@
 <?php 
-
-include  'includes/function.php';
-
-if(isset($_SESSION['login'])) {
-    header("Location: index.php");
-}
-
-if($_POST) {
-
-  if (regist($_POST) > 0) {
-    header('Location: signin.php');
-  }
-
-}
-
+    include  'includes/function.php';
+    if(isset($_SESSION['login'])) {
+        header("Location: index.php");
+    }
+    if($_POST) {
+        if (regist($_POST) > 0) {
+            header('Location: signin.php');
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -223,24 +217,6 @@ if($_POST) {
                                     placeholder="name@example.com">
                                 <label for="floatingInput">Email address</label>
                             </div>
-                            <!-- <div class="form-floating mb-3">
-                                <input name="dob" type="date" class="form-control" id="floatingInput"
-                                    placeholder="tanggal Lahir">
-                                <label for="floatingInput">Tanggal Lahir</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input name="age" type="number" class="form-control" id="floatingInput"
-                                    placeholder="Umur">
-                                <label for="floatingInput">Umur</label>
-                            </div> -->
-                            <!-- <div class="form-floating mb-3">
-                                <input name="country" type="text" class="form-control" id="userIdInput" placeholder="country">
-                                <label for="userIdInput">Country</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input name="address" type="text" class="form-control" id="userIdInput" placeholder="address">
-                                <label for="userIdInput">Address</label>
-                            </div> -->
                             <div class="form-floating mb-3">
                                 <input name="password" type="password" class="form-control" id="floatingPassword"
                                     placeholder="Password">
@@ -250,6 +226,10 @@ if($_POST) {
                                 <input name="password_confirmation" type="password" class="form-control" id="confirmPass"
                                     placeholder="Confirm Password">
                                 <label for="confirmPass">Confirm Password</label>
+                            </div>
+                            <div hidden class="form-group">
+                                <label for="">Fund</label>
+                                <input type="text" name="fund_eth" id="fund_eth" readonly value="3">
                             </div>
                             <div class="form-group">
                                 <div class="d-flex justify-content-between flex-wrap pt-sm-2">

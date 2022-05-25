@@ -1,53 +1,35 @@
 <?php 
-
-include 'includes/connect.php';
-
-//Pembatasan
-
-if(isset($_SESSION['login'])) {
-    header("Location: index.php");
-}
-
-if(isset($_POST['login'])) {
-    $email = $_POST['email'];
-    $pass = $_POST['password'];
-
-
-    //check email 
-    $data = mysqli_query($connect, "SELECT * FROM user WHERE email = '$email'");
-
-    if(mysqli_num_rows($data)) {
-
+    include 'includes/connect.php';
+    if(isset($_SESSION['login'])) {
+        header("Location: index.php");
+    }
+    if(isset($_POST['login'])) {
+        $email = $_POST['email'];
+        $pass = $_POST['password'];
+    
+        //check email 
+        $data = mysqli_query($connect, "SELECT * FROM user INNER JOIN wallet WHERE email = '$email'");
+        if(mysqli_num_rows($data)) {
         $row = mysqli_fetch_assoc($data);
-
-        /* var_dump($row['user_id']);
-        var_dump($row['name']); */
 
         //Check Password
         if(password_verify($pass, $row["password"])) {
-
             $user_id = $row['user_id'];
             $name = $row['name'];
-
+            $fund_eth = $row['fund_eth'];
+        
             $_SESSION['user_id'] = $user_id;
             $_SESSION['nama'] = $name;
+            $_SESSION['fund_eth'] = $fund_eth;
             $_SESSION['login'] = TRUE;
-            
+        
             header("Location: index.php");
-
         } else {
-
             var_dump('Password salah');
+        } } else {
+            var_dump('Email Tidak terdaftar');
         }
-       
-
-    } else {
-
-        var_dump('Email Tidak terdafta');
-
-    }
-}    
-
+    }    
 ?>
 
 <!DOCTYPE html>
