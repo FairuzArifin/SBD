@@ -54,7 +54,7 @@
             
 
             <h1><p>ETH</p></h1>
-                <button class="btn btn-primary mb-2 mr-2 px-2 py-2 rounded w-auto" name="tambah_saldo" style="width: 66.74px">
+                <button class="btn btn-primary mb-2 mr-2 px-2 py-2 rounded w-auto" name="tambah_saldo" style="width: 66.74px" method_exists="POST">
                 <span><i class="fa-solid fa-plus"></i></span> 
                 <span >&nbsp TAMBAH SALDO</span>
               </button>
@@ -78,7 +78,7 @@
   $fund_eth = $_SESSION['fund_eth'];
   }
 
-  $query2 = mysqli_query($connect,"SELECT fund_eth FROM wallet WHERE wallet_id = '{$_SESSION["wallet_id"]}',  UPDATE  wallet SET fund_eth = $fund_eth + 1.17  ");//WHERE wallet_id = '{$_SESSION["wallet_id"]}'");
+  $query2 = mysqli_query($connect,"UPDATE  wallet SET fund_eth = $fund_eth + 1.17  ");//WHERE wallet_id = '{$_SESSION["wallet_id"]}'");
   if($query2){echo "tambah saldo berhasil";
  }else {echo "maaf tidak dapat menambah saldo";}
 
