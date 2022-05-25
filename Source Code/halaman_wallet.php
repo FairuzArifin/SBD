@@ -81,7 +81,7 @@
   if($query2){ echo "
 	  <script type='text/javascript'>
     alert('saldo berhasil ditambah')
-      <!--window.location='profil.php';-->
+      window.location='index.html';
       </script>
         ";
   }else {echo "maaf tidak dapat menambah saldo";}
