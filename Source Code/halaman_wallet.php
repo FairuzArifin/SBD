@@ -70,7 +70,7 @@
   </body>
 </html>
 <?php 
- if(isset($_POST['tambah_saldo'])){
+ if(isset($_SESSION['tambah_saldo'])){
   $username= $_SESSION['username'];
   $wallet_id=$_SESSION['wallet_id'];
   $fund_eth = $_SESSION['fund_eth'];
@@ -78,13 +78,13 @@
 
   $query2 = mysqli_query($connect,"UPDATE  wallet SET fund_eth = fund_eth + 1.005  ");//WHERE wallet_id = '{$_SESSION["wallet_id"]}'");
 
-  if($query2){ echo "
-	  <script type='text/javascript'>
-    alert('saldo berhasil ditambah')
-      window.location='index.html';
-      </script>
-        ";
-  }else {echo "maaf tidak dapat menambah saldo";}
+  if(!$query2){ echo "maaf tidak dapat menambah saldo";}
+	  //<script type='text/javascript'>
+    //alert('saldo berhasil ditambah')
+      // window.location='../author.php';
+      //</script>
+       // ";
+  //}else {echo "maaf tidak dapat menambah saldo";}
 
 ?>
 
