@@ -119,7 +119,7 @@
                         </div>
                     </div>
                     <div class="wallet-btn">
-                        <a href="wallet.html"><span><i class="icofont-wallet" data-blast="color"></i></span> <span
+                        <a href="Source Code/halaman_wallet.php"><span><i class="icofont-wallet" data-blast="color"></i></span> <span
                                 class="d-none d-md-inline">234.98ETH</span> </a>
                     </div>
 
