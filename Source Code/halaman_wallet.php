@@ -1,6 +1,4 @@
-<?php 
-    session_start();
-?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -54,7 +52,7 @@
             
 
             <h1><p>ETH</p></h1>
-                <button class="btn btn-primary mb-2 mr-2 px-2 py-2 rounded w-auto" name="tambah_saldo" style="width: 66.74px" method_exists="POST">
+                <button class="btn btn-primary mb-2 mr-2 px-2 py-2 rounded w-auto" name="tambah_saldo" style="width: 66.74px"  onclick = "return confirm('Yakin igin menambah saldo ?');">
                 <span><i class="fa-solid fa-plus"></i></span> 
                 <span >&nbsp TAMBAH SALDO</span>
               </button>
@@ -78,9 +76,14 @@
   $fund_eth = $_SESSION['fund_eth'];
   }
 
-  $query2 = mysqli_query($connect,"UPDATE  wallet SET fund_eth = $fund_eth + 1.17  ");//WHERE wallet_id = '{$_SESSION["wallet_id"]}'");
-  if($query2){echo "tambah saldo berhasil";
- }else {echo "maaf tidak dapat menambah saldo";}
+  $query2 = mysqli_query($connect,"UPDATE  wallet SET fund_eth = fund_eth + 1.005  ");//WHERE wallet_id = '{$_SESSION["wallet_id"]}'");
+  if($query2){ echo "
+	  <script type='text/javascript'>
+    alert('saldo berhasil ditambah')
+      <!--window.location='profil.php';-->
+      </script>
+        ";
+  }else {echo "maaf tidak dapat menambah saldo";}
 
 ?>
 
