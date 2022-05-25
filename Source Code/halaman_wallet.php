@@ -7,17 +7,8 @@ include '../includes/connect.php';
 //           AND wallet.wallet_id = $wallet_id
 //           AND wallet.fund_eth = ";
 
-// require_once '../../includes/koneksi.php';
 
-// //maksud kode dibawah 2 baris :
-// $sql = mysqli_query($koneksi, "SELECT * FROM barang_masuk");
-// while ($data = mysqli_fetch_array($sql)) {
-
-$query = mysqli_query($connect,"SELECT * FROM wallet 
-          WHERE wallet_id = $wallet_id
-          AND fund_eth = $fund_eth");
-
-//$result = mysqli_query($connect, $query);
+$query = mysqli_query($connect, "SELECT * FROM wallet");
 
 while($data = mysqli_fetch_array($query)){
   
