@@ -1,20 +1,6 @@
-<?php
-include '../includes/connect.php';
-
-// $query = "SELECT user.username, wallet.wallet_id, wallet.fund_eth 
-//           FROM user, wallet 
-//           WHERE user.username = $username
-//           AND wallet.wallet_id = $wallet_id
-//           AND wallet.fund_eth = ";
-
-
-$query = mysqli_query($connect, "SELECT * FROM wallet");
-
-while($data = mysqli_fetch_array($query)){
-  
-}
+<?php 
+    session_start();
 ?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -37,17 +23,41 @@ while($data = mysqli_fetch_array($query)){
           </a>
         </nav>
     </div>
+    <?php
+        //include '../includes/connect.php';
+
+        //$query = mysqli_query($connect, "SELECT user.username, wallet.wallet_id, wallet.fund_eth FROM user, wallet ");
+        //        while($data = mysqli_fetch_array($query)){ jangan lupa tambah tanda tanya dan tanda lebih besar
+          // <p> <?= $data['username']
+          // <?= $data['wallet_id']
+
+        //start coba
+        if(session_start()){
+          include '../includes/connect.php';
+          $query = mysqli_query($connect, "SELECT user.username, wallet.wallet_id, wallet.fund_eth FROM user, wallet");// WHERE wallet.wallet_id = '{$_SESSION["wallet_id"]}' AND user.username = '{$_SESSION["username"]}' ");
+          //while($_data = mysqli_fetch_array($query)){
+        //end coba
+    ?>
     
     <div class="container text-center mt-2">
-      <p>Accoutnt1</p>
-      <?php echo $data['wallet_id']; ?>
+      <p> <? echo $_SESSION['username']?> </p>
+
+           <?echo $_SESSION['wallet_id']?> 
+        
+      
       <hr class="my-1">
         <div class="jumbotron jumbotron-fluid">
           <div class="container">
             <i class="fa-brands fa-ethereum display-4"></i>
-            <h1 class="display-6"><?php echo $data['fund_eth']; ?></h1>
+            <h1 class="display-6"><?echo $_SESSION['fund_eth'] ?></h1>
+            <?php }?>
+            
+
             <h1><p>ETH</p></h1>
-            <button type="button" class="btn btn-outline-primary" href="#">tambah saldo</button>
+                <button class="btn btn-primary mb-2 mr-2 px-2 py-2 rounded w-auto" name="tambah_saldo" style="width: 66.74px">
+                <span><i class="fa-solid fa-plus"></i></span> 
+                <span >&nbsp TAMBAH SALDO</span>
+              </button>
           </div>
         </div>
     </div>
@@ -61,3 +71,17 @@ while($data = mysqli_fetch_array($query)){
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
   </body>
 </html>
+<?php 
+ if(isset($_POST['tambah_saldo'])){
+  $username= $_SESSION['username'];
+  $wallet_id=$_SESSION['wallet_id'];
+  $fund_eth = $_SESSION['fund_eth'];
+  }
+
+  $query2 = mysqli_query($connect,"SELECT fund_eth FROM wallet WHERE wallet_id = '{$_SESSION["wallet_id"]}',  UPDATE  wallet SET fund_eth = $fund_eth + 1.17  ");//WHERE wallet_id = '{$_SESSION["wallet_id"]}'");
+  if($query2){echo "tambah saldo berhasil";
+ }else {echo "maaf tidak dapat menambah saldo";}
+
+?>
+
+
