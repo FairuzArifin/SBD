@@ -17,7 +17,7 @@ $query = "SELECT * FROM nft
         $nft[] = $row;
     }
 
-    foreach ($nft as $output)
+    foreach ($nft as $output) :
 ?>
 
 <!DOCTYPE html>
@@ -125,11 +125,12 @@ $query = "SELECT * FROM nft
                                                             alt="author-img "></a>
                                                 </div>
                                                 <?php $box = user_nft($nftid); 
-                                                    foreach ($box as $nft_details)?>
+                                                    foreach ($box as $nft_details):?>
                                                 <div class="author-p-info">
                                                     <p class="mb-0">Owner</p>
                                                     <h6><a href="author.html"></a><?php echo $nft_details['name']?> </h6>
                                                 </div>
+                                                <?php endforeach?>
                                             </div>
                                             <ul class="other-info-list">
                                                 <li class="item-other-info">
@@ -152,26 +153,23 @@ $query = "SELECT * FROM nft
 
                                             </ul>
                                         </div>
+                                        
                                         <div class="bids-tab tab-pane fade" id="nav-bids" role="tabpanel"
                                             aria-labelledby="nav-bids-tab">
                                             <span><i class="icofont-law-order"></i></span>
-                                            <p>No active bids yet. Be the first to make a bid!</p>
+
+                                            <p><?php echo $bidnow['bid_ongoing']?></p>
                                         </div>
                                         <div class="history-tab tab-pane fade" id="nav-history" role="tabpanel"
                                             aria-labelledby="nav-history-tab">
                                             <ul class="item-histo-list">
+                                                <?php $bids = show_bid($nftid); 
+                                                    foreach ($bids as $bidnow) : ?>
                                                 <li class="histo-item">
-                                                    <p>Created by <a href="author.html">@alex joe</a></p>
-                                                    <time>2021-08-04 23:05:07</time>
+                                                    <p>Bid By <?php echo $bidnow['name']?> <?php echo $bidnow['bid_ongoing']?></pa></p>
+                                                    <time><?php echo $bidnow['bid_time']?></time>
                                                 </li>
-                                                <li class="histo-item">
-                                                    <p>Listed by <a href="author.html">@alex joe</a></p>
-                                                    <time>2021-08-04 20:05:07</time>
-                                                </li>
-                                                <li class="histo-item">
-                                                    <p>Owned by <a href="author.html">@alex joe</a></p>
-                                                    <time>2021-08-04 22:05:07</time>
-                                                </li>
+                                                <?php endforeach ?>
                                             </ul>
                                         </div>
                                     </div>
@@ -227,23 +225,23 @@ $query = "SELECT * FROM nft
                                 </ul>
                             </div>
                             <div class="item-price">
-                                <h4>Price</h4>
-                                <p><span><i class="icofont-coins"></i> 2.29 ETH
-                                    </span>($ 6,227.15)</p>
+                                <h4>Start Price</h4>
+                                <p><span><i class="icofont-coins"></i> <?php echo $output['start_bid_price']?>
+                                    </span></p>
                             </div>
                             <div class="buying-btns d-flex flex-wrap">
                                 <a href="wallet.html" class="default-btn move-right"><span>Buy Now <i class="icofont-coins"></i> (<?php echo $output['buy_now']?> ETH)</span> </a>
                                 <button class="default-btn move-right" id="bid"><span>Place a Bid</span> </button>
                                 <div id="bid-frm">
                                     <div class="col-md-12">
-                                        <form id="manage-bid">
-                                            <input type="hidden" name="nft_id" value="<?php echo $nft_id ?>">
+                                        <form id="manage-bid" method="POST" action="item-bid.php">
+                                            <input type="hidden" name="nft_id" value="<?php echo $nft_id ?>" />
                                             <div class="form-group">
                                                 <label for="" class="control-label"><h5>Bid Amount</h5></label>
                                                 <input type="number" class="form-control text-right mt-2" name="bid_amount" style="width: 330px;">
                                             </div>
-                                            <button class="default-btn move-right mt-3 me-5"><span>Submit</span> </button>
-                                            <button class="default-btn move-right mt-3" id="cancel_bid"><span>Cancel</span> </button>
+                                            <button type = "submit" class="default-btn move-right mt-3 me-5"><span>Submit</span> </button>
+                                            <button type = "reset" class="default-btn move-right mt-3" id="cancel_bid"><span>Cancel</span> </button>
                                         </form>
                                     </div>
                                 </div>
@@ -284,7 +282,6 @@ $query = "SELECT * FROM nft
     <script src="../Source Code/assets/js/functions.js"></script>
     <script>
         $('#manage-bid').submit(function(e){
-    	e.preventDefault()
         })
         $('#bid-frm').hide()
         $('#bid').click(function(){
@@ -299,3 +296,4 @@ $query = "SELECT * FROM nft
 </body>
 
 </html>
+<?php endforeach ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2022 at 08:41 AM
+-- Generation Time: May 26, 2022 at 06:56 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -55,6 +55,20 @@ CREATE TABLE `bid_ongoing` (
   `bid_ongoing` double(30,10) UNSIGNED NOT NULL,
   `bid_time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `bid_ongoing`
+--
+
+INSERT INTO `bid_ongoing` (`bid_id`, `user_id`, `nft_id`, `bid_ongoing`, `bid_time`) VALUES
+(1, 2101, 3101, 2.0000000000, '2022-05-26 15:21:20'),
+(2, 2101, 3101, 3.0000000000, '2022-05-26 15:22:27'),
+(4, 2101, 3101, 4.0000000000, '2022-05-26 15:50:15'),
+(5, 2101, 3101, 4.0000000000, '2022-05-26 15:50:32'),
+(6, 2101, 3101, 3.0000000000, '2022-05-26 15:51:01'),
+(7, 2101, 3101, 3.0000000000, '2022-05-26 16:02:48'),
+(8, 2101, 3101, 5.0000000000, '2022-05-26 16:05:04'),
+(9, 2101, 3101, 12.0000000000, '2022-05-26 16:29:29');
 
 -- --------------------------------------------------------
 
@@ -125,7 +139,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `username`, `email`, `password`, `wallet_id`, `name`, `about`, `date_of_birth`, `age`, `country`, `address`) VALUES
 (2101, 'erli123', 'erligurning5@gmail.com', 'rahasia123', 1, 'erli', 'alam', '2003-07-31', 18, 'indonesia', 'medan selayang'),
-(2102, 'felicia123', 'nelvinafelicia@gmail.com', 'rahasia123', 2, 'felicia', 'gunung', '2003-05-16', 19, 'indonesia', 'medan selayang');
+(2102, 'felicia123', 'nelvinafelicia@gmail.com', 'rahasia123', 2, 'felicia', 'gunung', '2003-05-16', 19, 'indonesia', 'medan selayang'),
+(2104, 'asdasda', 'test@gmail.com', '$2y$10$kk9iX.IQ5Czhu', NULL, 'asdasd', '', '0000-00-00', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -144,7 +159,8 @@ CREATE TABLE `wallet` (
 
 INSERT INTO `wallet` (`wallet_id`, `fund_eth`) VALUES
 (1, 100.1000000000),
-(2, 200.1000000000);
+(2, 200.1000000000),
+(3, 3.0000000000);
 
 --
 -- Indexes for dumped tables
@@ -199,7 +215,7 @@ ALTER TABLE `wallet`
 -- AUTO_INCREMENT for table `bid_ongoing`
 --
 ALTER TABLE `bid_ongoing`
-  MODIFY `bid_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `bid_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `nft`
@@ -211,13 +227,13 @@ ALTER TABLE `nft`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2104;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2105;
 
 --
 -- AUTO_INCREMENT for table `wallet`
 --
 ALTER TABLE `wallet`
-  MODIFY `wallet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `wallet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
