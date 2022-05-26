@@ -55,7 +55,7 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
             <div class="header__content">
                 <div class="header__logo">
                     <a href="index.html">
-                        <img src="../assets/images/logo/logo-3.png" alt="logo">
+                        <img src="assets/images/logo/logo-3.png" alt="logo">
                     </a>
                 </div>
 
@@ -70,32 +70,32 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
                 <div class="header__menu ms-auto">
                     <ul class="header__nav mb-0">
                         <li class="header__nav-item">
-                            <a class="header__nav-link" href="../index.php">Home</a>
+                            <a class="header__nav-link" href="index.php">Home</a>
                         </li>
                         <li class="header__nav-item">
                             <a class="header__nav-link" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false" data-bs-offset="0,10">Explore</a>
 
                             <ul class="dropdown-menu header__nav-menu">
-                                <li><a class="drop-down-item" href="../explore.php">Explore NFT's</a></li>
-                                <li><a class="drop-down-item" href="../auction.php">Auction Page</a></li>
+                                <li><a class="drop-down-item" href="explore.php">Explore NFT's</a></li>
+                                <li><a class="drop-down-item" href="auction.php">Auction Page</a></li>
 
                             </ul>
                         </li>
                         <li class="header__nav-item">
-                            <a href="../activity.php" class="header__nav-link">Activity</a>
+                            <a href="activity.php" class="header__nav-link">Activity</a>
                         </li>
                         <li class="header__nav-item">
                             <a class="header__nav-link" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false" data-bs-offset="0,10">Pages</a>
 
                             <ul class="dropdown-menu header__nav-menu">
-                                <li><a class="drop-down-item" href="../item-details.php">NFT Details</a></li>
-                                <li><a class="drop-down-item" href="../all-authors-2.php">All Authors</a></li>
-                                <li><a class="drop-down-item" href="../author.php">Author Profile</a></li>
-                                <li><a class="drop-down-item" href="../wallet.php">Wallet Connect</a></li>
-                                <li><a class="drop-down-item" href="../404.php">404</a></li>
-                                <li><a class="drop-down-item" href="../forgot-pass.php">Forgot Password</a></li>
+                                <li><a class="drop-down-item" href="item-details.php">NFT Details</a></li>
+                                <li><a class="drop-down-item" href="all-authors-2.php">All Authors</a></li>
+                                <li><a class="drop-down-item" href="author.php">Author Profile</a></li>
+                                <li><a class="drop-down-item" href="wallet.php">Wallet Connect</a></li>
+                                <li><a class="drop-down-item" href="404.php">404</a></li>
+                                <li><a class="drop-down-item" href="forgot-pass.php">Forgot Password</a></li>
 
                             </ul>
                         </li>
@@ -108,8 +108,8 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
                                 </svg></a>
 
                             <ul class="dropdown-menu header__nav-menu">
-                                <li><a class="drop-down-item" href="../contact.php">Contact </a></li>
-                                <li><a class="drop-down-item" href="../coming-soon.php">Coming soon</a></li>
+                                <li><a class="drop-down-item" href="contact.php">Contact </a></li>
+                                <li><a class="drop-down-item" href="coming-soon.php">Coming soon</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -138,20 +138,20 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
 
                             <ul class="dropdown-menu">
                                 <?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == true) : ?>
-                                <li><a class="dropdown-item" href="../author.php"><span class="me-1"><i
+                                <li><a class="dropdown-item" href="author.php"><span class="me-1"><i
                                                 class="icofont-options"></i></span>
                                         Profile</a></li>
-                                <li><a class="dropdown-item" href="../activity.php"><span class="me-1"><i
+                                <li><a class="dropdown-item" href="activity.php"><span class="me-1"><i
                                                 class="icofont-lightning-ray"></i></span>
                                         Activity</a></li>
                                 <?php endif ;?>
 
                                 <?php if(!isset($_SESSION['logged'])) : ?>
-                                <li><a class="dropdown-item" href="signup.php"><span class="me-1"><i
+                                <li><a class="dropdown-item" href="account/signup.php"><span class="me-1"><i
                                                 class="icofont-space-shuttle"></i></span>
                                         Sign
                                         Up</a></li>
-                                <li><a class="dropdown-item" href="signin.php"><span class="me-1"><i
+                                <li><a class="dropdown-item" href="account/signin.php"><span class="me-1"><i
                                                 class="icofont-login"></i></span> Sign
                                         In</a></li>
                                 <?php endif ;?>
@@ -161,14 +161,14 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
                                     <hr class="dropdown-divider">
                                 </li>
 
-                                <li><a class="dropdown-item" href="signout.php"> Sign
+                                <li><a class="dropdown-item" href="account/signout.php"> Sign
                                         Out <span class="ms-1"><i class="icofont-logout"></i></span></a></li>
                                 <?php endif ;?>
                             </ul>
                         </div>
                     </div>
                     <div class="wallet-btn">
-                        <a href="../wallet.php"><span><i class="icofont-wallet" data-blast="color"></i></span> <span
+                        <a href="wallet.php"><span><i class="icofont-wallet" data-blast="color"></i></span> <span
                                 class="d-none d-md-inline">
                                 <?php 
 	                                if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){

@@ -124,7 +124,7 @@
                                 <span data-blast="bgColor"><i class="icofont-user"></i></span> <span
                                     class="d-none d-md-inline">
                                     <?php 
-	                                if(session_start()){
+	                                if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
                             		    echo $_SESSION['name'];
 	                                } else {
                                         echo "Tamu";
@@ -159,16 +159,12 @@
                     <div class="wallet-btn">
                         <a href="wallet.html"><span><i class="icofont-wallet" data-blast="color"></i></span> <span
                                 class="d-none d-md-inline">
-                                <?php
-                                if(session_start()){
-                                    include "connect.php";
-                                    $query = mysqli_query($connect, "SELECT fund_eth FROM Wallet WHERE wallet_id = '{$_SESSION["wallet_id"]}'");
-                                ?>
-                                <?php echo $_SESSION['fund_eth'] ?>
-                                <?php
-                                } else {
-                                    echo "Unknown";
-                                } 
+                                <?php 
+	                                if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
+                            		    echo $_SESSION['wallet'];
+	                                } else {
+                                        echo "Unknown";
+                                    }
                                 ?></span> </a>
                     </div>
 
