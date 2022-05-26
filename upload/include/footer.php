@@ -1,6 +1,6 @@
  <!-- ===============//footer section start here \\================= -->
  <footer class="footer-section light-version">
-        <div class="footer-top" style="background-image: url(../assets/images/footer/bg-light.jpg);">
+        <div class="footer-top" style="background-image: url(assets/images/footer/bg-light.jpg);">
             <div class="footer-newsletter">
                 <div class="container">
                     <div class="row g-4 align-items-center justify-content-center">
@@ -121,16 +121,16 @@
 
 
     <!-- All Scripts -->
-    <script src="../assets/js/jquery-3.6.0.min.js"></script>
-    <script src="../assets/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/js/waypoints.min.js"></script>
-    <script src="../assets/js/lightcase.js"></script>
-    <script src="../assets/js/swiper-bundle.min.js"></script>
-    <script src="../assets/js/countdown.min.js"></script>
-    <script src="../assets/js/jquery.counterup.min.js"></script>
-    <script src="../assets/js/wow.min.js"></script>
-    <script src="../assets/js/isotope.pkgd.min.js"></script>
-    <script src="../assets/js/functions.js"></script>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/lightcase.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/countdown.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/functions.js"></script>
 </body>
 
 </html>

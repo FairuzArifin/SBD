@@ -27,14 +27,14 @@
                                 <ul class="author-list d-flex">
                                     <li class="single-author">
                                         <a href="author.html"><img
-                                        src="../assets/images/seller/01.gif"
+                                        src="assets/images/seller/01.gif"
                                         alt="author-img"></a>                                                                
                                     </li>
                                     <li
                                     class="single-author d-flex align-items-center">
                                     <a href="author.html"
                                         class="veryfied"><img
-                                            src="../assets/images/seller/01.png"
+                                            src="assets/images/seller/01.png"
                                             alt="author-img"></a>
                                     <h6><a href="author.html">Jhon Doe</a>
                                     </h6>
