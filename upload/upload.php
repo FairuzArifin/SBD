@@ -1,6 +1,7 @@
 <?php 
-
+    
     include "connection.php";
+    include "include/header.php";
 
 
     if(isset($_POST['submit'])){
@@ -30,5 +31,12 @@
                 }
             }                                                                       
            }      
+           echo '<section class="profile-section light-version padding-top padding-bottom">
+           <center>
+           <h3>NFT UPLOADED</h3> <br>
+           <a href="author.php"><h3>Back</h3></a>
+           </center>
+           </section>';      
     }
+    include "include/footer.php";
 ?>

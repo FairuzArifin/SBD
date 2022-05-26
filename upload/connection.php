@@ -6,7 +6,7 @@
     $host = 'localhost';
     $user = 'root';
     $pass = '';
-    $database = 'tubessbd_';
+    $database = 'tubes_sbd';
 
     $con = mysqli_connect($host, $user, $pass, $database);
 ?>
