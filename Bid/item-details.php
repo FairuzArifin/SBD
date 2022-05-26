@@ -1,8 +1,13 @@
 <?php 
 
 include '../includes/connect.php';
-$nftid = 123;
-$query = "SELECT * FROM nft WHERE nft_id = $nftid";
+include '../includes/function.php';
+$nftid = 3101;
+$query = "SELECT * FROM nft
+            JOIN bid
+            ON nft.nft_id = bid.nft_id
+            WHERE nft.nft_id = $nftid
+            ";
 
     $h = mysqli_query($connect, $query);
         $nft = array();
@@ -12,7 +17,7 @@ $query = "SELECT * FROM nft WHERE nft_id = $nftid";
         $nft[] = $row;
     }
 
- foreach ($nft as $output)
+    foreach ($nft as $output)
 ?>
 
 <!DOCTYPE html>
@@ -60,123 +65,7 @@ $query = "SELECT * FROM nft WHERE nft_id = $nftid";
     <!-- preloader ending here -->
 
     <!-- ===============// header section start here \\================= -->
-    <header class="header light-version">
-        <div class="container-fluid">
-            <div class="header__content">
-                <div class="header__logo">
-                    <a href="index.html">
-                        <img src="../Source Code/assets/images/logo/logo-3.png" alt="logo">
-                    </a>
-                </div>
-
-                <form action="#" class="header__search">
-                    <input type="text" placeholder="Search items, collections, and creators">
-                    <button type="button"><i class="icofont-search-2"></i></button>
-                    <button type="button" class="close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path
-                                d="M13.41,12l6.3-6.29a1,1,0,1,0-1.42-1.42L12,10.59,5.71,4.29A1,1,0,0,0,4.29,5.71L10.59,12l-6.3,6.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L12,13.41l6.29,6.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z" />
-                        </svg></button>
-                </form>
-                <div class="header__menu ms-auto">
-                    <ul class="header__nav mb-0">
-                        <li class="header__nav-item">
-                            <a class="header__nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="header__nav-item">
-                            <a class="header__nav-link" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" data-bs-offset="0,10">Explore</a>
-
-                            <ul class="dropdown-menu header__nav-menu">
-                                <li><a class="drop-down-item" href="explore.html">Explore NFT's</a></li>
-                                <li><a class="drop-down-item" href="auction.html">Auction Page</a></li>
-
-                            </ul>
-                        </li>
-                        <li class="header__nav-item">
-                            <a href="activity.html" class="header__nav-link">Activity</a>
-                        </li>
-                        <li class="header__nav-item">
-                            <a class="header__nav-link" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" data-bs-offset="0,10">Pages</a>
-
-                            <ul class="dropdown-menu header__nav-menu">
-                                <li><a class="drop-down-item" href="item-details.html">NFT Details</a></li>
-                                <li><a class="drop-down-item" href="all-authors-2.html">All Authors</a></li>
-                                <li><a class="drop-down-item" href="author.html">Author Profile</a></li>
-                                <li><a class="drop-down-item" href="wallet.html">Wallet Connect</a></li>
-                                <li><a class="drop-down-item" href="404.html">404</a></li>
-                                <li><a class="drop-down-item" href="forgot-pass.html">Forgot Password</a></li>
-
-                            </ul>
-                        </li>
-                        <li class="header__nav-item">
-                            <a class="header__nav-link" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" data-bs-offset="0,10"><svg
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path
-                                        d="M12,10a2,2,0,1,0,2,2A2,2,0,0,0,12,10ZM5,10a2,2,0,1,0,2,2A2,2,0,0,0,5,10Zm14,0a2,2,0,1,0,2,2A2,2,0,0,0,19,10Z" />
-                                </svg></a>
-
-                            <ul class="dropdown-menu header__nav-menu">
-                                <li><a class="drop-down-item" href="contact.html">Contact </a></li>
-                                <li><a class="drop-down-item" href="coming-soon.html">Coming soon</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="header__actions">
-                    <div class="header__action header__action--search">
-                        <button class="header__action-btn" type="button"><i class="icofont-search-1"></i></button>
-                    </div>
-
-                    <div class="header__action header__action--profile">
-                        <div class="dropdown">
-                            <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false" data-bs-offset="-100,10">
-                                <span data-blast="bgColor"><i class="icofont-user"></i></span> <span
-                                    class="d-none d-md-inline">Alex
-                                    Joe</span>
-                            </a>
-
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="author.html"><span class="me-1"><i
-                                                class="icofont-options"></i></span>
-                                        Profile</a></li>
-                                <li><a class="dropdown-item" href="activity.html"><span class="me-1"><i
-                                                class="icofont-lightning-ray"></i></span>
-                                        Activity</a></li>
-                                <li><a class="dropdown-item" href="signup.html"><span class="me-1"><i
-                                                class="icofont-space-shuttle"></i></span>
-                                        Sign
-                                        Up</a></li>
-                                <li><a class="dropdown-item" href="signin.html"><span class="me-1"><i
-                                                class="icofont-login"></i></span> Sign
-                                        In</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-
-                                <li><a class="dropdown-item" href="#"> Sign
-                                        Out <span class="ms-1"><i class="icofont-logout"></i></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="wallet-btn">
-                        <a href="wallet.html"><span><i class="icofont-wallet" data-blast="color"></i></span> <span
-                                class="d-none d-md-inline">234.98ETH</span> </a>
-                    </div>
-
-                </div>
-
-                <button class="menu-trigger header__btn" id="menu05">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </header>
+    <?php include '../includes/header.php'; ?>
     <!-- ===============//header section end here \\================= -->
 
 
@@ -209,7 +98,7 @@ $query = "SELECT * FROM nft WHERE nft_id = $nftid";
                         <div class="item-desc-part">
                             <div class="item-desc-inner">
                                 <div class="item-desc-thumb">
-                                    <img src="<?php $output['photo'] ?>" alt="item-img">
+                                    <img src="<?php $output['photo'];?>.png" alt="item-img">
                                 </div>
                                 <div class="item-desc-content">
                                     <nav>
@@ -229,18 +118,17 @@ $query = "SELECT * FROM nft WHERE nft_id = $nftid";
                                         <div class="details-tab tab-pane fade show active" id="nav-details"
                                             role="tabpanel" aria-labelledby="nav-details-tab">
 
-                                            <p>This is the second batch of Cybertino Genesis NFTs for early adopters and
-                                                is 1 of 5. This Genesis NFT will be
-                                                interactive: hold and wait for future exclusive benefits and early
-                                                access to new drops!</p>
+                                            <p><?php echo $output['description']?></p>
                                             <div class="author-profile d-flex flex-wrap align-items-center gap-15">
                                                 <div class="author-p-thumb">
                                                     <a href="author.html"><img src="../Source Code/assets/images/seller/02.gif"
                                                             alt="author-img "></a>
                                                 </div>
+                                                <?php $box = user_nft($nftid); 
+                                                    foreach ($box as $nft_details)?>
                                                 <div class="author-p-info">
                                                     <p class="mb-0">Owner</p>
-                                                    <h6><a href="author.html">Alex joe</a></h6>
+                                                    <h6><a href="author.html"></a><?php echo $nft_details['name']?> </h6>
                                                 </div>
                                             </div>
                                             <ul class="other-info-list">
@@ -319,8 +207,11 @@ $query = "SELECT * FROM nft WHERE nft_id = $nftid";
                             </div>
                             <div class="item-details-countdown">
                                 <h4>Ends In:</h4>
-                                
-                                <ul class="item-countdown-list count-down" data-date="5 22 2022 21:14:01">
+                                <?php
+                                $date   = $output['auction_end'];
+                                $date   = date('d-M-Y H:i:s', strtotime($date));
+                                ?>
+                                <ul class="item-countdown-list count-down" data-date="<?php echo $date?>">
                                     <li>
                                         <span class="days"></span><span class="count-txt">Days</span>
                                     </li>
@@ -341,7 +232,7 @@ $query = "SELECT * FROM nft WHERE nft_id = $nftid";
                                     </span>($ 6,227.15)</p>
                             </div>
                             <div class="buying-btns d-flex flex-wrap">
-                                <a href="wallet.html" class="default-btn move-right"><span>Buy Now</span> </a>
+                                <a href="wallet.html" class="default-btn move-right"><span>Buy Now <i class="icofont-coins"></i> (<?php echo $output['buy_now']?> ETH)</span> </a>
                                 <button class="default-btn move-right" id="bid"><span>Place a Bid</span> </button>
                                 <div id="bid-frm">
                                     <div class="col-md-12">
@@ -368,116 +259,7 @@ $query = "SELECT * FROM nft WHERE nft_id = $nftid";
 
 
     <!-- ===============//footer section start here \\================= -->
-    <footer class="footer-section light-version">
-        <div class="footer-top" style="background-image: url(../Source Code/assets/images/footer/bg-light.jpg);">
-            <div class="footer-newsletter">
-                <div class="container">
-                    <div class="row g-4 align-items-center justify-content-center">
-                        <div class="col-lg-6">
-                            <div class="newsletter-part">
-                                <div class="ft-header">
-                                    <h4>Get The Latest Rarible Updates</h4>
-                                </div>
-                                <form action="#">
-                                    <input type="email" placeholder="Your Mail Address">
-                                    <button type="submit"> Subscrib now</button>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="social-part ps-lg-5">
-                                <div class="ft-header">
-                                    <h4>Join the Community</h4>
-                                </div>
-                                <ul class="social-list d-flex flex-wrap align-items-center mb-0">
-                                    <li class="social-link"><a href="#"><i class="icofont-twitter"></i></a></li>
-                                    <li class="social-link"><a href="#"><i class="icofont-twitch"></i></a></li>
-                                    <li class="social-link"><a href="#"><i class="icofont-reddit"></i></a></li>
-                                    <li class="social-link"><a href="#"><i class="icofont-instagram"></i></a></li>
-                                    <li class="social-link"><a href="#"><i class="icofont-dribble"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="footer-links padding-top padding-bottom">
-                <div class="container">
-                    <div class="row g-5 row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-5">
-                        <div class="col">
-                            <div class="footer-link-item">
-                                <h5>About</h5>
-                                <ul class="footer-link-list">
-                                    <li><a href="#" class="footer-link">Explore</a></li>
-                                    <li><a href="#" class="footer-link">How it works</a></li>
-                                    <li><a href="#" class="footer-link">Support</a></li>
-                                    <li><a href="#" class="footer-link">Become a partner</a></li>
-
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="footer-link-item">
-                                <h5>NFT Marketplace</h5>
-                                <ul class="footer-link-list">
-                                    <li><a href="#" class="footer-link">Sell your assets</a></li>
-                                    <li><a href="#" class="footer-link">FAQ</a></li>
-                                    <li><a href="#" class="footer-link">Support</a></li>
-                                    <li><a href="#" class="footer-link">Privacy/Policy</a></li>
-                                    <li><a href="#" class="footer-link">Your purchases</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="footer-link-item">
-                                <h5>Company</h5>
-                                <ul class="footer-link-list">
-                                    <li><a href="#" class="footer-link">About</a></li>
-                                    <li><a href="#" class="footer-link">Mission & Team</a></li>
-                                    <li><a href="#" class="footer-link">Our Blog</a></li>
-                                    <li><a href="#" class="footer-link">Services</a></li>
-                                    <li><a href="#" class="footer-link">We're Hiring</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="footer-link-item">
-                                <h5>NFT Marketplace</h5>
-                                <ul class="footer-link-list">
-                                    <li><a href="#" class="footer-link">Sell your assets</a></li>
-                                    <li><a href="#" class="footer-link">FAQ</a></li>
-                                    <li><a href="#" class="footer-link">Support</a></li>
-                                    <li><a href="#" class="footer-link">Privacy/Policy</a></li>
-                                    <li><a href="#" class="footer-link">Your purchases</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="footer-link-item">
-                                <h5>Comunity</h5>
-                                <ul class="footer-link-list">
-                                    <li><a href="#" class="footer-link">NFT Token</a></li>
-                                    <li><a href="#" class="footer-link">Discusion</a></li>
-                                    <li><a href="#" class="footer-link">Voting</a></li>
-                                    <li><a href="#" class="footer-link">Suggest Feature</a></li>
-                                    <li><a href="#" class="footer-link">Language</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p class="text-center py-4 mb-0">All rights reserved &copy; Enftomark || Design By: <a
-                        href="https://themeforest.net/user/codexcoder">codexcoder</a>
-                </p>
-            </div>
-        </div>
-    </footer>
+    <?php include '../includes/footer.php'; ?>
     <!-- ===============//footer section end here \\================= -->
 
 
