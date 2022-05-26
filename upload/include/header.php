@@ -15,15 +15,15 @@
     <!-- <meta property="og:image" content=""> -->
 
     <!-- site favicon -->
-    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
     <!-- ====== All css file ========= -->
-    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css//icofont.min.css">
-    <link rel="stylesheet" href="../assets/css/animate.css">
-    <link rel="stylesheet" href="../assets/css/lightcase.css">
-    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="../assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css//icofont.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/lightcase.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
 
 
     <!-- site title -->
@@ -48,7 +48,7 @@
             <div class="header__content">
                 <div class="header__logo">
                     <a href="index.html">
-                        <img src="../assets/images/logo/logo-3.png" alt="logo">
+                        <img src="assets/images/logo/logo-3.png" alt="logo">
                     </a>
                 </div>
 
