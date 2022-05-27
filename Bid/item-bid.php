@@ -12,8 +12,8 @@ $row = mysqli_fetch_array($process);
 $row2 = mysqli_fetch_assoc($proces); //2
 $www = $row2['minn'];
 $largestbid = $row['max'];
-$now = strotime(Now);
-if($row2 > $now){
+$now = date("Y-m-d h:i:sa");
+if(strtotime($www) > strtotime($now)){
     if($bid > $largestbid ){
         $sql = "INSERT INTO bid_ongoing (user_id,nft_id,bid_ongoing) VALUES ('$user_id', '$nft_id', '$bid')";          			                
         if($connect->query($sql)===TRUE){
