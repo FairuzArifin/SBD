@@ -1,5 +1,6 @@
 <?php
 //function show
+include 'connect.php';
 function show($sql2) {
     global $connect;
     $box = [];
@@ -39,31 +40,20 @@ function show_bid($nftid){
 
 }
 
-function save_bid(){
-    extract($_POST);
-    $data = "";
-    $chk = $this->db->query("SELECT * FROM bid_ongoing where nft_id = $nftid order by bid_amount desc limit 1 ");
-    $uid = $chk->num_rows > 0 ? $chk->fetch_array()['user_id'] : 0 ;
-    foreach($_POST as $k => $v){
-        if(!in_array($k, array('bid_id')) && !is_numeric($k)){
-            if(empty($data)){
-                $data .= " $k='$v' ";
-            }else{
-                $data .= ", $k='$v' ";
-            }
-        }
+function status_nft($nft_id){
+    global $connect;
+    $check = "SELECT MAX(bid_ongoing) AS max FROM bid_ongoing WHERE nft_id = $nft_id";
+    $time = "SELECT auction_end AS minn FROM bid WHERE nft_id = $nft_id"; //2
+    $process = mysqli_query($connect, $check);
+    $proces = mysqli_query($connect, $time); //2
+    $row = mysqli_fetch_array($process);
+    $row2 = mysqli_fetch_assoc($proces); //2
+    $www = $row2['minn'];
+    $largestbid = $row['max'];
+    $now = date("Y-m-d h:i:sa");
+    if(strtotime($www) > strtotime($now)){
+        return true;
+    } else {
+        return false;
     }
-                $data .= ", user_id='{$_SESSION['user_id']}' ";
-
-    if($uid == $_SESSION['user_id']){
-        echo "<p>User id tidak sama</p>";
-        exit;
-    }
-    if(empty($id)){
-        $save = $this->db->query("INSERT INTO bid_ongoing set ".$data);
-    }else{
-        $save = $this->db->query("UPDATE bid_ongoing set ".$data." where id=".$id);
-    }
-    if($save)
-        return 1;
-    }
+}

@@ -106,12 +106,9 @@ $query = "SELECT * FROM nft
                                             <button class="nav-link active" id="nav-details-tab" data-bs-toggle="tab"
                                                 data-bs-target="#nav-details" type="button" role="tab"
                                                 aria-controls="nav-details" aria-selected="true">Details</button>
-                                            <button class="nav-link" id="nav-bids-tab" data-bs-toggle="tab"
-                                                data-bs-target="#nav-bids" type="button" role="tab"
-                                                aria-controls="nav-bids" aria-selected="false">Bids</button>
                                             <button class="nav-link" id="nav-history-tab" data-bs-toggle="tab"
                                                 data-bs-target="#nav-history" type="button" role="tab"
-                                                aria-controls="nav-history" aria-selected="false">History</button>
+                                                aria-controls="nav-history" aria-selected="false">Bids</button>
                                         </div>
                                     </nav>
                                     <div class="tab-content" id="nav-tabContent">
@@ -154,12 +151,6 @@ $query = "SELECT * FROM nft
                                             </ul>
                                         </div>
                                         
-                                        <div class="bids-tab tab-pane fade" id="nav-bids" role="tabpanel"
-                                            aria-labelledby="nav-bids-tab">
-                                            <span><i class="icofont-law-order"></i></span>
-
-                                            <p><?php echo $bidnow['bid_ongoing']?></p>
-                                        </div>
                                         <div class="history-tab tab-pane fade" id="nav-history" role="tabpanel"
                                             aria-labelledby="nav-history-tab">
                                             <ul class="item-histo-list">
@@ -203,7 +194,8 @@ $query = "SELECT * FROM nft
                                     </div>
                                 </div>
                             </div>
-                            <div class="item-details-countdown">
+                            <?php if (status_nft($nftid) == TRUE):?>
+                                <div class="item-details-countdown">
                                 <h4>Ends In:</h4>
                                 <?php
                                 $date   = $output['auction_end'];
@@ -224,6 +216,7 @@ $query = "SELECT * FROM nft
                                     </li>
                                 </ul>
                             </div>
+                            
                             <div class="item-price">
                                 <h4>Start Price</h4>
                                 <p><span><i class="icofont-coins"></i> <?php echo $output['start_bid_price']?>
@@ -246,6 +239,14 @@ $query = "SELECT * FROM nft
                                     </div>
                                 </div>
                             </div>
+                            <?php else: ?>
+                                <div class="item-details-countdown">
+                                <h4>Ends In:</h4>
+                                    <h3 style="color:red">SOLD</h3>
+                                </ul>
+                                </div>
+                            <?php endif ?>
+
                         </div>
                     </div>
                 </div>
