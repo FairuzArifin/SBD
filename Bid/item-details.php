@@ -37,15 +37,15 @@ $query = "SELECT * FROM nft
     <!-- <meta property="og:image" content=""> -->
 
     <!-- site favicon -->
-    <link rel="icon" type="image/png" href="../Source Code/assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
 
     <!-- ====== All css file ========= -->
-    <link rel="stylesheet" href="../Source Code/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../Source Code/assets/css//icofont.min.css">
-    <link rel="stylesheet" href="../Source Code/assets/css/animate.css">
-    <link rel="stylesheet" href="../Source Code/assets/css/lightcase.css">
-    <link rel="stylesheet" href="../Source Code/assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="../Source Code/assets/css/style.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css//icofont.min.css">
+    <link rel="stylesheet" href="../assets/css/animate.css">
+    <link rel="stylesheet" href="../assets/css/lightcase.css">
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/style.min.css">
 
 
     <!-- site title -->
@@ -121,7 +121,7 @@ $query = "SELECT * FROM nft
                                             <p><?php echo $output['description']?></p>
                                             <div class="author-profile d-flex flex-wrap align-items-center gap-15">
                                                 <div class="author-p-thumb">
-                                                    <a href="author.html"><img src="../Source Code/assets/images/seller/02.gif"
+                                                    <a href="author.html"><img src="../assets/images/seller/02.gif"
                                                             alt="author-img "></a>
                                                 </div>
                                                 <?php $box = user_nft($nftid); 
@@ -270,16 +270,16 @@ $query = "SELECT * FROM nft
 
 
     <!-- All Scripts -->
-    <script src="../Source Code/assets/js/jquery-3.6.0.min.js"></script>
-    <script src="../Source Code/assets/js/bootstrap.bundle.min.js"></script>
-    <script src="../Source Code/assets/js/waypoints.min.js"></script>
-    <script src="../Source Code/assets/js/lightcase.js"></script>
-    <script src="../Source Code/assets/js/swiper-bundle.min.js"></script>
-    <script src="../Source Code/assets/js/countdown.min.js"></script>
-    <script src="../Source Code/assets/js/jquery.counterup.min.js"></script>
-    <script src="../Source Code/assets/js/wow.min.js"></script>
-    <script src="../Source Code/assets/js/isotope.pkgd.min.js"></script>
-    <script src="../Source Code/assets/js/functions.js"></script>
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/waypoints.min.js"></script>
+    <script src="../assets/js/lightcase.js"></script>
+    <script src="../assets/js/swiper-bundle.min.js"></script>
+    <script src="../assets/js/countdown.min.js"></script>
+    <script src="../assets/js/jquery.counterup.min.js"></script>
+    <script src="../assets/js/wow.min.js"></script>
+    <script src="../assets/js/isotope.pkgd.min.js"></script>
+    <script src="../assets/js/functions.js"></script>
     <script>
         $('#manage-bid').submit(function(e){
         })
