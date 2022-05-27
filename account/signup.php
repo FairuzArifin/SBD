@@ -231,6 +231,10 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
                                 <label for="floatingInput">Email address</label>
                             </div>
                             <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="nameInput" placeholder="username" name="username" required>
+                                <label for="usernameInput">Userame</label>
+                            </div>
+                            <div class="form-floating mb-3">
                                 <input type="password" class="form-control" id="floatingPassword" name="password1" required
                                     placeholder="Password">
                                 <label for="floatingPassword">Password</label>
