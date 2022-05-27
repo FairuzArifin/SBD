@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< Updated upstream
 -- Generation Time: May 26, 2022 at 06:56 PM
+=======
+-- Generation Time: May 26, 2022 at 05:43 PM
+>>>>>>> Stashed changes
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -35,13 +39,6 @@ CREATE TABLE `bid` (
   `buy_now` double(30,10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `bid`
---
-
-INSERT INTO `bid` (`nft_id`, `start_bid_price`, `auction_start`, `auction_end`, `buy_now`) VALUES
-(3101, 2.0050000000, '2022-05-23 05:00:41', '2022-06-15 05:00:41', 2.0060000000);
-
 -- --------------------------------------------------------
 
 --
@@ -53,7 +50,8 @@ CREATE TABLE `bid_ongoing` (
   `user_id` int(11) DEFAULT NULL,
   `nft_id` int(11) DEFAULT NULL,
   `bid_ongoing` double(30,10) UNSIGNED NOT NULL,
-  `bid_time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `bid_time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `status` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -81,14 +79,6 @@ CREATE TABLE `kepemilikan` (
   `nft_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `kepemilikan`
---
-
-INSERT INTO `kepemilikan` (`user_id`, `nft_id`) VALUES
-(2101, 3101),
-(2102, 3102);
-
 -- --------------------------------------------------------
 
 --
@@ -99,19 +89,11 @@ CREATE TABLE `nft` (
   `nft_id` int(11) NOT NULL,
   `title` varchar(100) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `photo` text DEFAULT NULL,
+  `photo` varchar(20) NOT NULL,
   `category` varchar(20) NOT NULL,
   `suka` int(11) NOT NULL,
   `status_nft` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `nft`
---
-
-INSERT INTO `nft` (`nft_id`, `title`, `description`, `photo`, `category`, `suka`, `status_nft`) VALUES
-(3101, 'air terjun', 'air terjun yang berada dipulau samosir', '', 'alam', 3, NULL),
-(3102, 'semangat', 'penyemangat di pagi hari', NULL, 'art', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -124,23 +106,25 @@ CREATE TABLE `user` (
   `username` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL,
   `password` varchar(20) NOT NULL,
-  `wallet_id` int(11) DEFAULT NULL,
-  `name` varchar(50) NOT NULL,
-  `about` varchar(100) NOT NULL,
-  `date_of_birth` date NOT NULL,
-  `age` int(3) NOT NULL,
-  `country` varchar(50) NOT NULL,
-  `address` varchar(150) DEFAULT NULL
+  `wallet_id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
+<<<<<<< Updated upstream
 INSERT INTO `user` (`user_id`, `username`, `email`, `password`, `wallet_id`, `name`, `about`, `date_of_birth`, `age`, `country`, `address`) VALUES
 (2101, 'erli123', 'erligurning5@gmail.com', 'rahasia123', 1, 'erli', 'alam', '2003-07-31', 18, 'indonesia', 'medan selayang'),
 (2102, 'felicia123', 'nelvinafelicia@gmail.com', 'rahasia123', 2, 'felicia', 'gunung', '2003-05-16', 19, 'indonesia', 'medan selayang'),
 (2104, 'asdasda', 'test@gmail.com', '$2y$10$kk9iX.IQ5Czhu', NULL, 'asdasd', '', '0000-00-00', 0, '', '');
+=======
+INSERT INTO `user` (`user_id`, `username`, `email`, `password`, `wallet_id`, `name`) VALUES
+(2101, 'erli123', 'erligurning5@gmail.com', 'rahasia123', 1, 'erli'),
+(2102, 'felicia123', 'nelvinafelicia@gmail.com', 'rahasia123', 2, 'felicia'),
+(2103, 'ruzz', 'yuuarifin@gmail.com', 'rahasia123', 3, 'Fairuz');
+>>>>>>> Stashed changes
 
 -- --------------------------------------------------------
 
@@ -158,9 +142,15 @@ CREATE TABLE `wallet` (
 --
 
 INSERT INTO `wallet` (`wallet_id`, `fund_eth`) VALUES
+<<<<<<< Updated upstream
 (1, 100.1000000000),
 (2, 200.1000000000),
 (3, 3.0000000000);
+=======
+(1, 162.4100000000),
+(2, 262.4100000000),
+(3, 74.3550000000);
+>>>>>>> Stashed changes
 
 --
 -- Indexes for dumped tables
@@ -170,7 +160,8 @@ INSERT INTO `wallet` (`wallet_id`, `fund_eth`) VALUES
 -- Indexes for table `bid`
 --
 ALTER TABLE `bid`
-  ADD PRIMARY KEY (`nft_id`);
+  ADD PRIMARY KEY (`nft_id`),
+  ADD KEY `fk_nft_id` (`nft_id`);
 
 --
 -- Indexes for table `bid_ongoing`
@@ -185,6 +176,7 @@ ALTER TABLE `bid_ongoing`
 --
 ALTER TABLE `kepemilikan`
   ADD PRIMARY KEY (`user_id`),
+  ADD KEY `user_id` (`user_id`),
   ADD KEY `nft_id` (`nft_id`);
 
 --
@@ -199,6 +191,7 @@ ALTER TABLE `nft`
 ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`),
   ADD UNIQUE KEY `username` (`username`,`email`),
+  ADD UNIQUE KEY `username_2` (`username`),
   ADD KEY `wallet_id` (`wallet_id`);
 
 --
@@ -221,7 +214,7 @@ ALTER TABLE `bid_ongoing`
 -- AUTO_INCREMENT for table `nft`
 --
 ALTER TABLE `nft`
-  MODIFY `nft_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3104;
+  MODIFY `nft_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -233,7 +226,11 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `wallet`
 --
 ALTER TABLE `wallet`
+<<<<<<< Updated upstream
   MODIFY `wallet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+=======
+  MODIFY `wallet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+>>>>>>> Stashed changes
 
 --
 -- Constraints for dumped tables
@@ -263,7 +260,13 @@ ALTER TABLE `kepemilikan`
 -- Constraints for table `user`
 --
 ALTER TABLE `user`
-  ADD CONSTRAINT `wallet_id` FOREIGN KEY (`wallet_id`) REFERENCES `wallet` (`wallet_id`);
+  ADD CONSTRAINT `wallet_id` FOREIGN KEY (`wallet_id`) REFERENCES `wallet` (`wallet_id`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `wallet`
+--
+ALTER TABLE `wallet`
+  ADD CONSTRAINT `wallet_ibfk_1` FOREIGN KEY (`wallet_id`) REFERENCES `user` (`wallet_id`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

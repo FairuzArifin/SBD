@@ -157,7 +157,7 @@
                         </div>
                     </div>
                     <div class="wallet-btn">
-                        <a href="wallet.html"><span><i class="icofont-wallet" data-blast="color"></i></span> <span
+                        <a href="wallet.php"><span><i class="icofont-wallet" data-blast="color"></i></span> <span
                                 class="d-none d-md-inline">
                                 <?php 
 	                                if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){

@@ -9,11 +9,17 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
+
+    <meta name="author" content="codexcoder">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
     <title>wallet</title>
   </head>
-  <body>
+  <body  background = "assets/images/banner/bg-4.png">
     <!-- Image and text -->
-    <div class="container">
+    <div>
         <nav class="navbar navbar-light bg-light">
           <a class="navbar-brand" href="#">
             <i class="fa-solid fa-wallet"></i>
@@ -24,7 +30,9 @@
     <?php
         //start coba
           include '../includes/connect.php';
-          $query = mysqli_query($connect, "SELECT user.username, wallet.wallet_id, wallet.fund_eth FROM user, wallet");// WHERE wallet.wallet_id = '{$_SESSION["wallet_id"]}' AND user.username = '{$_SESSION["name"]}' ");
+          $sql = "SELECT user.username, wallet.wallet_id, wallet.fund_eth 
+                  FROM user, wallet";
+          $query = mysqli_query($connect, $sql);// WHERE wallet.wallet_id = '{$_SESSION["wallet_id"]}' AND user.username = '{$_SESSION["name"]}' ");
           if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){         
         //end coba
     ?>
@@ -52,23 +60,26 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
   </body>
 </html>
-<!-- <?php 
+<?php 
  if(isset($_POST['tambah_saldo'])){
   $_SESSION['wallet_id'] = $wallet_id;
   $_SESSION['fund_eth'] = $fund_eth;
   }
-
-  $query2 = mysqli_query($connect,"UPDATE  wallet SET fund_eth = fund_eth + 1.005");//  WHERE wallet_id = '{$_SESSION["wallet_id"]}'");
+  $sql2 = "UPDATE  wallet 
+           SET fund_eth = fund_eth + 1.00005 
+           WHERE wallet_id = '{$_SESSION['wallet_id']}'";
+  $query2 = mysqli_query($connect,$sql2);//  WHERE wallet_id = '{$_SESSION["wallet_id"]}'");
   //");//
   if($query2){ echo "
 	  <script type='text/javascript'>
     alert('saldo berhasil ditambah')
-      //window.location='index.html';
+      window.location='account/signout.php';
+
       </script>
         ";
   }else {echo "maaf tidak dapat menambah saldo";}
 
-?> -->
+?>
 
 
 

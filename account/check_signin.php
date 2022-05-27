@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-    include '../../includes/connect.php';
+    include '../includes/connect.php';
  
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -18,20 +18,21 @@
             $user_id = $row['user_id'];
 			$email = $row['email'];
             $name = $row['name'];
+            $username = $row['username'];
             $password = $row['password'];
             $wallet = $row['fund_eth'];
+            $wallet_id = $row['wallet_id'];
         }
 
 	    if($query -> num_rows > 0){
             $_SESSION['user_id'] = $user_id;
 		    $_SESSION['email'] = $email;
             $_SESSION['name'] = $name;
+            $_SESSION['username'] = $username;
             $_SESSION['logged'] = true;
             $_SESSION['wallet'] = $wallet;
-		    header("location:../item-details.php");
-            $_SESSION['name'] = $name;
             $_SESSION['wallet_id'] = $wallet_id;
-            $_SESSION['user_id'] = $user_id;
+		    header("location:../item-details.php");
             
 	    } else {
 		    header("location:signin.php?pesan=error");

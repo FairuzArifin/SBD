@@ -11,7 +11,7 @@
 
     <title>wallet</title>
   </head>
-  <body>
+  <body background = "assets/images/banner/bg-4.png">
     <!-- Image and text -->
     <div class="container">
         <nav class="navbar navbar-light bg-light">
@@ -40,7 +40,9 @@
                <h1><?php echo $_SESSION['wallet'];?></h1> 
           <?php }?>
             <h1><p>ETH</p></h1>
+                <form action="tambah_saldo.php">
                 <button class="btn btn-primary mb-2 mr-2 px-2 py-2 rounded w-auto" name="tambah_saldo" style="width: 66.74px"  onclick = "return confirm('Yakin igin menambah saldo ?');">
+                </form>   
                 <span><i class="fa-solid fa-plus"></i></span> 
                 <span >&nbsp TAMBAH SALDO</span>
               </button>
@@ -52,23 +54,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
   </body>
 </html>
-<!-- <?php 
- if(isset($_POST['tambah_saldo'])){
-  $_SESSION['wallet_id'] = $wallet_id;
-  $_SESSION['fund_eth'] = $fund_eth;
-  }
 
-  $query2 = mysqli_query($connect,"UPDATE  wallet SET fund_eth = fund_eth + 1.005");//  WHERE wallet_id = '{$_SESSION["wallet_id"]}'");
-  //");//
-  if($query2){ echo "
-	  <script type='text/javascript'>
-    alert('saldo berhasil ditambah')
-      //window.location='index.html';
-      </script>
-        ";
-  }else {echo "maaf tidak dapat menambah saldo";}
-
-?> -->
 
 
 
