@@ -63,7 +63,6 @@
 <?php 
  if(isset($_POST['tambah_saldo'])){
   $_SESSION['wallet_id'] = $wallet_id;
-  $_SESSION['fund_eth'] = $fund_eth;
   }
   $sql2 = "UPDATE  wallet 
            SET fund_eth = fund_eth + 1.00005 
