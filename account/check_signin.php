@@ -7,7 +7,7 @@
     $password = $_POST['password'];
     $box = [];
     $signin = mysqli_query($connect,"SELECT * FROM user WHERE email='$email' AND password='$password'");
-    $sql = "SELECT * FROM user INNER JOIN wallet WHERE email = '{$email}' and password = '{$password}'";
+    $sql = "SELECT * FROM user INNER JOIN wallet WHERE email='$email' and user.wallet_id = wallet.wallet_id";
     $check = mysqli_num_rows($signin);
     $query = mysqli_query($connect, $sql);
  
@@ -30,8 +30,8 @@
             $_SESSION['name'] = $name;
             $_SESSION['username'] = $username;
             $_SESSION['logged'] = true;
-            $_SESSION['wallet'] = $wallet;
             $_SESSION['wallet_id'] = $wallet_id;
+            $_SESSION['wallet'] = $wallet;
 		    header("location:../item-details.php");
             
 	    } else {

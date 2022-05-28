@@ -72,30 +72,33 @@
                         <div class="dropdown">
                             <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false" data-bs-offset="-100,10">
-                                <?php if(isset($_SESSION['login'])) : ?>
                                   <span data-blast="bgColor"><i class="icofont-user"></i></span> <span
-                                    class="d-none d-md-inline"><?=$_SESSION['nama']?></span>
-                                <?php else : ?>
-                                  <span data-blast="bgColor"><i class="icofont-user"></i></span> <span
-                                    class="d-none d-md-inline">Login Here</span>
-                                <?php endif ;?>
+                                    class="d-none d-md-inline">
+                                    <?php 
+	                                if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
+                            		    echo $_SESSION['name'];
+	                                } else {
+                                        echo "Tamu";
+                                    }
+                                    ?>
+                                    </span>
                             </a>
 
                             <ul class="dropdown-menu">
 
-                                <?php if(isset($_SESSION['login'])) : ?>
+                                <?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == true) : ?>
                                   <li><a class="dropdown-item" href="author.php"><span class="me-1"><i
                                                 class="icofont-options"></i></span>
                                         Profile</a></li>
                                 <?php endif ;?>
 
-                                <?php if(isset($_SESSION['login'])) : ?>
+                                <?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == true) : ?>
                                   <li><a class="dropdown-item" href="activity.php"><span class="me-1"><i
                                                 class="icofont-lightning-ray"></i></span>
                                         Activity</a></li>
                                 <?php endif ;?>
                                 
-                                <?php if(!isset($_SESSION['login'])) : ?>
+                                <?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == true) : ?>
                                   <li><a class="dropdown-item" href="signup.php"><span class="me-1"><i
                                                 class="icofont-space-shuttle"></i></span>
                                         Sign
@@ -105,7 +108,7 @@
                                         In</a></li>
                                 <?php endif ;?>
 
-                                <?php if(isset($_SESSION['login'])) : ?>
+                                <?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == true) : ?>
                                   <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -118,16 +121,17 @@
                             </ul>
                         </div>
                     </div>
-                    <?php if(isset($_SESSION['login'])) : ?>
                     <div class="wallet-btn">
                         <a href="Source Code/halaman_wallet.php"><span><i class="icofont-wallet" data-blast="color"></i></span> <span
-                                class="d-none d-md-inline"><?=$_SESSION['fund_eth']?></span> </a>
+                                class="d-none d-md-inline">
+                                <?php 
+	                                if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
+                            		    echo $_SESSION['wallet'];
+	                                } else {
+                                        echo "Unknown";
+                                    }
+                                ?></span> </a>
                     </div>
-                    <?php endif ;?>
-                    <?php if(!isset($_SESSION['login'])) : ?>
-                    
-                    <?php endif ;?>
-
                 </div>
 
                 <button class="menu-trigger header__btn" id="menu05">
