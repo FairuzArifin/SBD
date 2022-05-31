@@ -1,12 +1,12 @@
 <?php
-    include "connection.php";
+    include "../includes/connect.php";
     include "include/header.php";
 ?>
 <section class="profile-section light-version padding-top padding-bottom">
 <div class="row justify-content-center gx-3 gy-2">
         <?php
             
-            $tampil = mysqli_query($con, "SELECT * FROM nft");
+            $tampil = mysqli_query($connect, "SELECT * FROM nft");
             if(mysqli_num_rows($tampil)>0){
                 while($t = mysqli_fetch_array($tampil)){ ?>
             <div class="col-lg-4 col-sm-6">
@@ -110,4 +110,4 @@
                     <?php }} ?>
 </div>
                 </section>
-<?php include "include/footer.php"; ?>
+<?php include "../includes/footer.php"; ?>

@@ -7,7 +7,7 @@
                     </a>
                 </div>
 
-                <form action="#" class="header__search">
+                <form action="get" action="../upload/search.php" class="header__search">
                     <input type="text" placeholder="Search items, collections, and creators">
                     <button type="button"><i class="icofont-search-2"></i></button>
                     <button type="button" class="close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -82,7 +82,7 @@
                             <ul class="dropdown-menu">
 
                                 <?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == true) : ?>
-                                  <li><a class="dropdown-item" href="../upload/author.php"><span class="me-1"><i
+                                  <li><a class="dropdown-item" href="../sbd/upload/author.php"><span class="me-1"><i
                                                 class="icofont-options"></i></span>
                                         Profile</a></li>
                                   <li><a class="dropdown-item" href="activity.php"><span class="me-1"><i

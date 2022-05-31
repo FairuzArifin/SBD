@@ -1,6 +1,6 @@
 <?php 
 
-    include "connection.php";
+    include "../includes/connect.php";
     include "include/header.php";
 
     if(isset($_POST['submit'])){
@@ -23,11 +23,11 @@
                 else {
                     move_uploaded_file($upload_file, $dir.'/'.$file_name);
                
-                    $query1 = mysqli_query($con, "INSERT INTO nft SET photo='$file_name',
+                    $query1 = mysqli_query($connect, "INSERT INTO nft SET photo='$file_name',
                     title = '$_POST[title]',
                     description = '$_POST[description]',
                     category = '$_POST[category]'");
-                    $query2 = mysqli_query($con, "INSERT INTO bid SET start_bid_price='$_POST[bidprice]',
+                    $query2 = mysqli_query($connect, "INSERT INTO bid SET start_bid_price='$_POST[bidprice]',
                     auction_start = '$_POST[auction_start]',
                     auction_end = '$_POST[auction_end],'");
                 }
@@ -40,5 +40,5 @@
            </center>
            </section>'; 
     }
-    include "include/footer.php";
+    include "../includes/footer.php";
 ?>

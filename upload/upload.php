@@ -1,6 +1,6 @@
 <?php 
     
-    include "connection.php";
+    include "../includes/connect.php";
     include "include/header.php";
 
 
@@ -24,13 +24,13 @@
                 else {
                     move_uploaded_file($upload_file, $dir.'/'.$file_name);
                
-                    $query = mysqli_query($con, "INSERT INTO nft SET photo='$file_name',
+                    $query = mysqli_query($connect, "INSERT INTO nft SET photo='$file_name',
                     title = '$_POST[title]',
                     description = '$_POST[description]',
                     category = '$_POST[category]'");
                 }
             }                                                                       
-           }      
+           }
            echo '<section class="profile-section light-version padding-top padding-bottom">
            <center>
            <h3>NFT UPLOADED</h3> <br>
@@ -38,5 +38,5 @@
            </center>
            </section>';      
     }
-    include "include/footer.php";
+    include "../includes/footer.php";
 ?>

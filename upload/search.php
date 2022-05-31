@@ -1,5 +1,5 @@
 <?php
-    include "connection.php";
+    include "../includes/connect.php";
     include "include/header.php";
 ?>
 <section class="profile-section light-version padding-top padding-bottom">
@@ -7,14 +7,14 @@
     <div class="row justify-content-center gx-3 gy-2">
         <?php
 
-        $tampil = mysqli_query($con, "SELECT * FROM nft");
+        $tampil = mysqli_query($connect, "SELECT * FROM nft");
 
         if($_GET['cari'] != ''){
         $query = "SELECT * 
                     FROM nft 
                     WHERE title 
                     LIKE '%".$_GET['cari']."%'";
-        $tampil = mysqli_query($con, $query);
+        $tampil = mysqli_query($connect, $query);
         }
         while($t = mysqli_fetch_array($tampil)){
         ?>
@@ -121,5 +121,5 @@
         </section>
 
 <?php
-    include "include/footer.php";
+    include "../includes/footer.php";
 ?>

@@ -29,17 +29,12 @@
     <!-- site title -->
     <title>Enftomark</title>
 </head>
-
+<?php
+    if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){  
+?>
 <body class="light-version">
     <!-- preloader start here -->
-    <div class="preloader">
-        <div class="preloader-inner">
-            <div class="preloader-icon">
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </div>
+   
     <!-- preloader ending here -->
 
     <!-- ===============// header section start here \\================= -->
@@ -118,8 +113,7 @@
                             <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false" data-bs-offset="-100,10">
                                 <span data-blast="bgColor"><i class="icofont-user"></i></span> <span
-                                    class="d-none d-md-inline">Alex
-                                    Joe</span>
+                                    class="d-none d-md-inline"><?php echo $_SESSION['name'];?></span>
                             </a>
 
                             <ul class="dropdown-menu">
@@ -146,10 +140,10 @@
                         </div>
                     </div>
                     <div class="wallet-btn">
-                        <a href="wallet.html"><span><i class="icofont-wallet" data-blast="color"></i></span> <span
-                                class="d-none d-md-inline">234.98ETH</span> </a>
+                        <a href="../../sbd/wallet/wallet.php"><span><i class="icofont-wallet" data-blast="color"></i></span> <span
+                                class="d-none d-md-inline"></span> </a>
                     </div>
-
+                    <?php } ?>
                 </div>
 
                 <button class="menu-trigger header__btn" id="menu05">
