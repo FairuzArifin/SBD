@@ -57,3 +57,18 @@ function status_nft($nft_id){
         return false;
     }
 }
+
+function wallet($uid){
+    global $connect;
+    $query = "SELECT username, wallet.wallet_id, fund_eth 
+              FROM user 
+              INNER JOIN wallet 
+              ON wallet.wallet_id = user.wallet_id 
+              WHERE user.user_id =  $uid ";
+          
+          $result = mysqli_query($connect, $query);
+          while($row = mysqli_fetch_assoc($result)) {
+              $box[] = $row;
+          }
+          return $box;
+}
