@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,7 +10,7 @@
 
     <title>wallet</title>
   </head>
-  <body background = "assets/images/banner/bg-4.png">
+  <body background = "../assets/images/banner/bg-4.png">
     <!-- Image and text -->
     <div class="container">
         <nav class="navbar navbar-light bg-light">
@@ -24,20 +23,27 @@
     <?php
         //start coba
           include '../includes/connect.php';
-          $query = mysqli_query($connect, "SELECT user.username, wallet.wallet_id, wallet.fund_eth FROM user, wallet");// WHERE wallet.wallet_id = '{$_SESSION["wallet_id"]}' AND user.username = '{$_SESSION["name"]}' ");
-          if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){         
+          include '../includes/function.php';
+
+
+          if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
+            $box = wallet($_SESSION['user_id']);
+            
+            foreach ($box AS $wallet)        
         //end coba
     ?>
     
     <div class="container text-center mt-2">
-      <h2><?php echo $_SESSION['wallet_id'];?></h2>
-     <h1> <?php echo $_SESSION['name'];?> </h1>
+      <h2><?php echo $wallet['wallet_id'];?></h2>
+      <!-- <?php echo $_SESSION['user_id']?>
+      <?php echo $_SESSION['wallet_id']?> -->
+     <h1> <?php echo $wallet['username'];?> </h1>
       
       <hr class="my-1">
         <div class="jumbotron jumbotron-fluid">
           <div class="container">
             <i class="fa-brands fa-ethereum display-4"></i>
-               <h1><?php echo $_SESSION['wallet'];?></h1> 
+               <h1><?php echo $wallet['fund_eth'];?></h1> 
           <?php }?>
             <h1><p>ETH</p></h1>
                 <form action="tambah_saldo.php">
@@ -54,6 +60,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
   </body>
 </html>
+
 
 
 
