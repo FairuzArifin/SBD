@@ -32,7 +32,7 @@
             $_SESSION['logged'] = true;
             $_SESSION['wallet_id'] = $wallet_id;
             $_SESSION['wallet'] = $wallet;
-		    header("location:../Bid/item-details.php");
+		    header("location:../upload/author.php");
             
 	    } else {
 		    header("location:signin.php?pesan=error");
