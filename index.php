@@ -19,16 +19,16 @@
     <!-- <meta property="og:image" content=""> -->
 
     <!-- site favicon -->
-    <link rel="icon" type="image/png" href="Source Code/assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
     <!-- ====== All css file ========= -->
-    <link rel="stylesheet" href="Source Code/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Source Code/assets/css//icofont.min.css">
-    <!-- <link rel="stylesheet" href="Source Code/assets/css/blast.min.css"> -->
-    <link rel="stylesheet" href="Source Code/assets/css/lightcase.css">
-    <link rel="stylesheet" href="Source Code/assets/css/animate.css">
-    <link rel="stylesheet" href="Source Code/assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="Source Code/assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css//icofont.min.css">
+    <!-- <link rel="stylesheet" href="assets/css/blast.min.css"> -->
+    <link rel="stylesheet" href="assets/css/lightcase.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
 
     <!-- site title -->
     <title>OpenSea</title>
@@ -54,7 +54,7 @@
             <div class="header__content">
                 <div class="header__logo">
                     <a href="index.html">
-                        <img src="Source Code/assets/images/logo/logo-3.png" alt="logo">
+                        <img src="assets/images/logo/logo-3.png" alt="logo">
                     </a>
                 </div>
 
@@ -221,7 +221,7 @@
                                                         <ul class="author-list d-flex">
                                                             <li class="single-author d-flex align-items-center">
                                                                 <a href="author.html" class="veryfied"><img
-                                                                        loading="lazy" src="Source Code/assets/images/seller/04.png"
+                                                                        loading="lazy" src="assets/images/seller/04.png"
                                                                         alt="author-img"></a>
                                                                 <h6><a href="author.html">rasselmrh</a></h6>
                                                             </li>
@@ -250,7 +250,7 @@
                                                 <!-- nft-bottom part -->
                                                 <div class="nft-item-bottom">
                                                     <div class="nft-thumb">
-                                                        <img loading="lazy" src="Source Code/assets/images/banner/01.gif"
+                                                        <img loading="lazy" src="assets/images/banner/01.gif"
                                                             alt="nft-img">
 
                                                         <!-- nft countdwon -->
@@ -294,7 +294,7 @@
                                                         <ul class="author-list d-flex">
                                                             <li class="single-author d-flex align-items-center">
                                                                 <a href="author.html" class="veryfied"><img
-                                                                        loading="lazy" src="Source Code/assets/images/seller/04.png"
+                                                                        loading="lazy" src="assets/images/seller/04.png"
                                                                         alt="author-img"></a>
                                                                 <h6><a href="author.html">Gucci Lucas</a></h6>
                                                             </li>
@@ -323,7 +323,7 @@
                                                 <!-- nft-bottom part -->
                                                 <div class="nft-item-bottom">
                                                     <div class="nft-thumb">
-                                                        <img loading="lazy" src="Source Code/assets/images/banner/01.png"
+                                                        <img loading="lazy" src="assets/images/banner/01.png"
                                                             alt="nft-img">
 
                                                         <!-- nft countdwon -->
@@ -367,7 +367,7 @@
                                                         <ul class="author-list d-flex">
                                                             <li class="single-author d-flex align-items-center">
                                                                 <a href="author.html" class="veryfied"><img
-                                                                        loading="lazy" src="Source Code/assets/images/seller/04.png"
+                                                                        loading="lazy" src="assets/images/seller/04.png"
                                                                         alt="author-img"></a>
                                                                 <h6><a href="author.html">lcus x3</a></h6>
                                                             </li>
@@ -396,7 +396,7 @@
                                                 <!-- nft-bottom part -->
                                                 <div class="nft-item-bottom">
                                                     <div class="nft-thumb">
-                                                        <img loading="lazy" src="Source Code/assets/images/banner/02.gif"
+                                                        <img loading="lazy" src="assets/images/banner/02.gif"
                                                             alt="nft-img">
 
                                                         <!-- nft countdwon -->
@@ -440,7 +440,7 @@
                                                         <ul class="author-list d-flex">
                                                             <li class="single-author d-flex align-items-center">
                                                                 <a href="author.html" class="veryfied"><img
-                                                                        loading="lazy" src="Source Code/assets/images/seller/03.png"
+                                                                        loading="lazy" src="assets/images/seller/03.png"
                                                                         alt="author-img"></a>
                                                                 <h6><a href="author.html">Imo35 ucas</a></h6>
                                                             </li>
@@ -469,7 +469,7 @@
                                                 <!-- nft-bottom part -->
                                                 <div class="nft-item-bottom">
                                                     <div class="nft-thumb">
-                                                        <img loading="lazy" src="Source Code/assets/images/banner/04.jpg"
+                                                        <img loading="lazy" src="assets/images/banner/04.jpg"
                                                             alt="nft-img">
 
                                                         <!-- nft countdwon -->
@@ -532,17 +532,17 @@
                                         <div class="thumb-list swiper-wrapper">
                                             <div class="swiper-slide">
                                                 <div class="single-thumb"><img
-                                                        src="Source Code/assets/images/nft-item/category/01.jpg" alt="cat-image">
+                                                        src="assets/images/nft-item/category/01.jpg" alt="cat-image">
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
                                                 <div class="single-thumb"><img
-                                                        src="Source Code/assets/images/nft-item/category/02.jpg" alt="cat-image">
+                                                        src="assets/images/nft-item/category/02.jpg" alt="cat-image">
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
                                                 <div class="single-thumb"><img
-                                                        src="Source Code/assets/images/nft-item/category/03.jpg" alt="cat-image">
+                                                        src="assets/images/nft-item/category/03.jpg" alt="cat-image">
                                                 </div>
                                             </div>
                                         </div>
@@ -562,17 +562,17 @@
                                         <div class="thumb-list swiper-wrapper">
                                             <div class="swiper-slide">
                                                 <div class="single-thumb"><img
-                                                        src="Source Code/assets/images/nft-item/category/04.jpg" alt="cat-image">
+                                                        src="assets/images/nft-item/category/04.jpg" alt="cat-image">
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
                                                 <div class="single-thumb"><img
-                                                        src="Source Code/assets/images/nft-item/category/05.jpg" alt="cat-image">
+                                                        src="assets/images/nft-item/category/05.jpg" alt="cat-image">
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
                                                 <div class="single-thumb"><img
-                                                        src="Source Code/assets/images/nft-item/category/06.jpg" alt="cat-image">
+                                                        src="assets/images/nft-item/category/06.jpg" alt="cat-image">
                                                 </div>
                                             </div>
                                         </div>
@@ -592,17 +592,17 @@
                                         <div class="thumb-list swiper-wrapper">
                                             <div class="swiper-slide">
                                                 <div class="single-thumb"><img
-                                                        src="Source Code/assets/images/nft-item/category/07.jpg" alt="cat-image">
+                                                        src="assets/images/nft-item/category/07.jpg" alt="cat-image">
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
                                                 <div class="single-thumb"><img
-                                                        src="Source Code/assets/images/nft-item/category/08.jpg" alt="cat-image">
+                                                        src="assets/images/nft-item/category/08.jpg" alt="cat-image">
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
                                                 <div class="single-thumb"><img
-                                                        src="Source Code/assets/images/nft-item/category/09.jpg" alt="cat-image">
+                                                        src="assets/images/nft-item/category/09.jpg" alt="cat-image">
                                                 </div>
                                             </div>
                                         </div>
@@ -622,17 +622,17 @@
                                         <div class="thumb-list swiper-wrapper">
                                             <div class="swiper-slide">
                                                 <div class="single-thumb"><img
-                                                        src="Source Code/assets/images/nft-item/category/10.jpg" alt="cat-image">
+                                                        src="assets/images/nft-item/category/10.jpg" alt="cat-image">
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
                                                 <div class="single-thumb"><img
-                                                        src="Source Code/assets/images/nft-item/category/11.jpg" alt="cat-image">
+                                                        src="assets/images/nft-item/category/11.jpg" alt="cat-image">
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
                                                 <div class="single-thumb"><img
-                                                        src="Source Code/assets/images/nft-item/category/12.jpg" alt="cat-image">
+                                                        src="assets/images/nft-item/category/12.jpg" alt="cat-image">
                                                 </div>
                                             </div>
                                         </div>
@@ -652,17 +652,17 @@
                                         <div class="thumb-list swiper-wrapper">
                                             <div class="swiper-slide">
                                                 <div class="single-thumb"><img
-                                                        src="Source Code/assets/images/nft-item/category/13.jpg" alt="cat-image">
+                                                        src="assets/images/nft-item/category/13.jpg" alt="cat-image">
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
                                                 <div class="single-thumb"><img
-                                                        src="Source Code/assets/images/nft-item/category/14.jpg" alt="cat-image">
+                                                        src="assets/images/nft-item/category/14.jpg" alt="cat-image">
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
                                                 <div class="single-thumb"><img
-                                                        src="Source Code/assets/images/nft-item/category/15.jpg" alt="cat-image">
+                                                        src="assets/images/nft-item/category/15.jpg" alt="cat-image">
                                                 </div>
                                             </div>
                                         </div>
@@ -682,17 +682,17 @@
                                         <div class="thumb-list swiper-wrapper">
                                             <div class="swiper-slide">
                                                 <div class="single-thumb"><img
-                                                        src="Source Code/assets/images/nft-item/category/16.jpg" alt="cat-image">
+                                                        src="assets/images/nft-item/category/16.jpg" alt="cat-image">
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
                                                 <div class="single-thumb"><img
-                                                        src="Source Code/assets/images/nft-item/category/17.jpg" alt="cat-image">
+                                                        src="assets/images/nft-item/category/17.jpg" alt="cat-image">
                                                 </div>
                                             </div>
                                             <div class="swiper-slide">
                                                 <div class="single-thumb"><img
-                                                        src="Source Code/assets/images/nft-item/category/18.jpg" alt="cat-image">
+                                                        src="assets/images/nft-item/category/18.jpg" alt="cat-image">
                                                 </div>
                                             </div>
                                         </div>
@@ -732,12 +732,12 @@
                                         <div class="author-part">
                                             <ul class="author-list d-flex">
                                                 <li class="single-author">
-                                                    <a href="author.html"><img src="Source Code/assets/images/seller/01.png"
+                                                    <a href="author.html"><img src="assets/images/seller/01.png"
                                                             alt="author-img"></a>
                                                 </li>
                                                 <li class="single-author d-flex align-items-center">
                                                     <a href="author.html" class="veryfied"><img
-                                                            src="Source Code/assets/images/seller/01.gif" alt="author-img"></a>
+                                                            src="assets/images/seller/01.gif" alt="author-img"></a>
                                                     <h6><a href="author.html">Jhon Doe</a></h6>
                                                 </li>
                                             </ul>
@@ -764,7 +764,7 @@
                                     <!-- nft-bottom part -->
                                     <div class="nft-item-bottom">
                                         <div class="nft-thumb">
-                                            <img src="Source Code/assets/images/nft-item/04.gif" alt="nft-img">
+                                            <img src="assets/images/nft-item/04.gif" alt="nft-img">
 
                                             <!-- nft countdwon -->
                                             <ul class="nft-countdown count-down" data-date="July 05, 2022 21:14:01"
@@ -805,16 +805,16 @@
                                         <div class="author-part">
                                             <ul class="author-list d-flex">
                                                 <li class="single-author">
-                                                    <a href="author.html"><img src="Source Code/assets/images/seller/01.png"
+                                                    <a href="author.html"><img src="assets/images/seller/01.png"
                                                             alt="author-img"></a>
                                                 </li>
                                                 <li class="single-author">
-                                                    <a href="author.html"><img src="Source Code/assets/images/seller/02.gif"
+                                                    <a href="author.html"><img src="assets/images/seller/02.gif"
                                                             alt="author-img"></a>
                                                 </li>
                                                 <li class="single-author d-flex align-items-center">
                                                     <a href="author.html" class="veryfied"><img
-                                                            src="Source Code/assets/images/seller/02.png" alt="author-img"></a>
+                                                            src="assets/images/seller/02.png" alt="author-img"></a>
                                                     <h6><a href="author.html">Gucci L.</a></h6>
                                                 </li>
                                             </ul>
@@ -841,7 +841,7 @@
                                     <!-- nft-bottom part -->
                                     <div class="nft-item-bottom">
                                         <div class="nft-thumb">
-                                            <img src="Source Code/assets/images/nft-item/03.jpg" alt="nft-img">
+                                            <img src="assets/images/nft-item/03.jpg" alt="nft-img">
 
                                             <!-- nft countdwon -->
                                             <ul class="nft-countdown count-down" data-date="July 05, 2022 21:14:01"
@@ -882,7 +882,7 @@
                                             <ul class="author-list d-flex">
                                                 <li class="single-author d-flex align-items-center">
                                                     <a href="author.html" class="veryfied"><img
-                                                            src="Source Code/assets/images/seller/04.png" alt="author-img"></a>
+                                                            src="assets/images/seller/04.png" alt="author-img"></a>
                                                     <h6><a href="author.html">Rassel mrh</a></h6>
                                                 </li>
                                             </ul>
@@ -909,7 +909,7 @@
                                     <!-- nft-bottom part -->
                                     <div class="nft-item-bottom">
                                         <div class="nft-thumb">
-                                            <img src="Source Code/assets/images/nft-item/04.jpg" alt="nft-img">
+                                            <img src="assets/images/nft-item/04.jpg" alt="nft-img">
 
                                             <!-- nft countdwon -->
                                             <ul class="nft-countdown count-down" data-date="July 05, 2022 21:14:01"
@@ -949,16 +949,16 @@
                                         <div class="author-part">
                                             <ul class="author-list d-flex">
                                                 <li class="single-author">
-                                                    <a href="author.html"><img src="Source Code/assets/images/seller/04.png"
+                                                    <a href="author.html"><img src="assets/images/seller/04.png"
                                                             alt="author-img"></a>
                                                 </li>
                                                 <li class="single-author">
-                                                    <a href="author.html"><img src="Source Code/assets/images/seller/05.png"
+                                                    <a href="author.html"><img src="assets/images/seller/05.png"
                                                             alt="author-img"></a>
                                                 </li>
                                                 <li class="single-author d-flex align-items-center">
                                                     <a href="author.html" class="veryfied"><img
-                                                            src="Source Code/assets/images/seller/04.gif" alt="author-img"></a>
+                                                            src="assets/images/seller/04.gif" alt="author-img"></a>
                                                     <h6><a href="author.html">Blexa z</a></h6>
                                                 </li>
                                             </ul>
@@ -985,7 +985,7 @@
                                     <!-- nft-bottom part -->
                                     <div class="nft-item-bottom">
                                         <div class="nft-thumb">
-                                            <img src="Source Code/assets/images/nft-item/05.gif" alt="nft-img">
+                                            <img src="assets/images/nft-item/05.gif" alt="nft-img">
 
                                             <!-- nft countdwon -->
                                             <ul class="nft-countdown count-down" data-date="July 05, 2022 21:14:01"
@@ -1040,12 +1040,12 @@
                             <div class="nft-item light-version style-2">
                                 <div class="nft-inner">
                                     <div class="nft-thumb">
-                                        <img src="Source Code/assets/images/nft-item/style-2/01.jpg" alt="nft-img">
+                                        <img src="assets/images/nft-item/style-2/01.jpg" alt="nft-img">
                                     </div>
                                     <div class="nft-content">
                                         <div class="author-thumb">
                                             <a href="author.html" class="veryfied"><img
-                                                    src="Source Code/assets/images/seller/04.png" alt="author-img"></a>
+                                                    src="assets/images/seller/04.png" alt="author-img"></a>
                                         </div>
                                         <div class="author-details d-flex flex-wrap align-items-center gap-15">
                                             <div class="author-number">
@@ -1065,12 +1065,12 @@
                             <div class="nft-item light-version style-2">
                                 <div class="nft-inner">
                                     <div class="nft-thumb">
-                                        <img loading="lazy" src="Source Code/assets/images/nft-item/style-2/02.jpg" alt="nft-img">
+                                        <img loading="lazy" src="assets/images/nft-item/style-2/02.jpg" alt="nft-img">
                                     </div>
                                     <div class="nft-content">
                                         <div class="author-thumb">
                                             <a href="author.html" class="veryfied"><img loading="lazy"
-                                                    src="Source Code/assets/images/seller/02.gif" alt="author-img"></a>
+                                                    src="assets/images/seller/02.gif" alt="author-img"></a>
                                         </div>
                                         <div class="author-details d-flex flex-wrap align-items-center gap-15">
                                             <div class="author-number">
@@ -1090,12 +1090,12 @@
                             <div class="nft-item light-version style-2">
                                 <div class="nft-inner">
                                     <div class="nft-thumb">
-                                        <img loading="lazy" src="Source Code/assets/images/nft-item/style-2/03.jpg" alt="nft-img">
+                                        <img loading="lazy" src="assets/images/nft-item/style-2/03.jpg" alt="nft-img">
                                     </div>
                                     <div class="nft-content">
                                         <div class="author-thumb">
                                             <a href="author.html" class="veryfied"><img loading="lazy"
-                                                    src="Source Code/assets/images/seller/03.png" alt="author-img"></a>
+                                                    src="assets/images/seller/03.png" alt="author-img"></a>
                                         </div>
                                         <div class="author-details d-flex flex-wrap align-items-center gap-15">
                                             <div class="author-number">
@@ -1115,12 +1115,12 @@
                             <div class="nft-item light-version style-2">
                                 <div class="nft-inner">
                                     <div class="nft-thumb">
-                                        <img loading="lazy" src="Source Code/assets/images/nft-item/style-2/04.jpg" alt="nft-img">
+                                        <img loading="lazy" src="assets/images/nft-item/style-2/04.jpg" alt="nft-img">
                                     </div>
                                     <div class="nft-content">
                                         <div class="author-thumb">
                                             <a href="author.html" class="veryfied"><img loading="lazy"
-                                                    src="Source Code/assets/images/seller/05.gif" alt="author-img"></a>
+                                                    src="assets/images/seller/05.gif" alt="author-img"></a>
                                         </div>
                                         <div class="author-details d-flex flex-wrap align-items-center gap-15">
                                             <div class="author-number">
@@ -1140,12 +1140,12 @@
                             <div class="nft-item light-version style-2">
                                 <div class="nft-inner">
                                     <div class="nft-thumb">
-                                        <img loading="lazy" src="Source Code/assets/images/nft-item/style-2/05.jpg" alt="nft-img">
+                                        <img loading="lazy" src="assets/images/nft-item/style-2/05.jpg" alt="nft-img">
                                     </div>
                                     <div class="nft-content">
                                         <div class="author-thumb">
                                             <a href="author.html" class="veryfied"><img loading="lazy"
-                                                    src="Source Code/assets/images/seller/02.png" alt="author-img"></a>
+                                                    src="assets/images/seller/02.png" alt="author-img"></a>
                                         </div>
                                         <div class="author-details d-flex flex-wrap align-items-center gap-15">
                                             <div class="author-number">
@@ -1165,12 +1165,12 @@
                             <div class="nft-item light-version style-2">
                                 <div class="nft-inner">
                                     <div class="nft-thumb">
-                                        <img loading="lazy" src="Source Code/assets/images/nft-item/style-2/06.jpg" alt="nft-img">
+                                        <img loading="lazy" src="assets/images/nft-item/style-2/06.jpg" alt="nft-img">
                                     </div>
                                     <div class="nft-content">
                                         <div class="author-thumb">
                                             <a href="author.html" class="veryfied"><img loading="lazy"
-                                                    src="Source Code/assets/images/seller/07.gif" alt="author-img"></a>
+                                                    src="assets/images/seller/07.gif" alt="author-img"></a>
                                         </div>
                                         <div class="author-details d-flex flex-wrap align-items-center gap-15">
                                             <div class="author-number">
@@ -1190,12 +1190,12 @@
                             <div class="nft-item light-version style-2">
                                 <div class="nft-inner">
                                     <div class="nft-thumb">
-                                        <img loading="lazy" src="Source Code/assets/images/nft-item/style-2/07.jpg" alt="nft-img">
+                                        <img loading="lazy" src="assets/images/nft-item/style-2/07.jpg" alt="nft-img">
                                     </div>
                                     <div class="nft-content">
                                         <div class="author-thumb">
                                             <a href="author.html" class="veryfied"><img loading="lazy"
-                                                    src="Source Code/assets/images/seller/05.png" alt="author-img"></a>
+                                                    src="assets/images/seller/05.png" alt="author-img"></a>
                                         </div>
                                         <div class="author-details d-flex flex-wrap align-items-center gap-15">
                                             <div class="author-number">
@@ -1215,12 +1215,12 @@
                             <div class="nft-item light-version style-2">
                                 <div class="nft-inner">
                                     <div class="nft-thumb">
-                                        <img loading="lazy" src="Source Code/assets/images/nft-item/style-2/08.jpg" alt="nft-img">
+                                        <img loading="lazy" src="assets/images/nft-item/style-2/08.jpg" alt="nft-img">
                                     </div>
                                     <div class="nft-content">
                                         <div class="author-thumb">
                                             <a href="author.html" class="veryfied"><img loading="lazy"
-                                                    src="Source Code/assets/images/seller/04.gif" alt="author-img"></a>
+                                                    src="assets/images/seller/04.gif" alt="author-img"></a>
                                         </div>
                                         <div class="author-details d-flex flex-wrap align-items-center gap-15">
                                             <div class="author-number">
@@ -1263,7 +1263,7 @@
                                             <ul class="author-list d-flex">
                                                 <li class="single-author d-flex align-items-center">
                                                     <a href="author.html" class="veryfied"><img loading="lazy"
-                                                            src="Source Code/assets/images/seller/04.png" alt="author-img"></a>
+                                                            src="assets/images/seller/04.png" alt="author-img"></a>
                                                     <h6><a href="author.html">Gucci Lucas</a></h6>
                                                 </li>
                                             </ul>
@@ -1290,7 +1290,7 @@
                                     <!-- nft-bottom part -->
                                     <div class="nft-item-bottom">
                                         <div class="nft-thumb">
-                                            <img loading="lazy" src="Source Code/assets/images/nft-item/01.gif" alt="nft-img">
+                                            <img loading="lazy" src="assets/images/nft-item/01.gif" alt="nft-img">
 
                                             <!-- nft countdwon -->
                                             <!-- <ul class="nft-countdown count-down" data-date="July 05, 2022 21:14:01">
@@ -1330,15 +1330,15 @@
                                             <ul class="author-list d-flex">
                                                 <li class="single-author">
                                                     <a href="author.html"><img loading="lazy"
-                                                            src="Source Code/assets/images/seller/01.png" alt="author-img"></a>
+                                                            src="assets/images/seller/01.png" alt="author-img"></a>
                                                 </li>
                                                 <li class="single-author">
                                                     <a href="author.html"><img loading="lazy"
-                                                            src="Source Code/assets/images/seller/01.gif" alt="author-img"></a>
+                                                            src="assets/images/seller/01.gif" alt="author-img"></a>
                                                 </li>
                                                 <li class="single-author d-flex align-items-center">
                                                     <a href="author.html" class="veryfied"><img loading="lazy"
-                                                            src="Source Code/assets/images/seller/02.png" alt="author-img"></a>
+                                                            src="assets/images/seller/02.png" alt="author-img"></a>
                                                     <h6><a href="author.html">Ecalo jers</a></h6>
                                                 </li>
                                             </ul>
@@ -1365,7 +1365,7 @@
                                     <!-- nft-bottom part -->
                                     <div class="nft-item-bottom">
                                         <div class="nft-thumb">
-                                            <img loading="lazy" src="Source Code/assets/images/nft-item/02.jpg" alt="nft-img">
+                                            <img loading="lazy" src="assets/images/nft-item/02.jpg" alt="nft-img">
 
                                             <!-- nft countdwon -->
                                             <!-- <ul class="nft-countdown count-down" data-date="July 05, 2022 21:14:01">
@@ -1405,15 +1405,15 @@
                                             <ul class="author-list d-flex">
                                                 <li class="single-author">
                                                     <a href="author.html"><img loading="lazy"
-                                                            src="Source Code/assets/images/seller/02.png" alt="author-img"></a>
+                                                            src="assets/images/seller/02.png" alt="author-img"></a>
                                                 </li>
                                                 <li class="single-author">
                                                     <a href="author.html"><img loading="lazy"
-                                                            src="Source Code/assets/images/seller/05.png" alt="author-img"></a>
+                                                            src="assets/images/seller/05.png" alt="author-img"></a>
                                                 </li>
                                                 <li class="single-author d-flex align-items-center">
                                                     <a href="author.html" class="veryfied"><img loading="lazy"
-                                                            src="Source Code/assets/images/seller/04.png" alt="author-img"></a>
+                                                            src="assets/images/seller/04.png" alt="author-img"></a>
                                                     <h6><a href="author.html">Hola moc</a></h6>
                                                 </li>
                                             </ul>
@@ -1440,7 +1440,7 @@
                                     <!-- nft-bottom part -->
                                     <div class="nft-item-bottom">
                                         <div class="nft-thumb">
-                                            <img loading="lazy" src="Source Code/assets/images/nft-item/03.jpg" alt="nft-img">
+                                            <img loading="lazy" src="assets/images/nft-item/03.jpg" alt="nft-img">
 
                                             <!-- nft countdwon -->
                                             <!-- <ul class="nft-countdown count-down" data-date="July 05, 2022 21:14:01">
@@ -1480,11 +1480,11 @@
                                             <ul class="author-list d-flex">
                                                 <li class="single-author">
                                                     <a href="author.html"><img loading="lazy"
-                                                            src="Source Code/assets/images/seller/06.png" alt="author-img"></a>
+                                                            src="assets/images/seller/06.png" alt="author-img"></a>
                                                 </li>
                                                 <li class="single-author d-flex align-items-center">
                                                     <a href="author.html" class="veryfied"><img loading="lazy"
-                                                            src="Source Code/assets/images/seller/05.gif" alt="author-img"></a>
+                                                            src="assets/images/seller/05.gif" alt="author-img"></a>
                                                     <h6><a href="author.html">Logicto pen</a></h6>
                                                 </li>
                                             </ul>
@@ -1511,7 +1511,7 @@
                                     <!-- nft-bottom part -->
                                     <div class="nft-item-bottom">
                                         <div class="nft-thumb">
-                                            <img loading="lazy" src="Source Code/assets/images/nft-item/06.gif" alt="nft-img">
+                                            <img loading="lazy" src="assets/images/nft-item/06.gif" alt="nft-img">
 
                                             <!-- nft countdwon -->
                                             <!-- <ul class="nft-countdown count-down" data-date="July 05, 2022 21:14:01">
@@ -1551,15 +1551,15 @@
                                             <ul class="author-list d-flex">
                                                 <li class="single-author">
                                                     <a href="author.html"><img loading="lazy"
-                                                            src="Source Code/assets/images/seller/06.png" alt="author-img"></a>
+                                                            src="assets/images/seller/06.png" alt="author-img"></a>
                                                 </li>
                                                 <li class="single-author">
                                                     <a href="author.html"><img loading="lazy"
-                                                            src="Source Code/assets/images/seller/07.gif" alt="author-img"></a>
+                                                            src="assets/images/seller/07.gif" alt="author-img"></a>
                                                 </li>
                                                 <li class="single-author d-flex align-items-center">
                                                     <a href="author.html" class="veryfied"><img loading="lazy"
-                                                            src="Source Code/assets/images/seller/09.png" alt="author-img"></a>
+                                                            src="assets/images/seller/09.png" alt="author-img"></a>
                                                     <h6><a href="author.html">unique lo</a></h6>
                                                 </li>
                                             </ul>
@@ -1586,7 +1586,7 @@
                                     <!-- nft-bottom part -->
                                     <div class="nft-item-bottom">
                                         <div class="nft-thumb">
-                                            <img loading="lazy" src="Source Code/assets/images/nft-item/09.jpg" alt="nft-img">
+                                            <img loading="lazy" src="assets/images/nft-item/09.jpg" alt="nft-img">
 
                                             <!-- nft countdwon -->
                                             <!-- <ul class="nft-countdown count-down" data-date="July 05, 2022 21:14:01">
@@ -1626,7 +1626,7 @@
                                             <ul class="author-list d-flex">
                                                 <li class="single-author d-flex align-items-center">
                                                     <a href="author.html" class="veryfied"><img loading="lazy"
-                                                            src="Source Code/assets/images/seller/05.gif" alt="author-img"></a>
+                                                            src="assets/images/seller/05.gif" alt="author-img"></a>
                                                     <h6><a href="author.html">Monica bel</a></h6>
                                                 </li>
                                             </ul>
@@ -1653,7 +1653,7 @@
                                     <!-- nft-bottom part -->
                                     <div class="nft-item-bottom">
                                         <div class="nft-thumb">
-                                            <img loading="lazy" src="Source Code/assets/images/nft-item/06.jpg" alt="nft-img">
+                                            <img loading="lazy" src="assets/images/nft-item/06.jpg" alt="nft-img">
 
                                             <!-- nft countdwon -->
                                             <!-- <ul class="nft-countdown count-down" data-date="July 05, 2022 21:14:01">
@@ -1693,15 +1693,15 @@
                                             <ul class="author-list d-flex">
                                                 <li class="single-author">
                                                     <a href="author.html"><img loading="lazy"
-                                                            src="Source Code/assets/images/seller/08.gif" alt="author-img"></a>
+                                                            src="assets/images/seller/08.gif" alt="author-img"></a>
                                                 </li>
                                                 <li class="single-author">
                                                     <a href="author.html"><img loading="lazy"
-                                                            src="Source Code/assets/images/seller/01.png" alt="author-img"></a>
+                                                            src="assets/images/seller/01.png" alt="author-img"></a>
                                                 </li>
                                                 <li class="single-author d-flex align-items-center">
                                                     <a href="author.html" class="veryfied"><img loading="lazy"
-                                                            src="Source Code/assets/images/seller/11.png" alt="author-img"></a>
+                                                            src="assets/images/seller/11.png" alt="author-img"></a>
                                                     <h6><a href="author.html">Gucci L.</a></h6>
                                                 </li>
                                             </ul>
@@ -1728,7 +1728,7 @@
                                     <!-- nft-bottom part -->
                                     <div class="nft-item-bottom">
                                         <div class="nft-thumb">
-                                            <img loading="lazy" src="Source Code/assets/images/nft-item/04.gif" alt="nft-img">
+                                            <img loading="lazy" src="assets/images/nft-item/04.gif" alt="nft-img">
 
                                             <!-- nft countdwon -->
                                             <!-- <ul class="nft-countdown count-down" data-date="July 05, 2022 21:14:01">
@@ -1768,15 +1768,15 @@
                                             <ul class="author-list d-flex">
                                                 <li class="single-author">
                                                     <a href="author.html"><img loading="lazy"
-                                                            src="Source Code/assets/images/seller/01.png" alt="author-img"></a>
+                                                            src="assets/images/seller/01.png" alt="author-img"></a>
                                                 </li>
                                                 <li class="single-author">
                                                     <a href="author.html"><img loading="lazy"
-                                                            src="Source Code/assets/images/seller/07.png" alt="author-img"></a>
+                                                            src="assets/images/seller/07.png" alt="author-img"></a>
                                                 </li>
                                                 <li class="single-author d-flex align-items-center">
                                                     <a href="author.html" class="veryfied"><img loading="lazy"
-                                                            src="Source Code/assets/images/seller/09.png" alt="author-img"></a>
+                                                            src="assets/images/seller/09.png" alt="author-img"></a>
                                                     <h6><a href="author.html">ptrax elm.</a></h6>
                                                 </li>
                                             </ul>
@@ -1803,7 +1803,7 @@
                                     <!-- nft-bottom part -->
                                     <div class="nft-item-bottom">
                                         <div class="nft-thumb">
-                                            <img loading="lazy" src="Source Code/assets/images/nft-item/08.jpg" alt="nft-img">
+                                            <img loading="lazy" src="assets/images/nft-item/08.jpg" alt="nft-img">
 
                                             <!-- nft countdwon -->
                                             <!-- <ul class="nft-countdown count-down" data-date="July 05, 2022 21:14:01">
@@ -1974,16 +1974,16 @@
 
 
     <!-- All Scripts -->
-    <script src="Source Code/assets/js/jquery-3.6.0.min.js"></script>
-    <script src="Source Code/assets/js/bootstrap.bundle.min.js"></script>
-    <script src="Source Code/assets/js/waypoints.min.js"></script>
-    <script src="Source Code/assets/js/lightcase.js"></script>
-    <script src="Source Code/assets/js/swiper-bundle.min.js"></script>
-    <script src="Source Code/assets/js/countdown.min.js"></script>
-    <script src="Source Code/assets/js/jquery.counterup.min.js"></script>
-    <script src="Source Code/assets/js/wow.min.js"></script>
-    <script src="Source Code/assets/js/isotope.pkgd.min.js"></script>
-    <script src="Source Code/assets/js/functions.js"></script>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/lightcase.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/countdown.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/functions.js"></script>
 </body>
 
 </html>

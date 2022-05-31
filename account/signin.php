@@ -33,7 +33,7 @@
 <?php
 session_start();
 if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
-    header("location:../index.php?pesan=sudah");
+    header("location:../index.php");
 }   
 ?>
 
@@ -50,7 +50,7 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
     <!-- preloader ending here -->
 
     <!-- ===============// header section start here \\================= -->
-<?php include '../includes/header.php'; ?>
+    <?php include '../includes/header.php'; ?>
     <!-- ===============//header section end here \\================= -->
 
 
@@ -98,7 +98,7 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
                                         <input type="checkbox" name="remember" id="remember">
                                         <label for="remember">Remember Me</label>
                                     </div>
-                                    <a href="forgot-pass.html">Forgot Password?</a>
+                                    <a href="forgot_pass.php">Forgot Password?</a>
                                 </div>
                             </div>
                             <div class="form-group">

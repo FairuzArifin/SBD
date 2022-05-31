@@ -2,8 +2,8 @@
         <div class="container-fluid">
             <div class="header__content">
                 <div class="header__logo">
-                    <a href="index.php">
-                        <img src="Source Code/assets/images/logo/logo-3.png" alt="logo">
+                    <a href="../index.php">
+                        <img src="../assets/images/logo/logo-3.png" alt="logo">
                     </a>
                 </div>
 
@@ -54,11 +54,6 @@
                                     <path
                                         d="M12,10a2,2,0,1,0,2,2A2,2,0,0,0,12,10ZM5,10a2,2,0,1,0,2,2A2,2,0,0,0,5,10Zm14,0a2,2,0,1,0,2,2A2,2,0,0,0,19,10Z" />
                                 </svg></a>
-
-                            <ul class="dropdown-menu header__nav-menu">
-                                <li><a class="drop-down-item" href="contact.html">Contact </a></li>
-                                <li><a class="drop-down-item" href="coming-soon.html">Coming soon</a></li>
-                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -87,23 +82,18 @@
                             <ul class="dropdown-menu">
 
                                 <?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == true) : ?>
-                                  <li><a class="dropdown-item" href="author.php"><span class="me-1"><i
+                                  <li><a class="dropdown-item" href="../upload/author.php"><span class="me-1"><i
                                                 class="icofont-options"></i></span>
                                         Profile</a></li>
-                                <?php endif ;?>
-
-                                <?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == true) : ?>
                                   <li><a class="dropdown-item" href="activity.php"><span class="me-1"><i
                                                 class="icofont-lightning-ray"></i></span>
                                         Activity</a></li>
-                                <?php endif ;?>
-                                
-                                <?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == true) : ?>
-                                  <li><a class="dropdown-item" href="signup.php"><span class="me-1"><i
+                                <?php else : ?>
+                                <li><a class="dropdown-item" href="../account/signup.php"><span class="me-1"><i
                                                 class="icofont-space-shuttle"></i></span>
                                         Sign
                                         Up</a></li>
-                                <li><a class="dropdown-item" href="signin.php"><span class="me-1"><i
+                                <li><a class="dropdown-item" href="../account/signin.php"><span class="me-1"><i
                                                 class="icofont-login"></i></span> Sign
                                         In</a></li>
                                 <?php endif ;?>
@@ -113,7 +103,7 @@
                                     <hr class="dropdown-divider">
                                 </li>
 
-                                <li><a class="dropdown-item" href="logout.php"> Sign
+                                <li><a class="dropdown-item" href="../account/signout.php"> Sign
                                         Out <span class="ms-1"><i class="icofont-logout"></i></span></a></li>
                                 <?php endif ;?>
                                 
