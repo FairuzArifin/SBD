@@ -41,7 +41,6 @@
 
     <!-- if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){  
 ?> -->
-
 <body class="light-version">
     <!-- preloader start here -->
    
