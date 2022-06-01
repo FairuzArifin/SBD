@@ -40,22 +40,13 @@ function show_bid($nftid){
 
 }
 
-function status_nft($nft_id){
+function get_latest_bid($nftid){
     global $connect;
-    $check = "SELECT MAX(bid_ongoing) AS max FROM bid_ongoing WHERE nft_id = $nft_id";
-    $time = "SELECT auction_end AS minn FROM bid WHERE nft_id = $nft_id"; //2
-    $process = mysqli_query($connect, $check);
-    $proces = mysqli_query($connect, $time); //2
-    $row = mysqli_fetch_array($process);
-    $row2 = mysqli_fetch_assoc($proces); //2
-    $www = $row2['minn'];
-    $largestbid = $row['max'];
-    $now = date("Y-m-d h:i:sa");
-    if(strtotime($www) > strtotime($now)){
-        return true;
-    } else {
-        return false;
-    }
+    $q = "SELECT * FROM bid_ongoing where nft_id = $nftid order by bid_ongoing desc limit 1 ";
+    $get = mysqli_query($connect, $q);
+    $bid = $get->fetch_array()['bid_ongoing'];
+    return $bid;
+
 }
 
 function wallet($uid){
@@ -95,4 +86,18 @@ mysqli_query($connect, $q1);
 mysqli_query($connect, $q2);
 
 
+}
+
+function cek_saldo($uid,$price){
+global $connect;
+
+$query = "SELECT * FROM wallet WHERE user_id = $uid";
+$isi = mysqli_query($connect, $query);
+$saldo = mysqli_fetch_assoc($isi);
+
+if($saldo>$price){
+    return true;
+}else{
+    return false;
+}
 }
