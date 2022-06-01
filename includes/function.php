@@ -65,39 +65,39 @@ function wallet($uid){
 }
 
 function pindah($sid,$bid,$nft_id,$price){
-global $connect;
+    global $connect;
 
-$query = "UPDATE kepemilikan SET user_id = $bid WHERE nft_id = $nft_id";
-mysqli_query($connect, $query);
+    $query = "UPDATE kepemilikan SET user_id = $bid WHERE nft_id = $nft_id";
+    mysqli_query($connect, $query);
 
-$query1 = "SELECT fund_eth FROM wallet WHERE user_id = $sid";
-$query2 = "SELECT fund_eth FROM wallet WHERE user_id = $bid";
-$isi1 = mysqli_query($connect, $query1);
-$isi2 = mysqli_query($connect, $query2);
-$saldos = mysqli_fetch_assoc($isi1);
-$saldob = mysqli_fetch_assoc($isi2);
+    $query1 = "SELECT fund_eth FROM wallet WHERE user_id = $sid";
+    $query2 = "SELECT fund_eth FROM wallet WHERE user_id = $bid";
+    $isi1 = mysqli_query($connect, $query1);
+    $isi2 = mysqli_query($connect, $query2);
+    $saldos = mysqli_fetch_assoc($isi1);
+    $saldob = mysqli_fetch_assoc($isi2);
 
-$sakhir = $saldos['fund_eth'] + $price;
-$bakhir = $saldob['fund_eth'] - $price;
+    $sakhir = $saldos['fund_eth'] + $price;
+    $bakhir = $saldob['fund_eth'] - $price;
 
-$q1 = "UPDATE wallet SET fund_eth = $sakhir WHERE user_id = $sid";
-$q2 = "UPDATE wallet SET fund_eth = $bakhir WHERE user_id = $bid";
-mysqli_query($connect, $q1);
-mysqli_query($connect, $q2);
-
+    $q1 = "UPDATE wallet SET fund_eth = $sakhir WHERE user_id = $sid";
+    $q2 = "UPDATE wallet SET fund_eth = $bakhir WHERE user_id = $bid";
+    mysqli_query($connect, $q1);
+    mysqli_query($connect, $q2);
 
 }
 
 function cek_saldo($uid,$price){
-global $connect;
+    
+    global $connect;
+    $query = "SELECT * FROM wallet WHERE user_id = $uid";
+    $isi = mysqli_query($connect, $query);
+    $saldo = mysqli_fetch_assoc($isi);
 
-$query = "SELECT * FROM wallet WHERE user_id = $uid";
-$isi = mysqli_query($connect, $query);
-$saldo = mysqli_fetch_assoc($isi);
+    if($saldo>$price){
+        return true;
+    } else {
+        return false;
+    }
 
-if($saldo>$price){
-    return true;
-}else{
-    return false;
-}
 }

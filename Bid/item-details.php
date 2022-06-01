@@ -2,7 +2,7 @@
 
 include '../includes/connect.php';
 include '../includes/function.php';
-$nftid = 9;
+$nftid = $_GET['nft_id'];
 $query = "SELECT * FROM nft
             JOIN bid
             ON nft.nft_id = bid.nft_id
@@ -222,6 +222,8 @@ $query = "SELECT * FROM nft
                                             <div class="form-group">
                                                 <label for="" class="control-label"><h5>Bid Amount</h5></label>
                                                 <input type="number" class="form-control text-right mt-2" name="bid_amount" style="width: 330px;">
+                                                <input type="hidden" name="sid" value="<?php echo $sid ?>" />
+                                                <input type="hidden" name="bid" value="<?php echo $_SESSION['user_id'] ?>" />
                                             </div>
                                             <button type = "submit" class="default-btn move-right mt-3 me-5"><span>Submit</span> </button>
                                             <button type = "reset" class="default-btn move-right mt-3" id="cancel_bid"><span>Cancel</span> </button>
