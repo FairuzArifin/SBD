@@ -98,7 +98,7 @@ $query = "SELECT * FROM nft
                         <div class="item-desc-part">
                             <div class="item-desc-inner">
                                 <div class="item-desc-thumb">
-                                    <img src="<?php $output['photo'];?>.png" alt="item-img">
+                                <img src="../upload/nftimage/<?php echo $output['photo'] ?>" alt="item-img">
                                 </div>
                                 <div class="item-desc-content">
                                     <nav>
@@ -222,7 +222,9 @@ $query = "SELECT * FROM nft
                                     </span></p>
                             </div>
                             <div class="buying-btns d-flex flex-wrap">
-                                <a href="wallet.html" class="default-btn move-right"><span>Buy Now <i class="icofont-coins"></i> (<?php echo $output['buy_now']?> ETH)</span> </a>
+                                <form action="buy-now.php" method="POST">
+                                <button type="submit" name="buynow" class="default-btn move-right"><span>Buy Now <i class="icofont-coins"></i> (<?php echo $output['buy_now']?> ETH)</span> </button>
+                                </form>
                                 <button class="default-btn move-right" id="bid"><span>Place a Bid</span> </button>
                                 <div id="bid-frm">
                                     <div class="col-md-12">
