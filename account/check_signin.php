@@ -7,7 +7,7 @@
     $password = $_POST['password'];
     $box = [];
     $signin = mysqli_query($connect,"SELECT * FROM user WHERE email='$email' AND password='$password'");
-    $sql = "SELECT * FROM user INNER JOIN wallet WHERE email='$email' and user.wallet_id = wallet.wallet_id";
+    $sql = "SELECT * FROM user INNER JOIN wallet WHERE email='$email' and user.user_id = wallet.user_id";
     $check = mysqli_num_rows($signin);
     $query = mysqli_query($connect, $sql);
  
@@ -21,7 +21,6 @@
             $username = $row['username'];
             $password = $row['password'];
             $wallet = $row['fund_eth'];
-            $wallet_id = $row['wallet_id'];
         }
 
 	    if($query -> num_rows > 0){
@@ -30,7 +29,6 @@
             $_SESSION['name'] = $name;
             $_SESSION['username'] = $username;
             $_SESSION['logged'] = true;
-            $_SESSION['wallet_id'] = $wallet_id;
             $_SESSION['wallet'] = $wallet;
 		    header("location:../upload/author.php");
             

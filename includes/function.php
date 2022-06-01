@@ -29,7 +29,7 @@ function show_bid($nftid){
     $query = "SELECT bid_ongoing, name, bid_time from user 
                 INNER JOIN bid_ongoing
                 ON bid_ongoing.user_id = user.user_id
-                WHERE nft_id = 3101;";
+                WHERE nft_id = 9;";
 
     $result = mysqli_query($connect, $query);
     while($row = mysqli_fetch_assoc($result)) {
@@ -60,10 +60,10 @@ function status_nft($nft_id){
 
 function wallet($uid){
     global $connect;
-    $query = "SELECT username, wallet.wallet_id, fund_eth 
+    $query = "SELECT username, wallet.user_id, fund_eth 
               FROM user 
               INNER JOIN wallet 
-              ON wallet.wallet_id = user.wallet_id 
+              ON wallet.user_id = user.user_id 
               WHERE user.user_id =  $uid ";
           
           $result = mysqli_query($connect, $query);

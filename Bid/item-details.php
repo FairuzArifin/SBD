@@ -2,7 +2,7 @@
 
 include '../includes/connect.php';
 include '../includes/function.php';
-$nftid = 3101;
+$nftid = 9;
 $query = "SELECT * FROM nft
             JOIN bid
             ON nft.nft_id = bid.nft_id
@@ -194,7 +194,6 @@ $query = "SELECT * FROM nft
                                     </div>
                                 </div>
                             </div>
-                            <?php if (status_nft($nftid) == TRUE):?>
                                 <div class="item-details-countdown">
                                 <h4>Ends In:</h4>
                                 <?php
@@ -239,14 +238,6 @@ $query = "SELECT * FROM nft
                                     </div>
                                 </div>
                             </div>
-                            <?php else: ?>
-                                <div class="item-details-countdown">
-                                <h4>Ends In:</h4>
-                                    <h3 style="color:red">SOLD</h3>
-                                </ul>
-                                </div>
-                            <?php endif ?>
-
                         </div>
                     </div>
                 </div>
