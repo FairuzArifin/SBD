@@ -116,8 +116,13 @@
                                 class="d-none d-md-inline">
                                 <?php 
 	                                if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
-                            		    echo $_SESSION['wallet'];
-	                                } else {
+                            		    $uid = $_SESSION['user_id'];
+                                        $query = "SELECT fund_eth FROM wallet WHERE user_id = $uid";
+                                        $isi = mysqli_query($connect, $query);
+                                        $saldo = mysqli_fetch_assoc($isi);
+                                        echo $saldo['fund_eth'];
+	                                
+                                    } else {
                                         echo "Unknown";
                                     }
                                 ?></span> </a>
