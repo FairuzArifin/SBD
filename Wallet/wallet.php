@@ -29,7 +29,7 @@
           if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
             $box = wallet($_SESSION['user_id']);
             
-            foreach ($box AS $wallet)       
+            foreach ($box AS $wallet)        
         //end coba
     ?>
     

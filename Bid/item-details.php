@@ -2,7 +2,7 @@
 
 include '../includes/connect.php';
 include '../includes/function.php';
-$nftid = 9;
+$nftid = $_GET['nft_id'];
 $query = "SELECT * FROM nft
             JOIN bid
             ON nft.nft_id = bid.nft_id
@@ -98,7 +98,7 @@ $query = "SELECT * FROM nft
                         <div class="item-desc-part">
                             <div class="item-desc-inner">
                                 <div class="item-desc-thumb">
-                                    <img src="<?php $output['photo'];?>.png" alt="item-img">
+                                <img src="../upload/nftimage/<?php echo $output['photo'] ?>" alt="item-img">
                                 </div>
                                 <div class="item-desc-content">
                                     <nav>
@@ -127,6 +127,7 @@ $query = "SELECT * FROM nft
                                                     <p class="mb-0">Owner</p>
                                                     <h6><a href="author.html"></a><?php echo $nft_details['name']?> </h6>
                                                 </div>
+                                                <?php $sid = $nft_details['user_id'];?>
                                                 <?php endforeach?>
                                             </div>
                                             <ul class="other-info-list">
@@ -174,27 +175,10 @@ $query = "SELECT * FROM nft
                             <div class="nft-item-title">
                             
                                 <h3> <?php echo $output['title']?> </h3>
-                                <div class="share-btn">
-                                    <div class=" dropstart">
-                                        <a class=" dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                            aria-expanded="false" data-bs-offset="25,0">
-                                            <i class="icofont-share-alt"></i>
-                                        </a>
 
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><span>
-                                                        <i class="icofont-twitter"></i>
-                                                    </span> Twitter </a>
-                                            </li>
-                                            <li><a class="dropdown-item" href="#"><span><i
-                                                            class="icofont-telegram"></i></span> Telegram</a></li>
-                                            <li><a class="dropdown-item" href="#"><span><i
-                                                            class="icofont-envelope"></i></span> Email</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
                             </div>
                                 <div class="item-details-countdown">
+                                <?php if ($output['status_nft'] == 0):?>
                                 <h4>Ends In:</h4>
                                 <?php
                                 $date   = $output['auction_end'];
@@ -217,33 +201,38 @@ $query = "SELECT * FROM nft
                             </div>
                             
                             <div class="item-price">
-                                <h4>Start Price</h4>
-                                <p><span><i class="icofont-coins"></i> <?php echo $output['start_bid_price']?>
+                                <h4>Minimum Bid</h4>
+                                <p><span><i class="icofont-coins"></i> <?php echo get_latest_bid($nftid); ?> ETH
                                     </span></p>
                             </div>
                             <div class="buying-btns d-flex flex-wrap">
-                                <a href="wallet.html" class="default-btn move-right"><span>Buy Now <i class="icofont-coins"></i> (<?php echo $output['buy_now']?> ETH)</span> </a>
+                                <form action="buy-now.php" method="POST">
+                                <button type="submit" name="buynow" class="default-btn move-right"><span>Buy Now <i class="icofont-coins"></i> (<?php echo $output['buy_now']?> ETH)</span> </button>
+                                <input type="hidden" name="nft_id" value="<?php echo $nftid ?>" />
+                                <input type="hidden" name="bid" value="<?php echo $_SESSION['user_id'] ?>" />
+                                <input type="hidden" name="sid" value="<?php echo $sid ?>" />
+
+
+                                </form>
                                 <button class="default-btn move-right" id="bid"><span>Place a Bid</span> </button>
                                 <div id="bid-frm">
                                     <div class="col-md-12">
                                         <form id="manage-bid" method="POST" action="item-bid.php">
-                                            <input type="hidden" name="nft_id" value="<?php echo $nft_id ?>" />
+                                            <input type="hidden" name="nft_id" value="<?php echo $nftid ?>" />
                                             <div class="form-group">
                                                 <label for="" class="control-label"><h5>Bid Amount</h5></label>
                                                 <input type="number" class="form-control text-right mt-2" name="bid_amount" style="width: 330px;">
+                                                <input type="hidden" name="sid" value="<?php echo $sid ?>" />
+                                                <input type="hidden" name="bid" value="<?php echo $_SESSION['user_id'] ?>" />
                                             </div>
                                             <button type = "submit" class="default-btn move-right mt-3 me-5"><span>Submit</span> </button>
                                             <button type = "reset" class="default-btn move-right mt-3" id="cancel_bid"><span>Cancel</span> </button>
                                         </form>
+                                        <?php else :?>
+                                        <?php endif?>
                                     </div>
                                 </div>
                             </div>
-                                <div class="item-details-countdown">
-                                <h4>Ends In:</h4>
-                                    <h3 style="color:red">SOLD</h3>
-                                </ul>
-                                </div>
-
                         </div>
                     </div>
                 </div>

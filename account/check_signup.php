@@ -21,7 +21,7 @@
     if (mysqli_num_rows($process)>0) { 
         header("location:signup.php?pesan=ganda");
     } else { 
-    	$sql1 = "INSERT INTO user (name,username,password,email) VALUES ('$name', '$username', '$password1', '$email')"; 
+    	$sql1 = "INSERT INTO user (name,password,email,username) VALUES ('$name', '$password1', '$email', '$username)"; 
         $sql2 = "INSERT INTO wallet (fund_eth) VALUES ('$fund_eth')";         			                
         if($connect->query($sql1)===TRUE){
 			if($connect->query($sql2)===TRUE){
