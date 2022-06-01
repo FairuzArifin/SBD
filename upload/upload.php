@@ -24,10 +24,29 @@
                 else {
                     move_uploaded_file($upload_file, $dir.'/'.$file_name);
                
-                    $query = mysqli_query($connect, "INSERT INTO nft SET photo='$file_name',
-                    title = '$_POST[title]',
-                    description = '$_POST[description]',
-                    category = '$_POST[category]'");
+                    $title = $_POST['title'];
+                    $description = $_POST['description'];
+                    $category = $_POST['category'];
+
+                    $user_id = $_POST['user_id'];
+
+                    $sql = "INSERT INTO nft (photo, title, description, category)
+                    VALUES ('$file_name', '$title', '$description', '$category')";
+
+                    if($connect->query($sql)===TRUE){
+                        $q="SELECT * FROM nft WHERE title = $title";
+                        $keluar=mysqli_query($connect, $q);
+                        $row=mysqli_fetch_assoc($keluar);
+                        
+                        $q1="INSERT INTO kepemilikan (user_id, nft_id) VALUES ($user_id, $nid)";
+                        if($connect->query($q1)===TRUE){
+                            echo 'Berhasil';
+                        } else{
+                            echo "Error : " .$sql2."<br/>".$connect->error;
+                        }
+                    } else {
+                        echo "Error : " .$sql."<br/>".$connect->error;
+                    }
                 }
             }                                                                       
            }

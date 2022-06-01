@@ -22,14 +22,35 @@
                 }
                 else {
                     move_uploaded_file($upload_file, $dir.'/'.$file_name);
-               
-                    $query1 = mysqli_query($connect, "INSERT INTO nft SET photo='$file_name',
+                    $sql = "INSERT INTO nft SET photo='$file_name',
                     title = '$_POST[title]',
                     description = '$_POST[description]',
-                    category = '$_POST[category]'");
-                    $query2 = mysqli_query($connect, "INSERT INTO bid SET start_bid_price='$_POST[bidprice]',
-                    auction_start = '$_POST[auction_start]',
-                    auction_end = '$_POST[auction_end],'");
+                    category = '$_POST[category]'";
+
+                    $title = $_POST['title'];
+                    $description = $_POST['description'];
+                    $category = $_POST['category'];
+
+                    $start_bid_price= $_POST['start_bid_price'];
+                    $auction_start = $_POST['auction_start'];
+                    $auction_end = $_POST['auction_end'];
+                    $buy_now = $_POST['buy_now'];
+
+                    $sql = "INSERT INTO nft (photo, title, description, category)
+                    VALUES ('$file_name', '$title', '$description', '$category')";
+
+                    $sql2 = "INSERT INTO bid (start_bid_price, auction_start, auction_end, buy_now)
+                    VALUES ('$start_bid_price', '$auction_start', '$auction_end', '$buy_now')";
+
+                    if($connect->query($sql)===TRUE){
+                        if($connect->query($sql2)===TRUE){
+                            echo 'Berhasil';
+                        } else{
+                            echo "Error : " .$sql2."<br/>".$connect->error;
+                        }
+                    } else {
+                        echo "Error : " .$sql."<br/>".$connect->error;
+                    }
                 }
             }                                                                       
            }

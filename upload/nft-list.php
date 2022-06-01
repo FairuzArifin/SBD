@@ -2,13 +2,41 @@
     include "../includes/connect.php";
     include "include/header.php";
 ?>
-<section class="profile-section light-version padding-top padding-bottom">
-<div class="row justify-content-center gx-3 gy-2">
-        <?php
-            
-            $tampil = mysqli_query($connect, "SELECT * FROM nft");
-            if(mysqli_num_rows($tampil)>0){
-                while($t = mysqli_fetch_array($tampil)){ ?>
+
+<section class="explore-section light-version padding-top padding-bottom">
+        <div class="container">
+            <div class="section-header light-version">
+                <div class="nft-filter d-flex flex-wrap justify-content-center">
+                    <div class="form-floating">
+                        <select class="form-select" id="catSelect" aria-label="Floating label select example" name="category">
+                            <option selected>All Category</option>
+                            <option value="Art" name="category">Art</option>
+                            <option value="Collectibles" name="category">Collectibles</option>
+                            <option value="Music" name="category">Music</option>
+                            <option value="Photography"name="category">Photography</option>
+                            <option value="Sports" name="category">Sports</option>
+                            <option value="Trading Cards" name="category">Trading Cards</option>
+                            <option value="Virtual Worlds" name="category">Virtual Worlds</option>
+                        </select>
+                        <label for="catSelect">Select a Category</label>
+                    </div>
+                    
+                </div>
+                <div class="nft-search">
+                    <div class="form-floating nft-search-input">
+                        <input type="text" class="form-control" id="nftSearch" placeholder="Search NFT">
+                        <label for="nftSearch">Search NFT</label>
+                        <button type="button"> <i class="icofont-search-1"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="section-wrapper">
+                <div class="explore-wrapper">
+                    <div class="row justify-content-center gx-4 gy-3">
+                        <?php
+                            $tampil = mysqli_query($connect, "SELECT * FROM nft WHERE status_nft=0");
+                            if(mysqli_num_rows($tampil)>0){
+                                while($t = mysqli_fetch_array($tampil)){ ?>
             <div class="col-lg-4 col-sm-6">
             <div class="nft-item light-version">
                 <div class="nft-inner">
@@ -108,6 +136,13 @@
         </div>
         </div>
                     <?php }} ?>
-</div>
-                </section>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
 <?php include "../includes/footer.php"; ?>
