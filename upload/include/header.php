@@ -30,8 +30,18 @@
     <title>Enftomark</title>
 </head>
 <?php
-    if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){  
+    include '../includes/function.php';
+    
+    if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
+        $box = wallet($_SESSION['user_id']);
+        
+        foreach ($box AS $wallet)        
+    //end coba
 ?>
+
+    <!-- if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){  
+?> -->
+
 <body class="light-version">
     <!-- preloader start here -->
    
@@ -141,7 +151,7 @@
                     </div>
                     <div class="wallet-btn">
                         <a href="../../sbd/wallet/wallet.php"><span><i class="icofont-wallet" data-blast="color"></i></span> <span
-                                class="d-none d-md-inline"></span> </a>
+                                class="d-none d-md-inline"><?php echo $wallet['fund_eth'];?></span> </a>
                     </div>
                     <?php } ?>
                 </div>
