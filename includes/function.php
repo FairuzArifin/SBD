@@ -24,6 +24,7 @@ function user_nft($nftid){
     }
     return $box;
 }
+
 function show_bid($nftid){
     global $connect;
     $query = "SELECT bid_ongoing, name, bid_time from user 
