@@ -89,7 +89,7 @@
                                                 class="icofont-lightning-ray"></i></span>
                                         Activity</a></li>
                                 <?php else : ?>
-                                <li><a class="dropdown-item" href="../account/signup.php"><span class="me-1"><i
+                                <li><a class="dropdown-item" href="account/signup.php"><span class="me-1"><i
                                                 class="icofont-space-shuttle"></i></span>
                                         Sign
                                         Up</a></li>
