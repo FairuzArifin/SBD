@@ -4,7 +4,7 @@
     include "include/header.php";
 
     if(isset($_POST['submit'])){
-        $userid = $_session['user_id'];
+        $userid = $_SESSION['user_id'];
         $dir = "nftimage/";
         $file_name = ($_FILES['file']['name']);
         $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));

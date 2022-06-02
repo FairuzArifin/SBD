@@ -233,7 +233,12 @@
                                                             aria-labelledby="pills-mentions-tab">
                                                             <div class="row justify-content-center gx-3 gy-2">
                                                             <?php
-                                                                    $tampil = mysqli_query($connect, "SELECT * FROM nft");
+                                                                    $q = "SELECT * FROM nft
+                                                                                JOIN kepemilikan
+                                                                                ON kepemilikan.nft_id = nft.nft_id
+                                                                                JOIN user
+                                                                                ON user.user_id = kepemilikan.user_id";
+                                                                    $tampil = mysqli_query($connect, $q);
                                                                     if(mysqli_num_rows($tampil)>0){
                                                                         while($t = mysqli_fetch_array($tampil)){ ?>
                                                                     <div class="col-lg-4 col-sm-6">
@@ -254,7 +259,7 @@
                                                                                             class="veryfied"><img
                                                                                                 src="../assets/images/seller/01.png"
                                                                                                 alt="author-img"></a>
-                                                                                        <h6><a href="../bid/item-details.php?nft_id=<?php echo $t['nft_id'] ?>">Jhon Doe</a>
+                                                                                        <h6><a href="../bid/item-details.php?nft_id=<?php echo $t['nft_id'] ?>"><?php echo $t['name'] ?></a>
                                                                                         </h6>
                                                                                         </li>
                                                                                     </ul>
