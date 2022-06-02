@@ -2,9 +2,15 @@
 include '../includes/connect.php';
 include '../includes/function.php';
 
-$user_id = 2104;
-$sid = $_POST['sid'];
+$user_id = $_SESSION['user_id'];
 $nft_id = $_POST['nft_id'];
+
+$cekseller = "SELECT *
+            FROM kepemilikan
+            WHERE nft_id = $nft_id";
+$out = mysqli_query($connect, $cekseller);
+$seller_id = mysqli_fetch_assoc($out);
+$sid = $seller_id['user_id'];
 
 $check = "SELECT *
             FROM bid
@@ -19,7 +25,7 @@ $end = $time['auction_end'];
 $now = date("Y-m-d h:i:s");
 $buy_price =$time['buy_now'];
 
-if(strtotime($start) > strtotime($now)){
+if(strtotime($start) < strtotime($now)){
     echo "<script>alert('Lelang Belum Dimulai');history.go(-1) </script>";}
 elseif(strtotime($now) > strtotime($end)){
 echo "<script>alert('NFT Already Sold');history.go(-1) </script>";}

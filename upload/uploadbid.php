@@ -4,7 +4,7 @@
     include "include/header.php";
 
     if(isset($_POST['submit'])){
-        $userid = $_POST['user_id'];
+        $userid = $_session['user_id'];
         $dir = "nftimage/";
         $file_name = ($_FILES['file']['name']);
         $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
@@ -36,9 +36,9 @@
                     $auction_start = 0;
                     $auction_end = date("Y-m-d h:i:sa");
                     $buy_now = date("Y-m-d h:i:sa");
-
-                    $sql = "INSERT INTO nft (photo, title, description, category)
-                    VALUES ('$file_name', '$title', '$description', '$category')";
+                    $status_nft = 1;
+                    $sql = "INSERT INTO nft (photo, title, description, category, status_nft)
+                    VALUES ('$file_name', '$title', '$description', '$category','$status_nft')";
 
                     
 
@@ -48,7 +48,7 @@
                         $q = mysqli_query($connect,$sql);
                         $data = mysqli_fetch_array($q);
                         $last_id = $data['last_id'];
-
+                        
                         $sql2 = "INSERT INTO bid (nft_id,start_bid_price, auction_start, auction_end, buy_now)
                         VALUES ('$last_id','$start_bid_price', '$auction_start', '$auction_end', '$buy_now')";
 

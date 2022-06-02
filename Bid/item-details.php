@@ -157,15 +157,18 @@ $query = "SELECT * FROM nft
                                             aria-labelledby="nav-history-tab">
                                             <ul class="item-histo-list">
 
-                                                <?php if ($output['status_nft']==0):
+                                                <?php if ($output['status_nft']==0){
                                                  $bids = show_bid($nftid);
-                                                    foreach ($bids as $bidnow) : ?>
+                                                if (empty($bids)){
+                                                    echo "-";
+                                                }
+                                                else
+                                                foreach ($bids as $bidnow): ?>
                                                 <li class="histo-item">
                                                     <p>Bid By <?php echo $bidnow['name']?> <?php echo $bidnow['bid_ongoing']?></pa></p>
                                                     <time><?php echo $bidnow['bid_time']?></time>
                                                 </li>
-                                                <?php endforeach;
-                                                    endif; ?>
+                                                <?php endforeach;}?>
                                             </ul>
                                         </div>
                                     </div>
@@ -203,13 +206,20 @@ $query = "SELECT * FROM nft
                                     </li>
                                 </ul>
                             </div>
-
+                            <?php $highest_bid = get_latest_bid($nftid);
+                            if (empty($highest_bid)){ ?>
+                            <div class="item-price">
+                                <h4>Minimum Bid</h4>
+                                <p><span><i class="icofont-coins"></i> <?php echo $output['start_bid_price']; ?> ETH
+                                    </span></p>
+                            </div>
+                            <?php }else{?>
                             <div class="item-price">
                                 <h4>Minimum Bid</h4>
                                 <p><span><i class="icofont-coins"></i> <?php echo get_latest_bid($nftid); ?> ETH
                                     </span></p>
-                            </div>
-                            <div class="buying-btns d-flex flex-wrap">
+                                <?php } ?>
+                                <div class="buying-btns d-flex flex-wrap">
                                 <form action="buy-now.php" method="POST">
                                 <button type="submit" name="buynow" class="default-btn move-right"><span>Buy Now <i class="icofont-coins"></i> (<?php echo $output['buy_now']?> ETH)</span> </button>
                                 <input type="hidden" name="nft_id" value="<?php echo $nftid ?>" />

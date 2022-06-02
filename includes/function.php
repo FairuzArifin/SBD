@@ -31,11 +31,10 @@ function show_bid($nftid){
                 ON bid_ongoing.user_id = user.user_id
                 WHERE nft_id = $nftid;";
 
-    $result = mysqli_query($connect, $query);
-    while($row = mysqli_fetch_assoc($result)) {
-        $box[] = $row;
-    }
-    return $box;
+    $get = mysqli_query($connect, $query);
+    $bid = $get->num_rows > 0 ? $bid = $get->fetch_array()['bid_ongoing']:0;
+
+    return $bid;
 
 
 }
