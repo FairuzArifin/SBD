@@ -1,7 +1,7 @@
 <?php
     include "../includes/connect.php";
     include "include/header.php";
-    
+
     if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
 ?>
     <!-- ==========Page Header Section Start Here========== -->
@@ -53,8 +53,8 @@
                                 <p><?php echo $_SESSION['email'];?></p>
                             </div>
 
-                            
-                            
+
+
 
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                     </div>
                     <div class="profile-details">
                         <nav class="profile-nav">
-                            
+
                         </nav>
                         <div class="tab-content" id="nav-tabContent">
                             <!-- All NFT tab -->
@@ -221,7 +221,7 @@
                                                                             <!-- submit button -->
                                                                             <div class="submit-btn-field text-center">
                                                                                 <button type="submit"><input type="submit" name="submit" class="submit-btn-field text-center"></button>
-                                                                                    
+
                                                                             </div>
                                                                         </form>
                                                                     </div>
@@ -246,7 +246,7 @@
                                                                                         <li class="single-author">
                                                                                             <a href="../bid/item-bid.php"><img
                                                                                             src="../assets/images/seller/01.gif"
-                                                                                            alt="author-img"></a>                                                                
+                                                                                            alt="author-img"></a>
                                                                                         </li>
                                                                                         <li
                                                                                         class="single-author d-flex align-items-center">
@@ -258,7 +258,7 @@
                                                                                         </h6>
                                                                                         </li>
                                                                                     </ul>
-                                                                                </div>                                                                
+                                                                                </div>
                                                                             <div class="more-part">
                                                                                 <div class=" dropstart">
                                                                                     <a class=" dropdown-toggle"
@@ -320,7 +320,7 @@
                                                                                 <h4><a href="../bid/item-details.php?nft_id=<?php echo $t['nft_id'] ?>"><?php echo $t['title'] ?></a> </h4>
                                                                                 <div
                                                                                     class="price-like d-flex justify-content-between align-items-center">
-                                                                                    
+
                                                                                     <a href="#" class="nft-like"><i
                                                                                             class="icofont-heart"></i>
                                                                                         230</a>
@@ -331,7 +331,7 @@
                                                                 </div>
                                                                 </div>
                                                                             <?php }} ?>
-                                                                    
+
                                                                 </div>
                                                     </div>
                                                     </div>
@@ -350,9 +350,9 @@
                                                                                 <div class="author-part">
                                                                                     <ul class="author-list d-flex">
                                                                                         <li class="single-author">
-                                                                                            <a href="../bid/item-bid.php"><img
+                                                                                            <a href="author.html"><img
                                                                                             src="../assets/images/seller/01.gif"
-                                                                                            alt="author-img"></a>                                                                
+                                                                                            alt="author-img"></a>
                                                                                         </li>
                                                                                         <li
                                                                                         class="single-author d-flex align-items-center">
@@ -360,11 +360,11 @@
                                                                                             class="veryfied"><img
                                                                                                 src="../assets/images/seller/01.png"
                                                                                                 alt="author-img"></a>
-                                                                                        <h6><a href="../bid/item-bid.php">Jhon Doe</a>
+                                                                                        <h6><a href="author.html">Jhon Doe</a>
                                                                                         </h6>
                                                                                         </li>
                                                                                     </ul>
-                                                                                </div>                                                                
+                                                                                </div>
                                                                             <div class="more-part">
                                                                                 <div class=" dropstart">
                                                                                     <a class=" dropdown-toggle"
@@ -442,9 +442,9 @@
                                                                 </div>
                                                                             <?php }} ?>
                                                         </div>
-                                                            </div>    
+                                                            </div>
                                                     </div>
-                                                    
+
 
                                                 </div>
                                             </article>

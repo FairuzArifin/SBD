@@ -122,7 +122,7 @@ $query = "SELECT * FROM nft
                                                     <a href="author.html"><img src="../assets/images/seller/02.gif"
                                                             alt="author-img "></a>
                                                 </div>
-                                                <?php $box = user_nft($nftid); 
+                                                <?php $box = user_nft($nftid);
                                                     foreach ($box as $nft_details):?>
                                                 <div class="author-p-info">
                                                     <p class="mb-0">Owner</p>
@@ -152,13 +152,13 @@ $query = "SELECT * FROM nft
 
                                             </ul>
                                         </div>
-                                        
+
                                         <div class="history-tab tab-pane fade" id="nav-history" role="tabpanel"
                                             aria-labelledby="nav-history-tab">
                                             <ul class="item-histo-list">
-                                                
+
                                                 <?php if ($output['status_nft']==0):
-                                                 $bids = show_bid($nftid); 
+                                                 $bids = show_bid($nftid);
                                                     foreach ($bids as $bidnow) : ?>
                                                 <li class="histo-item">
                                                     <p>Bid By <?php echo $bidnow['name']?> <?php echo $bidnow['bid_ongoing']?></pa></p>
@@ -177,7 +177,7 @@ $query = "SELECT * FROM nft
                     <div class="col-lg-6">
                         <div class="item-buy-part">
                             <div class="nft-item-title">
-                            
+
                                 <h3> <?php echo $output['title']?> </h3>
 
                             </div>
@@ -203,7 +203,7 @@ $query = "SELECT * FROM nft
                                     </li>
                                 </ul>
                             </div>
-                            
+
                             <div class="item-price">
                                 <h4>Minimum Bid</h4>
                                 <p><span><i class="icofont-coins"></i> <?php echo get_latest_bid($nftid); ?> ETH
