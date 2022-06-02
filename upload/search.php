@@ -15,7 +15,7 @@
                     ON kepemilikan.nft_id = nft.nft_id
                     JOIN user
                     ON user.user_id = kepemilikan.user_id
-                    WHERE status_nft=0 AND title
+                    WHERE title
                     LIKE '%".$_GET['cari']."%'";
         $tampil = mysqli_query($connect, $query);
         }
@@ -29,13 +29,13 @@
                             <div class="author-part">
                                 <ul class="author-list d-flex">
                                     <li class="single-author">
-                                        <a href="author.html"><img
+                                        <a href="../bid/item-details.php?nft_id=<?php echo $t['nft_id'] ?>"><img
                                         src="assets/images/seller/01.gif"
                                         alt="author-img"></a>                                                                
                                     </li>
                                     <li
                                     class="single-author d-flex align-items-center">
-                                    <a href="author.html"
+                                    <a href="../bid/item-details.php?nft_id=<?php echo $t['nft_id'] ?>"
                                         class="veryfied"><img
                                             src="assets/images/seller/01.png"
                                             alt="author-img"></a>
@@ -55,18 +55,6 @@
                                         class="icofont-flikr"></i>
                                 </a>
 
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item"
-                                            href="#"><span>
-                                                <i
-                                                    class="icofont-warning"></i>
-                                            </span> Report </a>
-                                    </li>
-                                    <li><a class="dropdown-item"
-                                            href="#"><span><i
-                                                    class="icofont-reply"></i></span>
-                                            Share</a></li>
-                                </ul>
                             </div>
                         </div>
                     </div>
@@ -76,43 +64,19 @@
                             <img src="nftimage/<?php echo $t['photo'] ?>"
                                 alt="nft-img">
 
-                            <!-- nft countdwon -->
-                            <!-- <ul class="nft-countdown count-down"
-                                data-date="July 05, 2022 21:14:01">
-                                <li>
-                                    <span
-                                        class="days">34</span><span
-                                        class="count-txt">D</span>
-                                </li>
-                                <li>
-                                    <span
-                                        class="hours">09</span><span
-                                        class="count-txt">H</span>
-                                </li>
-                                <li>
-                                    <span
-                                        class="minutes">32</span><span
-                                        class="count-txt">M</span>
-                                </li>
-                                <li>
-                                    <span
-                                        class="seconds">32</span><span
-                                        class="count-txt">S</span>
-                                </li>
-                            </ul> -->
                         </div>
                         <div class="nft-content">
-                            <h4><a href="item-details.html"><?php echo $t['title'] ?></a> </h4>
+                            <h4><a href="../bid/item-details.php?nft_id=<?php echo $t['nft_id'] ?>"><?php echo $t['title'] ?></a> </h4>
                             <div
                                 class="price-like d-flex justify-content-between align-items-center">
-                                <p class="nft-price">Price:
-                                    <span
-                                        class="yellow-color">0.34
-                                        ETH</span>
-                                </p>
-                                <a href="#" class="nft-like"><i
-                                        class="icofont-heart"></i>
-                                    230</a>
+                                <?php if (empty($highest_bid)): ?>
+                                <?php else: ?>
+                            <p class="nft-price">Price:
+                                <span
+                                    class="yellow-color"><?php echo get_latest_bid($t['nft_id'])?>
+                                    ETH</span>
+                            </p>
+                            <?php endif ;?>
                             </div>
                         </div>
                             </div>

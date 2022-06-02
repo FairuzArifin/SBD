@@ -24,8 +24,10 @@ if($connect->query($q)===TRUE){
             
     echo '<section class="profile-section light-version padding-top padding-bottom">
            <center>
-           <h3>NFT UPLOADED</h3> <br>
-           <a href="author.php"><h3>Back</h3></a>
+           <h3>BID UPDATED</h3> <br>
+           <a href="item-details.php?nft_id="';
+           echo $nft_id;
+    echo '"><h3>Back</h3></a>
            </center>
            </section>';
 } else{

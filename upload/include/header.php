@@ -51,7 +51,7 @@
         <div class="container-fluid">
             <div class="header__content">
                 <div class="header__logo">
-                    <a href="index.html">
+                    <a href="../index.php">
                         <img src="assets/images/logo/logo-3.png" alt="logo">
                     </a>
                 </div>
@@ -68,34 +68,11 @@
                     <ul class="header__nav mb-0">
                         <li class="header__nav-item">
                             <a class="header__nav-link" href="index.html">Home</a>
+                        </li>           
+                        <li class="header__nav-item">         
+                                <a class="header__nav-link" href="nft-list.php">Explore</a>
                         </li>
-                        <li class="header__nav-item">
-                            <a class="header__nav-link" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" data-bs-offset="0,10">Explore</a>
-
-                            <ul class="dropdown-menu header__nav-menu">
-                                <li><a class="drop-down-item" href="explore.html">Explore NFT's</a></li>
-                                <li><a class="drop-down-item" href="auction.html">Auction Page</a></li>
-
-                            </ul>
-                        </li>
-                        <li class="header__nav-item">
-                            <a href="activity.html" class="header__nav-link">Activity</a>
-                        </li>
-                        <li class="header__nav-item">
-                            <a class="header__nav-link" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" data-bs-offset="0,10">Pages</a>
-
-                            <ul class="dropdown-menu header__nav-menu">
-                                <li><a class="drop-down-item" href="item-details.html">NFT Details</a></li>
-                                <li><a class="drop-down-item" href="all-authors-2.html">All Authors</a></li>
-                                <li><a class="drop-down-item" href="author.html">Author Profile</a></li>
-                                <li><a class="drop-down-item" href="wallet.html">Wallet Connect</a></li>
-                                <li><a class="drop-down-item" href="404.html">404</a></li>
-                                <li><a class="drop-down-item" href="forgot-pass.html">Forgot Password</a></li>
-
-                            </ul>
-                        </li>
+                        
                         <li class="header__nav-item">
                             <a class="header__nav-link" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false" data-bs-offset="0,10"><svg
@@ -143,7 +120,7 @@
                                     <hr class="dropdown-divider">
                                 </li>
 
-                                <li><a class="dropdown-item" href="#"> Sign
+                                <li><a class="dropdown-item" href="../../account/signout.php"> Sign
                                         Out <span class="ms-1"><i class="icofont-logout"></i></span></a></li>
                             </ul>
                         </div>

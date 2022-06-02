@@ -20,8 +20,7 @@
                         <h2>Upload NFT to Bid</h2>
                     </div>
                     <ol class="breadcrumb">
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active"><?php echo $_SESSION['name'];?></li>
+                        <li><a href="../index.php">Home</a></li>
                     </ol>
                 </div>
             </div>

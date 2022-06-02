@@ -53,7 +53,7 @@
         <div class="container-fluid">
             <div class="header__content">
                 <div class="header__logo">
-                    <a href="../index.php">
+                    <a href="index.php">
                         <img src="assets/images/logo/logo-3.png" alt="logo">
                     </a>
                 </div>
@@ -171,7 +171,7 @@
                             <div class="banner-btns d-flex flex-wrap">
                                 <a data-blast="bgColor" href="upload/nft-list.php"
                                     class="default-btn move-top"><span>Explore</span> </a>
-                                <a href="signin.html" class="default-btn move-right"><span>Create</span> </a>
+                                <a href="account/signin.php" class="default-btn move-right"><span>Create</span> </a>
 
                             </div>
                         </div>
@@ -214,15 +214,6 @@
                                                                 <i class="icofont-flikr"></i>
                                                             </a>
 
-                                                            <ul class="dropdown-menu">
-                                                                <li><a class="dropdown-item" href="#"><span>
-                                                                            <i class="icofont-warning"></i>
-                                                                        </span> Report </a>
-                                                                </li>
-                                                                <li><a class="dropdown-item" href="#"><span><i
-                                                                                class="icofont-reply"></i></span>
-                                                                        Share</a></li>
-                                                            </ul>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -235,14 +226,9 @@
 
                                                     </div>
                                                     <div class="nft-content">
-                                                        <h4><a href="item-details.html"><?php echo $t['title'] ?></a> </h4>
+                                                        <h4><a href="bid/item-details.php?nft_id=<?php echo $t['nft_id'] ?>"><?php echo $t['title'] ?></a> </h4>
                                                         <div
                                                             class="price-like d-flex justify-content-between align-items-center">
-                                                            <p class="nft-price">Price: <span class="yellow-color">0.34
-                                                                    ETH</span>
-                                                            </p>
-                                                            <a href="#" class="nft-like"><i class="icofont-heart"></i>
-                                                                230</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -280,7 +266,7 @@
                                         <?php
                                             
                                             $query = "SELECT * FROM nft
-                                                        WHERE category='Art'";
+                                                        WHERE category='Art' LIMIT 4";
                                             $tampil = mysqli_query($connect, $query);
                                             
                                             while($row=mysqli_fetch_array($tampil)){
@@ -295,7 +281,7 @@
                                     </div>
                                     <div class="nft-content">
                                         <div class="author-details">
-                                            <h4><a href="upload/nft-list.php">Art</a> </h4>
+                                            <h4><a href="upload/search2.php?category=Art">Art</a> </h4>
                                         </div>
                                     </div>
                                 </div>
@@ -309,7 +295,7 @@
                                         <?php
                                             
                                             $query = "SELECT * FROM nft
-                                                        WHERE category='Photography'";
+                                                        WHERE category='Photography' LIMIT 4";
                                             $tampil = mysqli_query($connect, $query);
                                             
                                             while($row=mysqli_fetch_array($tampil)){
@@ -324,7 +310,7 @@
                                     </div>
                                     <div class="nft-content">
                                         <div class="author-details">
-                                            <h4><a href="upload/nft-list.php">Photography</a> </h4>
+                                            <h4><a href="upload/search2.php?category=Photography">Photography</a> </h4>
                                         </div>
                                     </div>
                                 </div>
@@ -338,7 +324,7 @@
                                         <?php
                                             
                                             $query = "SELECT * FROM nft
-                                                        WHERE category='Collectibles'";
+                                                        WHERE category='Collectibles' LIMIT 4";
                                             $tampil = mysqli_query($connect, $query);
                                             
                                             while($row=mysqli_fetch_array($tampil)){
@@ -353,7 +339,7 @@
                                     </div>
                                     <div class="nft-content">
                                         <div class="author-details">
-                                            <h4><a href="upload/nft-list.php">Collectibles</a> </h4>
+                                            <h4><a href="upload/search2.php?category=Collectibles">Collectibles</a> </h4>
                                         </div>
                                     </div>
                                 </div>
@@ -367,7 +353,7 @@
                                         <?php
                                             
                                             $query = "SELECT * FROM nft
-                                                        WHERE category='Music'";
+                                                        WHERE category='Music' LIMIT 4";
                                             $tampil = mysqli_query($connect, $query);
                                             
                                             while($row=mysqli_fetch_array($tampil)){
@@ -382,7 +368,7 @@
                                     </div>
                                     <div class="nft-content">
                                         <div class="author-details">
-                                            <h4><a href="upload/nft-list.php">Music</a> </h4>
+                                            <h4><a href="upload/search2.php?category=Music">Music</a> </h4>
                                         </div>
                                     </div>
                                 </div>
@@ -396,7 +382,7 @@
                                         <?php
                                             
                                             $query = "SELECT * FROM nft
-                                                        WHERE category='Sports'";
+                                                        WHERE category='Sports' LIMIT 4";
                                             $tampil = mysqli_query($connect, $query);
                                             
                                             while($row=mysqli_fetch_array($tampil)){
@@ -411,7 +397,7 @@
                                     </div>
                                     <div class="nft-content">
                                         <div class="author-details">
-                                            <h4><a href="upload/nft-list.php">Sports</a> </h4>
+                                            <h4><a href="upload/search2.php?category=Sports">Sports</a> </h4>
                                         </div>
                                     </div>
                                 </div>
@@ -425,7 +411,7 @@
                                         <?php
                                             
                                             $query = "SELECT * FROM nft
-                                                        WHERE category='Trading Cards'";
+                                                        WHERE category='Trading Cards' LIMIT 4";
                                             $tampil = mysqli_query($connect, $query);
                                             
                                             while($row=mysqli_fetch_array($tampil)){
@@ -440,7 +426,7 @@
                                     </div>
                                     <div class="nft-content">
                                         <div class="author-details">
-                                            <h4><a href="upload/nft-list.php">Trading Cards</a> </h4>
+                                            <h4><a href="upload/search2.php?category=Trading+Cards">Trading Cards</a> </h4>
                                         </div>
                                     </div>
                                     </div>
