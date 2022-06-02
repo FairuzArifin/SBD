@@ -131,38 +131,9 @@
                                                                 data-bs-toggle="pill" data-bs-target="#pills-mentions"
                                                                 type="button" role="tab" aria-controls="pills-mentions"
                                                                 aria-selected="true"><i class="icofont-flash"></i>
-                                                                On Sale</button>
-                                                        </li>
-                                                        <li class="nav-item" role="presentation">
-                                                            <button class="nav-link" id="pills-favorites-tab"
-                                                                data-bs-toggle="pill" data-bs-target="#pills-favorites"
-                                                                type="button" role="tab" aria-controls="pills-favorites"
-                                                                aria-selected="false"><i class="icofont-license"></i>
                                                                 Owned</button>
                                                         </li>
-                                                        <li class="nav-item" role="presentation">
-                                                            <button class="nav-link" id="pills-groups-tab"
-                                                                data-bs-toggle="pill" data-bs-target="#pills-groups"
-                                                                type="button" role="tab" aria-controls="pills-groups"
-                                                                aria-selected="false"><i class="icofont-puzzle"></i>
-                                                                Created</button>
-                                                        </li>
-                                                        <li class="nav-item" role="presentation">
-                                                            <button class="nav-link" id="pills-friends-tab"
-                                                                data-bs-toggle="pill" data-bs-target="#pills-friends"
-                                                                type="button" role="tab" aria-controls="pills-friends"
-                                                                aria-selected="false"><i class="icofont-library"></i>
-                                                                Collection</button>
-                                                        </li>
 
-                                                        <li class="custom-select">
-                                                            <select>
-                                                                <option value="1">All</option>
-                                                                <option value="2">Recent</option>
-                                                                <option value="3">Relevant</option>
-                                                                <option value="4">Popular</option>
-                                                            </select>
-                                                        </li>
                                                     </ul>
                                                     <div class="tab-content activity-content" id="pills-tabContent">
                                                         <div class="tab-pane fade" id="pills-personal" role="tabpanel"
@@ -233,11 +204,13 @@
                                                             aria-labelledby="pills-mentions-tab">
                                                             <div class="row justify-content-center gx-3 gy-2">
                                                             <?php
+                                                            $uid = $_SESSION['user_id'];
                                                                     $q = "SELECT * FROM nft
                                                                                 JOIN kepemilikan
                                                                                 ON kepemilikan.nft_id = nft.nft_id
                                                                                 JOIN user
-                                                                                ON user.user_id = kepemilikan.user_id";
+                                                                                ON user.user_id = kepemilikan.user_id
+                                                                                WHERE kepemilikan.user_id = $uid";
                                                                     $tampil = mysqli_query($connect, $q);
                                                                     if(mysqli_num_rows($tampil)>0){
                                                                         while($t = mysqli_fetch_array($tampil)){ ?>
@@ -296,39 +269,13 @@
                                                                                 <img src="nftimage/<?php echo $t['photo'] ?>"
                                                                                     alt="nft-img">
 
-                                                                                <!-- nft countdwon -->
-                                                                                <!-- <ul class="nft-countdown count-down"
-                                                                                    data-date="July 05, 2022 21:14:01">
-                                                                                    <li>
-                                                                                        <span
-                                                                                            class="days">34</span><span
-                                                                                            class="count-txt">D</span>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <span
-                                                                                            class="hours">09</span><span
-                                                                                            class="count-txt">H</span>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <span
-                                                                                            class="minutes">32</span><span
-                                                                                            class="count-txt">M</span>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <span
-                                                                                            class="seconds">32</span><span
-                                                                                            class="count-txt">S</span>
-                                                                                    </li>
-                                                                                </ul> -->
+
                                                                             </div>
                                                                             <div class="nft-content">
                                                                                 <h4><a href="../bid/item-details.php?nft_id=<?php echo $t['nft_id'] ?>"><?php echo $t['title'] ?></a> </h4>
                                                                                 <div
                                                                                     class="price-like d-flex justify-content-between align-items-center">
 
-                                                                                    <a href="#" class="nft-like"><i
-                                                                                            class="icofont-heart"></i>
-                                                                                        230</a>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -340,114 +287,7 @@
                                                                 </div>
                                                     </div>
                                                     </div>
-                                                        <div class="tab-pane fade" id="pills-favorites" role="tabpanel"
-                                                            aria-labelledby="pills-favorites-tab">
-                                                            <div class="row justify-content-center gx-3 gy-2">
-                                                                <?php
-                                                                    $tampil = mysqli_query($connect, "SELECT * FROM nft");
-                                                                    if(mysqli_num_rows($tampil)>0){
-                                                                        while($t = mysqli_fetch_array($tampil)){ ?>
-                                                                    <div class="col-lg-4 col-sm-6">
-                                                                    <div class="nft-item light-version">
-                                                                        <div class="nft-inner">
-                                                                            <!-- nft top part -->
-                                                                            <div class="nft-item-top d-flex justify-content-between align-items-center">
-                                                                                <div class="author-part">
-                                                                                    <ul class="author-list d-flex">
-                                                                                        <li class="single-author">
-                                                                                            <a href="author.html"><img
-                                                                                            src="../assets/images/seller/01.gif"
-                                                                                            alt="author-img"></a>
-                                                                                        </li>
-                                                                                        <li
-                                                                                        class="single-author d-flex align-items-center">
-                                                                                        <a href="../bid/item-details.php?nid=<?php echo $t['nft_id'] ?>"
-                                                                                            class="veryfied"><img
-                                                                                                src="../assets/images/seller/01.png"
-                                                                                                alt="author-img"></a>
-                                                                                        <h6><a href="author.html">Jhon Doe</a>
-                                                                                        </h6>
-                                                                                        </li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                            <div class="more-part">
-                                                                                <div class=" dropstart">
-                                                                                    <a class=" dropdown-toggle"
-                                                                                        href="#" role="button"
-                                                                                        data-bs-toggle="dropdown"
-                                                                                        aria-expanded="false"
-                                                                                        data-bs-offset="25,0">
-                                                                                        <i
-                                                                                            class="icofont-flikr"></i>
-                                                                                    </a>
-
-                                                                                    <ul class="dropdown-menu">
-                                                                                        <li><a class="dropdown-item"
-                                                                                                href="#"><span>
-                                                                                                    <i
-                                                                                                        class="icofont-warning"></i>
-                                                                                                </span> Report </a>
-                                                                                        </li>
-                                                                                        <li><a class="dropdown-item"
-                                                                                                href="#"><span><i
-                                                                                                        class="icofont-reply"></i></span>
-                                                                                                Share</a></li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!-- nft-bottom part -->
-                                                                        <div class="nft-item-bottom">
-                                                                            <div class="nft-thumb">
-                                                                                <img src="nftimage/<?php echo $t['photo'] ?>"
-                                                                                    alt="nft-img">
-
-                                                                                <!-- nft countdwon -->
-                                                                                <!-- <ul class="nft-countdown count-down"
-                                                                                    data-date="July 05, 2022 21:14:01">
-                                                                                    <li>
-                                                                                        <span
-                                                                                            class="days">34</span><span
-                                                                                            class="count-txt">D</span>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <span
-                                                                                            class="hours">09</span><span
-                                                                                            class="count-txt">H</span>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <span
-                                                                                            class="minutes">32</span><span
-                                                                                            class="count-txt">M</span>
-                                                                                    </li>
-                                                                                    <li>
-                                                                                        <span
-                                                                                            class="seconds">32</span><span
-                                                                                            class="count-txt">S</span>
-                                                                                    </li>
-                                                                                </ul> -->
-                                                                            </div>
-                                                                            <div class="nft-content">
-                                                                                <h4><a href="item-details.html"><?php echo $t['title'] ?></a> </h4>
-                                                                                <div
-                                                                                    class="price-like d-flex justify-content-between align-items-center">
-                                                                                    <p class="nft-price">Price:
-                                                                                        <span
-                                                                                            class="yellow-color">0.34
-                                                                                            ETH</span>
-                                                                                    </p>
-                                                                                    <a href="#" class="nft-like"><i
-                                                                                            class="icofont-heart"></i>
-                                                                                        230</a>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                </div>
-                                                                            <?php }} ?>
-                                                        </div>
-                                                            </div>
+                                                        
                                                     </div>
 
 

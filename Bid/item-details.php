@@ -223,7 +223,6 @@ $query = "SELECT * FROM nft
                                 <form action="buy-now.php" method="POST">
                                 <button type="submit" name="buynow" class="default-btn move-right"><span>Buy Now <i class="icofont-coins"></i> (<?php echo $output['buy_now']?> ETH)</span> </button>
                                 <input type="hidden" name="nft_id" value="<?php echo $nftid ?>" />
-                                <input type="hidden" name="bid" value="<?php echo $_SESSION['user_id'] ?>" />
                                 <input type="hidden" name="sid" value="<?php echo $sid ?>" />
 
 
@@ -240,10 +239,13 @@ $query = "SELECT * FROM nft
                                             <button type = "submit" class="default-btn move-right mt-3 me-5"><span>Submit</span> </button>
                                             <button type = "reset" class="default-btn move-right mt-3" id="cancel_bid"><span>Cancel</span> </button>
                                         </form>
-                                        <?php else :?>
+                                        <?php else :
+                                            if($_SESSION['user_id']==$sid){?>
+                                            
                                             <a href="../upload/updatebid.php?nft_id=<?php echo $nftid ?>" class="default-btn move-right"><span>Sell</span> </a>
                                             
-                                        <?php endif?>
+                                        <?php }else{}
+                                        endif?>
                                     </div>
                                 </div>
                             </div>

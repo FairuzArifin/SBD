@@ -27,7 +27,7 @@
 
 
     <!-- site title -->
-    <title>Enftomark</title>
+    <title>OpenSea</title>
 </head>
 <?php
     include '../includes/function.php';
