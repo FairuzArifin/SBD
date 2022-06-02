@@ -169,71 +169,12 @@
                                                             aria-labelledby="pills-personal-tab">
                                                             <div class="row">
                                                                 <div class="col">
-                                                                    <!-- create item -->
-                                                                    <h3>Upload NFT</h3>
-                                                                    <div class="create-nft py-5 px-4">
-                                                                        <form class="create-nft-form" action="upload.php" method="post" enctype="multipart/form-data">
-                                                                            <!-- upload field -->
-                                                                            <div class="upload-item mb-30">
-                                                                                <p>PNG,JPG,JPEG,SVG,WEBP,Mp3 & Mp4
-                                                                                    (Max-150mb)</p>
-                                                                                <div class="custom-upload">
-                                                                                    <i class="icofont-upload-alt"></i>
-                                                                                        Upload a file
-                                                                                    <input type="file" class="file-input" name="file" id="file" value="Upload">
-                                                                                </div>
-                                                                            </div>
-                                                                            <!-- item name input -->
-                                                                            <div
-                                                                                class="form-floating item-name-field mb-3">
-                                                                                <input type="text" class="form-control"
-                                                                                    id="itemNameInput"
-                                                                                    placeholder="Item Name"
-                                                                                    name="title">
-                                                                                <label for="itemNameInput">Item
-                                                                                    Name</label>
-                                                                            </div>
-                                                                            <!-- item-description -->
-                                                                            <div
-                                                                                class="form-floating item-desc-field mb-30">
-                                                                                <input type="text" class="form-control"
-                                                                                        id="itemDesc"
-                                                                                        placeholder="Item Description"
-                                                                                        name="description">
-                                                                                    <label for="itemDesc">Item Description</label>
-                                                                            </div>
-                                                                            <!-- item-category -->
-                                                                            <div class="form-floating item-desc-field mb-30">
-                                                                                <p>Item Category</p>
-                                                                                <select name="category">
-                                                                                    <option value="Art" name="category">Art</option>
-                                                                                    <option value="Collectibles" name="category">Collectibles</option>
-                                                                                    <option value="Music" name="category">Music</option>
-                                                                                    <option value="Photography"name="category">Photography</option>
-                                                                                    <option value="Sports" name="category">Sports</option>
-                                                                                    <option value="Trading Cards" name="category">Trading Cards</option>
-                                                                                    <option value="Virtual Worlds" name="category">Virtual Worlds</option>
-                                                                                </select>
-                                                                            </div>
-                                                                            <!-- Royalites, Size & copy -->
-                                                                            <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id'] ?>">
-                                                                            <!-- submit button -->
-                                                                            <div class="submit-btn-field text-center">
-                                                                            <button type="submit"><input type="submit" class="submit-btn-field text-center" value="submit" name="submit"></button>
-                                                                                    
-                                                                            </div>
 
-                                                                        </form>
-
-                                                                        
-                                                                        
-                                                                    </div>
-                                                                    <br>
-                                                                    <br>
                                                                     <!-- upload nft bid-->
                                                                     <h3>Upload NFT To Bid</h3>
                                                                     <div class="create-nft py-5 px-4">
                                                                         <form class="create-nft-form" action="uploadbid.php" method="post" enctype="multipart/form-data">
+                                                                        <input type="text" name="user_id" value="<?php echo $_SESSION['user_id']?>" hidden>
                                                                             <!-- upload field -->
                                                                             <div class="upload-item mb-30">
                                                                                 <p>PNG,JPG,JPEG,SVG,WEBP,Mp3 & Mp4
@@ -276,67 +217,6 @@
                                                                                     <option value="Virtual Worlds" name="category">Virtual Worlds</option>
                                                                                 </select>
                                                                             </div>
-                                                                            <!-- item price -->
-                                                                            <div class="item-price-field mb-3">
-                                                                                <div class="row g-3">
-                                                                                    <div class="col-md-6">
-                                                                                        <div class="form-floating">
-                                                                                            <input type="text"
-                                                                                                class="form-control"
-                                                                                                id="itemPriceInput"
-                                                                                                placeholder="Item Price"
-                                                                                                name="start_bid_price">
-                                                                                            <label
-                                                                                                for="itemPriceInput">Start Bid Price</label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="item-price-field mb-3">
-                                                                                <div class="row g-3">
-                                                                                    <div class="col-md-6">
-                                                                                        <div class="form-floating">
-                                                                                            <input type="text"
-                                                                                                class="form-control"
-                                                                                                id="itemPriceInput"
-                                                                                                placeholder="Item Price"
-                                                                                                name="buy_now">
-                                                                                            <label
-                                                                                                for="itemPriceInput">Buy Now Price</label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <!-- auction time -->
-                                                                            <div class="item-price-field mb-3">
-                                                                                <div class="row g-3">
-                                                                                    <div class="col-md-6">
-                                                                                        <div class="form-floating">
-                                                                                            <input type="datetime-local"
-                                                                                                class="form-control"
-                                                                                                id="auctionstart"
-                                                                                                name="auction_start">
-                                                                                            <label
-                                                                                                for="itemPriceInput">Auction Start Time</label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>               
-                                                                            <div class="item-price-field mb-3">
-                                                                                <div class="row g-3">
-                                                                                    <div class="col-md-6">
-                                                                                        <div class="form-floating">
-                                                                                            <input type="datetime-local"
-                                                                                                class="form-control"
-                                                                                                id="auctionend"
-                                                                                                name="auction_end">
-                                                                                            <label
-                                                                                                for="itemPriceInput">Auction End Time</label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>   
-                                                                            <!-- Royalites, Size & copy -->
 
                                                                             <!-- submit button -->
                                                                             <div class="submit-btn-field text-center">
@@ -374,7 +254,7 @@
                                                                                             class="veryfied"><img
                                                                                                 src="../assets/images/seller/01.png"
                                                                                                 alt="author-img"></a>
-                                                                                        <h6><a href="../bid/item-bid.php">Jhon Doe</a>
+                                                                                        <h6><a href="../bid/item-details.php?nft_id=<?php echo $t['nft_id'] ?>">Jhon Doe</a>
                                                                                         </h6>
                                                                                         </li>
                                                                                     </ul>
@@ -437,7 +317,7 @@
                                                                                 </ul> -->
                                                                             </div>
                                                                             <div class="nft-content">
-                                                                                <h4><a href="item-details.html"><?php echo $t['title'] ?></a> </h4>
+                                                                                <h4><a href="../bid/item-details.php?nft_id=<?php echo $t['nft_id'] ?>"><?php echo $t['title'] ?></a> </h4>
                                                                                 <div
                                                                                     class="price-like d-flex justify-content-between align-items-center">
                                                                                     
@@ -476,7 +356,7 @@
                                                                                         </li>
                                                                                         <li
                                                                                         class="single-author d-flex align-items-center">
-                                                                                        <a href="../bid/item-details.php?nft_id=<?php echo $t['nft_id'] ?>"
+                                                                                        <a href="../bid/item-details.php?nid=<?php echo $t['nft_id'] ?>"
                                                                                             class="veryfied"><img
                                                                                                 src="../assets/images/seller/01.png"
                                                                                                 alt="author-img"></a>

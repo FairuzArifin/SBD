@@ -4,6 +4,7 @@
     include "include/header.php";
 
     if(isset($_POST['submit'])){
+        $userid = $_POST['user_id'];
         $dir = "nftimage/";
         $file_name = ($_FILES['file']['name']);
         $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
@@ -31,18 +32,29 @@
                     $description = $_POST['description'];
                     $category = $_POST['category'];
 
-                    $start_bid_price= $_POST['start_bid_price'];
-                    $auction_start = $_POST['auction_start'];
-                    $auction_end = $_POST['auction_end'];
-                    $buy_now = $_POST['buy_now'];
+                    $start_bid_price= 0;
+                    $auction_start = 0;
+                    $auction_end = date("Y-m-d h:i:sa");
+                    $buy_now = date("Y-m-d h:i:sa");
 
                     $sql = "INSERT INTO nft (photo, title, description, category)
                     VALUES ('$file_name', '$title', '$description', '$category')";
 
-                    $sql2 = "INSERT INTO bid (start_bid_price, auction_start, auction_end, buy_now)
-                    VALUES ('$start_bid_price', '$auction_start', '$auction_end', '$buy_now')";
+                    
 
                     if($connect->query($sql)===TRUE){
+
+                        $sql ="SELECT MAX(nft_id) AS last_id FROM nft LIMIT 1";
+                        $q = mysqli_query($connect,$sql);
+                        $data = mysqli_fetch_array($q);
+                        $last_id = $data['last_id'];
+
+                        $sql2 = "INSERT INTO bid (nft_id,start_bid_price, auction_start, auction_end, buy_now)
+                        VALUES ('$last_id','$start_bid_price', '$auction_start', '$auction_end', '$buy_now')";
+
+                        $sql3 = "INSERT INTO kepemilikan (user_id,nft_id)
+                        VALUES ('$userid','$last_id')";
+
                         if($connect->query($sql2)===TRUE){
                             echo 'Berhasil';
                         } else{

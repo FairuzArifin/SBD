@@ -3,6 +3,7 @@
 include '../includes/connect.php';
 include '../includes/function.php';
 $nftid = $_GET['nft_id'];
+
 $query = "SELECT * FROM nft
             JOIN bid
             ON nft.nft_id = bid.nft_id
@@ -155,13 +156,16 @@ $query = "SELECT * FROM nft
                                         <div class="history-tab tab-pane fade" id="nav-history" role="tabpanel"
                                             aria-labelledby="nav-history-tab">
                                             <ul class="item-histo-list">
-                                                <?php $bids = show_bid($nftid); 
+                                                
+                                                <?php if ($output['status_nft']==0):
+                                                 $bids = show_bid($nftid); 
                                                     foreach ($bids as $bidnow) : ?>
                                                 <li class="histo-item">
                                                     <p>Bid By <?php echo $bidnow['name']?> <?php echo $bidnow['bid_ongoing']?></pa></p>
                                                     <time><?php echo $bidnow['bid_time']?></time>
                                                 </li>
-                                                <?php endforeach ?>
+                                                <?php endforeach;
+                                                    endif; ?>
                                             </ul>
                                         </div>
                                     </div>
@@ -222,13 +226,12 @@ $query = "SELECT * FROM nft
                                             <div class="form-group">
                                                 <label for="" class="control-label"><h5>Bid Amount</h5></label>
                                                 <input type="number" class="form-control text-right mt-2" name="bid_amount" style="width: 330px;">
-                                                <input type="hidden" name="sid" value="<?php echo $sid ?>" />
-                                                <input type="hidden" name="bid" value="<?php echo $_SESSION['user_id'] ?>" />
                                             </div>
                                             <button type = "submit" class="default-btn move-right mt-3 me-5"><span>Submit</span> </button>
                                             <button type = "reset" class="default-btn move-right mt-3" id="cancel_bid"><span>Cancel</span> </button>
                                         </form>
                                         <?php else :?>
+                                            <a href="../upload/updatebid.php?nft_id=<?php echo $nftid ?>" class="default-btn move-right"><span>Sell</span> </a>
                                         <?php endif?>
                                     </div>
                                 </div>

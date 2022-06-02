@@ -34,11 +34,13 @@
                     VALUES ('$file_name', '$title', '$description', '$category')";
 
                     if($connect->query($sql)===TRUE){
-                        $q="SELECT * FROM nft WHERE title = $title";
-                        $keluar=mysqli_query($connect, $q);
-                        $row=mysqli_fetch_assoc($keluar);
-                        
-                        $q1="INSERT INTO kepemilikan (user_id, nft_id) VALUES ($user_id, $nid)";
+                        $sql ="SELECT MAX(nft_id) AS last_id FROM nft LIMIT 1";
+                        $q = mysqli_query($connect,$sql);
+                        $data = mysqli_fetch_array($query);
+                        $last_id = $data['last_id'];
+
+                        $q1="INSERT INTO kepemilikan (user_id, nft_id) VALUES ($user_id, $last_id)";
+
                         if($connect->query($q1)===TRUE){
                             echo 'Berhasil';
                         } else{
