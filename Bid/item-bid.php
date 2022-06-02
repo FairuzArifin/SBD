@@ -2,11 +2,16 @@
 include '../includes/connect.php';
 include '../includes/function.php';
 
+if (empty($_SESSION['logged'])){
+    header ("location: ../account/signin.php");
+    exit();
+
+}
 $bidd = $_POST['bid_amount'];
 $nft_id = $_POST['nft_id'];
 $sid = $_POST['sid'];
-$bid = $_POST['bid'];
-$user_id = $bid;
+$user_id = $_SESSION['user_id'];
+
 
 $check = "SELECT MAX(bid_ongoing) AS max FROM bid_ongoing WHERE nft_id = $nft_id";  //check higher bid
 $process = mysqli_query($connect, $check);
@@ -29,7 +34,7 @@ $proce = mysqli_query($connect, $author);
 $row3 = mysqli_fetch_array($proce);
 $auth = $row3['author'];
 
-if($_SESSION['user_id'] = $row3['author']){
+if($_SESSION['user_id'] != $row3['author']){
 if(cek_saldo($user_id,$bidd)==true){
     if($bidd < $buy){
         if(strtotime($www) > strtotime($now)){
@@ -45,9 +50,10 @@ if(cek_saldo($user_id,$bidd)==true){
                 echo "<script>alert('Your Bid Must be Higher');history.go(-1) </script>";
             }
         } else {
-                $sql = "UPDATE `nft` SET `status_nft` = '1' WHERE `nft`.`nft_id` = $nft_id";
+                $q = "UPDATE `nft` SET `status_nft` = '1' WHERE `nft`.`nft_id` = $nft_id";
                 pindah($sid, $bid, $nft_id, $largestbid);
-                    if($connect->query($sql)===TRUE){
+                    if($connect->query($q)===TRUE){
+                        delete_bid($nft_id);
                         echo "<script>alert('NFT Already Sold');history.go(-1) </script>";
                     } else {
                         echo "Gagal";

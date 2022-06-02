@@ -2,6 +2,11 @@
 include '../includes/connect.php';
 include '../includes/function.php';
 
+if (empty($_SESSION['logged'])){
+    header ("location: ../account/signin.php");
+    exit();
+
+}
 $user_id = $_SESSION['user_id'];
 $nft_id = $_POST['nft_id'];
 

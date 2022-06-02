@@ -231,6 +231,7 @@ $query = "SELECT * FROM nft
                                 <div id="bid-frm">
                                     <div class="col-md-12">
                                         <form id="manage-bid" method="POST" action="item-bid.php">
+                                        <input type="hidden" name="sid" value="<?php echo $sid ?>" />
                                             <input type="hidden" name="nft_id" value="<?php echo $nftid ?>" />
                                             <div class="form-group">
                                                 <label for="" class="control-label"><h5>Bid Amount</h5></label>
