@@ -1,11 +1,34 @@
-    <?php
+<?php
     include '../includes/connect.php';
-    $nid = $_GET['nft_id'];
+    $nid = $_GET['user_id'];
     $query = "SELECT * FROM nft WHERE nft_id = $nid";
     $out = mysqli_query($connect,$query);
     $row = mysqli_fetch_assoc($out);
-
     ?>
+
+    <?php
+    include "include/header.php";
+
+    if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
+    ?>
+    <!-- ==========Page Header Section Start Here========== -->
+    <section class="page-header-section style-1 light-version">
+        <div class="container">
+            <div class="page-header-content">
+                <div class="page-header-inner">
+                    <div class="page-title">
+                        <h2>Upload NFT to Bid</h2>
+                    </div>
+                    <ol class="breadcrumb">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active"><?php echo $_SESSION['name'];?></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <div class="py-5 px-4">
     <form class="create-nft-form" action="process-updatebid.php" method="POST">
         
         <!-- item name input -->
@@ -16,7 +39,7 @@
                 placeholder="<?php echo $row['title'];?>"
                 name="title"
                 disabled="disabled">
-            <label for="itemNameInput"></label>
+            <label for="itemNameInput"><?php echo $row['title'];?></label>
         </div>
         <!-- item-description -->
         <div
@@ -26,7 +49,7 @@
                     placeholder="<?php echo $row['description'];?>"
                     name="description"
                     disabled="disabled">
-                <label for="itemDesc"></label>
+                <label for="itemDesc"><?php echo $row['description'];?></label>
         </div>
         <!-- item-category -->
         <div class="form-floating item-desc-field mb-30">
@@ -98,8 +121,12 @@
         <input type="hidden" name="nft_id" value="<?php echo $nid ?>" />   
 
         <!-- submit button -->
-        <div class="submit-btn-field text-center">
-            <button type="submit"><input type="submit" name="submit" class="submit-btn-field text-center"></button>
-                
+        <div>
+            <button type = "submit" class="default-btn move-right mt-3 me-5"><span>Submit</span> </button>              
         </div>
     </form>
+    </div>
+    <!-- Batas -->
+    <?php } ?>
+    <?php include "include/footer.php"; ?>
+    
