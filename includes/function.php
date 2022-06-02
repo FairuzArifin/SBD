@@ -44,7 +44,7 @@ function get_latest_bid($nftid){
     global $connect;
     $q = "SELECT * FROM bid_ongoing where nft_id = $nftid order by bid_ongoing desc limit 1 ";
     $get = mysqli_query($connect, $q);
-    $bid = $get->fetch_array()['bid_ongoing'];
+    $bid = $get->num_rows > 0 ? $bid = $get->fetch_array()['bid_ongoing']:0;
     return $bid;
 
 }
