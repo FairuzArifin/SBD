@@ -56,6 +56,7 @@
                         VALUES ('$userid','$last_id')";
 
                         if($connect->query($sql2)===TRUE){
+                            mysqli_query($connect,$sql3);
                             echo 'Berhasil';
                         } else{
                             echo "Error : " .$sql2."<br/>".$connect->error;

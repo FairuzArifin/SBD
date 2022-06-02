@@ -232,6 +232,7 @@ $query = "SELECT * FROM nft
                                         </form>
                                         <?php else :?>
                                             <a href="../upload/updatebid.php?nft_id=<?php echo $nftid ?>" class="default-btn move-right"><span>Sell</span> </a>
+                                            
                                         <?php endif?>
                                     </div>
                                 </div>
