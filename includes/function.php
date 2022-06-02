@@ -31,10 +31,15 @@ function show_bid($nftid){
                 ON bid_ongoing.user_id = user.user_id
                 WHERE nft_id = $nftid;";
 
-    $get = mysqli_query($connect, $query);
-    $bid = $get->num_rows > 0 ? $bid = $get->fetch_array()['bid_ongoing']:0;
-
-    return $bid;
+$result = mysqli_query($connect, $query);
+if($result->num_rows > 0){
+while($row = mysqli_fetch_assoc($result)) {
+    $box[] = $row;
+}
+}else{
+    $box = 0;
+}
+return $box;
 
 
 }
@@ -43,7 +48,7 @@ function get_latest_bid($nftid){
     global $connect;
     $q = "SELECT * FROM bid_ongoing where nft_id = $nftid order by bid_ongoing desc limit 1 ";
     $get = mysqli_query($connect, $q);
-    $bid = $get->num_rows > 0 ? $bid = $get->fetch_array()['bid_ongoing']:0;
+    $bid = $get->num_rows > 0 ? $bid = $get->fetch_assoc()['bid_ongoing']:0;
     return $bid;
 
 }
@@ -99,4 +104,9 @@ function cek_saldo($uid,$price){
         return false;
     }
 
+}
+function delete_bid($nftid){
+    global $connect;
+    $sql = "DELETE FROM bid_ongoing WHERE nft_id = $nftid";
+    mysqli_query($connect, $sql);
 }

@@ -35,11 +35,12 @@ else{
             $sql = "UPDATE `nft` SET `status_nft` = '1' WHERE `nft`.`nft_id` = $nft_id";
             if($connect->query($sql)===TRUE){
             pindah($sid,$user_id,$nft_id,$buy_price);
+            delete_bid($nft_id);
             echo "<script>alert('Buy Now Success');history.go(-1) </script>";
             }
         }
         else{
-            echo "<script>alert('Saldo Kurang');history.go(-1) </script>";
+            echo "<script>alert('Sald o Kurang');history.go(-1) </script>";
         }
     }else{
         echo "<script>alert('Punya sendiri');history.go(-1) </script>";
