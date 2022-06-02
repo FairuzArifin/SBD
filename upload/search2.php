@@ -9,14 +9,14 @@
 
         $tampil = mysqli_query($connect, "SELECT * FROM nft");
 
-        if($_GET['cari'] != ''){
+        if($_GET['category'] != ''){
         $query = "SELECT * FROM nft
                     JOIN kepemilikan
                     ON kepemilikan.nft_id = nft.nft_id
                     JOIN user
                     ON user.user_id = kepemilikan.user_id
-                    WHERE status_nft=0 AND title
-                    LIKE '%".$_GET['cari']."%'";
+                    WHERE category
+                    LIKE '%".$_GET['category']."%'";
         $tampil = mysqli_query($connect, $query);
         }
         while($t = mysqli_fetch_array($tampil)){
