@@ -2,10 +2,10 @@
 include '../includes/connect.php';
 include '../includes/function.php';
 
-$bidd = 10;
-$nft_id = 9;
-$sid = 2101;
-$bid = 2102;
+$bidd = $_POST['bid_amount'];
+$nft_id = $_POST['nft_id'];
+$sid = $_POST['sid'];
+$bid = $_POST['bid'];
 $user_id = $bid;
 
 $check = "SELECT MAX(bid_ongoing) AS max FROM bid_ongoing WHERE nft_id = $nft_id";  //check higher bid

@@ -1,6 +1,6 @@
 <?php
     include '../includes/connect.php';
-    $nid = $_GET['user_id'];
+    $nid = $_GET['nft_id'];
     $query = "SELECT * FROM nft WHERE nft_id = $nid";
     $out = mysqli_query($connect,$query);
     $row = mysqli_fetch_assoc($out);
