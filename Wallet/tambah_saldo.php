@@ -34,9 +34,9 @@
     ?>
     
     <div class="container text-center mt-2">
-      <h2><?php echo $wallet['wallet_id'];?></h2>
+      <h2><?php echo $wallet['user_id'];?></h2>
       <!-- <?php echo $_SESSION['user_id']?>
-      <?php echo $_SESSION['wallet_id']?> -->
+      <?php echo $_SESSION['user_id']?> -->
      <h1> <?php echo $wallet['username'];?> </h1>
       
       <hr class="my-1">
