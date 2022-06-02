@@ -17,8 +17,11 @@
              `auction_end` = '$end', 
              `buy_now` = '$buynow' 
              WHERE `bid`.`nft_id` = $nft_id";
-
+    
 if($connect->query($q)===TRUE){
+    $sql = "UPDATE `nft` SET `status_nft` = '0' WHERE `nft`.`nft_id` = $nft_id";
+    mysqli_query($connect, $sql);
+            
     echo '<section class="profile-section light-version padding-top padding-bottom">
            <center>
            <h3>NFT UPLOADED</h3> <br>
