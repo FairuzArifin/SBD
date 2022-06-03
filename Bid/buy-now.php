@@ -45,7 +45,7 @@ else{
             }
         }
         else{
-            echo "<script>alert('Sald o Kurang');history.go(-1) </script>";
+            echo "<script>alert('Saldo Kurang');history.go(-1) </script>";
         }
     }else{
         echo "<script>alert('Punya sendiri');history.go(-1) </script>";
