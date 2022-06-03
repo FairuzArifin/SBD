@@ -8,7 +8,7 @@
             <div class="section-header light-version">
                 <div class="nft-filter d-flex flex-wrap justify-content-center">
                 <label for="catSelect">Select a Category</label>
-                <div class="form-floating item-desc-field mb-30">
+                <div class="form-floating item-desc-field">
                         <form action="search2.php" method="get"> 
                         <select name="category">
                         <option value="Art" name="category">Art</option>

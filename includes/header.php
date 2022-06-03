@@ -58,9 +58,6 @@
                                   <li><a class="dropdown-item" href="../upload/author.php"><span class="me-1"><i
                                                 class="icofont-options"></i></span>
                                         Profile</a></li>
-                                  <li><a class="dropdown-item" href="activity.php"><span class="me-1"><i
-                                                class="icofont-lightning-ray"></i></span>
-                                        Activity</a></li>
                                 <?php else : ?>
                                 <li><a class="dropdown-item" href="../account/signup.php"><span class="me-1"><i
                                                 class="icofont-space-shuttle"></i></span>
