@@ -18,42 +18,15 @@
                 <div class="header__menu ms-auto">
                     <ul class="header__nav mb-0">
                         <li class="header__nav-item">
-                            <a class="header__nav-link" href="index.php">Home</a>
+                            <a class="header__nav-link" href="../index.php">Home</a>
                         </li>
                         <li class="header__nav-item">
                             <a class="header__nav-link" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false" data-bs-offset="0,10">Explore</a>
 
                             <ul class="dropdown-menu header__nav-menu">
-                                <li><a class="drop-down-item" href="explore.html">Explore NFT's</a></li>
-                                <li><a class="drop-down-item" href="auction.html">Auction Page</a></li>
-
+                                <li><a class="drop-down-item" href="../upload/nft-list.php">Explore NFT's</a></li>
                             </ul>
-                        </li>
-                        <li class="header__nav-item">
-                            <a href="activity.html" class="header__nav-link">Activity</a>
-                        </li>
-                        <li class="header__nav-item">
-                            <a class="header__nav-link" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" data-bs-offset="0,10">Pages</a>
-
-                            <ul class="dropdown-menu header__nav-menu">
-                                <li><a class="drop-down-item" href="item-details.html">NFT Details</a></li>
-                                <li><a class="drop-down-item" href="all-authors-2.html">All Authors</a></li>
-                                <li><a class="drop-down-item" href="author.html">Author Profile</a></li>
-                                <li><a class="drop-down-item" href="wallet.html">Wallet Connect</a></li>
-                                <li><a class="drop-down-item" href="404.html">404</a></li>
-                                <li><a class="drop-down-item" href="forgot-pass.html">Forgot Password</a></li>
-
-                            </ul>
-                        </li>
-                        <li class="header__nav-item">
-                            <a class="header__nav-link" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" data-bs-offset="0,10"><svg
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path
-                                        d="M12,10a2,2,0,1,0,2,2A2,2,0,0,0,12,10ZM5,10a2,2,0,1,0,2,2A2,2,0,0,0,5,10Zm14,0a2,2,0,1,0,2,2A2,2,0,0,0,19,10Z" />
-                                </svg></a>
                         </li>
                     </ul>
                 </div>
@@ -112,7 +85,7 @@
                         </div>
                     </div>
                     <div class="wallet-btn">
-                        <a href="../Wallet/halaman_wallet.php"><span><i class="icofont-wallet" data-blast="color"></i></span> <span
+                        <a href="../Wallet/wallet.php"><span><i class="icofont-wallet" data-blast="color"></i></span> <span
                                 class="d-none d-md-inline">
                                 <?php 
 	                                if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){

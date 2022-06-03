@@ -78,7 +78,7 @@
 
                         </div>
                         <div class="nft-content">
-                            <h4><a href="item-details.html"><?php echo $t['title'] ?></a> </h4>
+                            <h4><a href="../bid/item-details.php?nft_id=<?php echo $t['nft_id'] ?>"><?php echo $t['title'] ?></a> </h4>
                             <div
                                 class="price-like d-flex justify-content-between align-items-center">
                                 <?php if (empty($highest_bid)): ?>

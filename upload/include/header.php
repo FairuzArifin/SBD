@@ -15,15 +15,15 @@
     <!-- <meta property="og:image" content=""> -->
 
     <!-- site favicon -->
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png">
 
     <!-- ====== All css file ========= -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css//icofont.min.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/lightcase.css">
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css//icofont.min.css">
+    <link rel="stylesheet" href="../assets/css/animate.css">
+    <link rel="stylesheet" href="../assets/css/lightcase.css">
+    <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/css/style.min.css">
 
 
     <!-- site title -->
@@ -32,11 +32,7 @@
 <?php
     include '../includes/function.php';
     
-    if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
-        $box = wallet($_SESSION['user_id']);
-        
-        foreach ($box AS $wallet)        
-    //end coba
+   
 ?>
 
     <!-- if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){  
@@ -52,11 +48,11 @@
             <div class="header__content">
                 <div class="header__logo">
                     <a href="../index.php">
-                        <img src="assets/images/logo/logo-3.png" alt="logo">
+                        <img src="../assets/images/logo/logo-3.png" alt="logo">
                     </a>
                 </div>
 
-                <form method="get" action="search.php" class="header__search">
+                <form method="get" action="../upload/search.php" class="header__search">
                     <input type="text" placeholder="Search items, collections, and creators" name="cari">
                     <button type="button" name="cari"><i class="icofont-search-2"></i></button>
                     <button type="button" class="close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -67,23 +63,14 @@
                 <div class="header__menu ms-auto">
                     <ul class="header__nav mb-0">
                         <li class="header__nav-item">
-                            <a class="header__nav-link" href="index.html">Home</a>
-                        </li>           
-                        <li class="header__nav-item">         
-                                <a class="header__nav-link" href="nft-list.php">Explore</a>
+                            <a class="header__nav-link" href="../index.php">Home</a>
                         </li>
-                        
                         <li class="header__nav-item">
                             <a class="header__nav-link" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" data-bs-offset="0,10"><svg
-                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path
-                                        d="M12,10a2,2,0,1,0,2,2A2,2,0,0,0,12,10ZM5,10a2,2,0,1,0,2,2A2,2,0,0,0,5,10Zm14,0a2,2,0,1,0,2,2A2,2,0,0,0,19,10Z" />
-                                </svg></a>
+                                aria-haspopup="true" aria-expanded="false" data-bs-offset="0,10">Explore</a>
 
                             <ul class="dropdown-menu header__nav-menu">
-                                <li><a class="drop-down-item" href="contact.html">Contact </a></li>
-                                <li><a class="drop-down-item" href="coming-soon.html">Coming soon</a></li>
+                                <li><a class="drop-down-item" href="../upload/nft-list.php">Explore NFT's</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -98,38 +85,66 @@
                         <div class="dropdown">
                             <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false" data-bs-offset="-100,10">
-                                <span data-blast="bgColor"><i class="icofont-user"></i></span> <span
-                                    class="d-none d-md-inline"><?php echo $_SESSION['name'];?></span>
+                                  <span data-blast="bgColor"><i class="icofont-user"></i></span> <span
+                                    class="d-none d-md-inline">
+                                    <?php 
+	                                if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
+                            		    echo $_SESSION['name'];
+	                                } else {
+                                        echo "Tamu";
+                                    }
+                                    ?>
+                                    </span>
                             </a>
 
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="author.html"><span class="me-1"><i
+
+                                <?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == true) : ?>
+                                  <li><a class="dropdown-item" href="../upload/author.php"><span class="me-1"><i
                                                 class="icofont-options"></i></span>
                                         Profile</a></li>
-                                <li><a class="dropdown-item" href="activity.html"><span class="me-1"><i
+                                  <li><a class="dropdown-item" href="activity.php"><span class="me-1"><i
                                                 class="icofont-lightning-ray"></i></span>
                                         Activity</a></li>
-                                <li><a class="dropdown-item" href="signup.html"><span class="me-1"><i
+                                <?php else : ?>
+                                <li><a class="dropdown-item" href="../account/signup.php"><span class="me-1"><i
                                                 class="icofont-space-shuttle"></i></span>
                                         Sign
                                         Up</a></li>
-                                <li><a class="dropdown-item" href="signin.html"><span class="me-1"><i
+                                <li><a class="dropdown-item" href="../account/signin.php"><span class="me-1"><i
                                                 class="icofont-login"></i></span> Sign
                                         In</a></li>
-                                <li>
+                                <?php endif ;?>
+
+                                <?php if(isset($_SESSION['logged']) && $_SESSION['logged'] == true) : ?>
+                                  <li>
                                     <hr class="dropdown-divider">
                                 </li>
 
-                                <li><a class="dropdown-item" href="../../account/signout.php"> Sign
+                                <li><a class="dropdown-item" href="../account/signout.php"> Sign
                                         Out <span class="ms-1"><i class="icofont-logout"></i></span></a></li>
+                                <?php endif ;?>
+                                
+                               
                             </ul>
                         </div>
                     </div>
                     <div class="wallet-btn">
-                        <a href="../../sbd/wallet/wallet.php"><span><i class="icofont-wallet" data-blast="color"></i></span> <span
-                                class="d-none d-md-inline"><?php echo $wallet['fund_eth'];?></span> </a>
+                        <a href="../Wallet/wallet.php"><span><i class="icofont-wallet" data-blast="color"></i></span> <span
+                                class="d-none d-md-inline">
+                                <?php 
+	                                if(isset($_SESSION['logged']) && $_SESSION['logged'] == true){
+                            		    $uid = $_SESSION['user_id'];
+                                        $query = "SELECT fund_eth FROM wallet WHERE user_id = $uid";
+                                        $isi = mysqli_query($connect, $query);
+                                        $saldo = mysqli_fetch_assoc($isi);
+                                        echo $saldo['fund_eth'];
+	                                
+                                    } else {
+                                        echo "Unknown";
+                                    }
+                                ?></span> </a>
                     </div>
-                    <?php } ?>
                 </div>
 
                 <button class="menu-trigger header__btn" id="menu05">
