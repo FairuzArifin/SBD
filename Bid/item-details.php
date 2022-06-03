@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 include '../includes/connect.php';
 include '../includes/function.php';
 $nftid = $_GET['nft_id'];
@@ -241,11 +241,11 @@ $query = "SELECT * FROM nft
                                             <button type = "reset" class="default-btn move-right mt-3" id="cancel_bid"><span>Cancel</span> </button>
                                         </form>
                                         <?php else :
+                                        if(empty($_SESSION['logged'])){}
+                                            else{
                                             if($_SESSION['user_id']==$sid){?>
-                                            
                                             <a href="../upload/updatebid.php?nft_id=<?php echo $nftid ?>" class="default-btn move-right"><span>Sell</span> </a>
-                                            
-                                        <?php }else{}
+                                        <?php }else{}}
                                         endif?>
                                     </div>
                                 </div>
